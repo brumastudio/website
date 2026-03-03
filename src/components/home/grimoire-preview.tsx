@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
@@ -24,16 +25,17 @@ interface GrimoirePreviewProps {
   projects?: Project[];
 }
 
-export function GrimoirePreview({ projects }: GrimoirePreviewProps) {
+export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
+  const t = await getTranslations("Home.grimoirePreview");
   const items = projects && projects.length > 0 ? projects : fallbackProjects;
 
   return (
     <section id="grimoire" className="px-6 py-24 md:py-32 scroll-mt-20">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
-          label="Section 02"
-          heading="The Grimoire"
-          subheading="Selected works and experiments."
+          label={t("label")}
+          heading={t("heading")}
+          subheading={t("subheading")}
         />
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -58,7 +60,7 @@ export function GrimoirePreview({ projects }: GrimoirePreviewProps) {
                     <div className="flex flex-col items-center gap-2 text-grimoire-muted">
                       <Sparkles className="h-6 w-6" />
                       <span className="font-ui text-xs uppercase tracking-wider">
-                        Coming Soon
+                        {t("comingSoon")}
                       </span>
                     </div>
                   </div>
@@ -87,7 +89,7 @@ export function GrimoirePreview({ projects }: GrimoirePreviewProps) {
 
             if (hasSlug) {
               return (
-                <Link key={project.title} href={`/grimoire/${project.slug.current}`}>
+                <Link key={project.title} href={{ pathname: "/grimoire/[slug]", params: { slug: project.slug.current } }}>
                   {card}
                 </Link>
               );

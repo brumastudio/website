@@ -22,13 +22,16 @@ export function estimateReadingTime(body: any[]): number {
   return Math.max(1, Math.ceil(words / 200));
 }
 
-/** Format a date string as "Mar 15, 2026" */
-export function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+/** Format a date string as "Mar 15, 2026" (en) or "15 mar 2026" (es) */
+export function formatDate(dateString: string, locale: string = "en"): string {
+  return new Date(dateString).toLocaleDateString(
+    locale === "es" ? "es-MX" : "en-US",
+    {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    }
+  );
 }
 
 /** Format a category slug as a display label */

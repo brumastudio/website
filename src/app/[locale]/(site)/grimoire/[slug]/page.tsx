@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { client } from "@/lib/sanity";
 import { urlFor } from "@/lib/sanity";
 import { projectBySlugQuery, projectSlugsQuery, allProjectsQuery } from "@/lib/queries";
 import { PortableTextBody } from "@/components/portable-text-body";
 import { GoldDivider } from "@/components/gold-divider";
+import { routing } from "@/i18n/routing";
 import type { Project } from "@/lib/types";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
   const slugs = await client.fetch<string[]>(projectSlugsQuery);
-  return slugs.map((slug) => ({ slug }));
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -34,7 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProjectPage({ params }: Props) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("GrimoireProject");
   const project = await client.fetch<Project | null>(projectBySlugQuery, { slug });
 
   if (!project) {
@@ -60,7 +67,7 @@ export default async function ProjectPage({ params }: Props) {
             href="/grimoire"
             className="font-ui text-sm text-grimoire-muted hover:text-grimoire-gold transition-colors duration-200 mb-6 inline-block"
           >
-            &larr; Back to Grimoire
+            {t("backLink")}
           </Link>
 
           <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
@@ -116,7 +123,7 @@ export default async function ProjectPage({ params }: Props) {
               <PortableTextBody value={project.body} />
             ) : (
               <p className="font-body text-lg leading-relaxed text-grimoire-muted italic">
-                Full case study coming soon.
+                {t("caseStudyComingSoon")}
               </p>
             )}
           </div>
@@ -126,7 +133,7 @@ export default async function ProjectPage({ params }: Props) {
             {project.client && (
               <div>
                 <h3 className="font-ui text-xs font-medium uppercase tracking-wider text-grimoire-muted mb-1">
-                  Client
+                  {t("client")}
                 </h3>
                 <p className="font-body text-base md:text-lg leading-relaxed text-grimoire-text">
                   {project.client}
@@ -137,7 +144,7 @@ export default async function ProjectPage({ params }: Props) {
             {project.timeline && (
               <div>
                 <h3 className="font-ui text-xs font-medium uppercase tracking-wider text-grimoire-muted mb-1">
-                  Timeline
+                  {t("timeline")}
                 </h3>
                 <p className="font-body text-base md:text-lg leading-relaxed text-grimoire-text">
                   {project.timeline}
@@ -148,7 +155,7 @@ export default async function ProjectPage({ params }: Props) {
             {project.techStack && project.techStack.length > 0 && (
               <div>
                 <h3 className="font-ui text-xs font-medium uppercase tracking-wider text-grimoire-muted mb-2">
-                  Tech Stack
+                  {t("techStack")}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
@@ -171,7 +178,7 @@ export default async function ProjectPage({ params }: Props) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 font-ui text-sm font-medium text-grimoire-gold hover:text-grimoire-gold-light transition-colors duration-200"
                 >
-                  View Live Site
+                  {t("viewLiveSite")}
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
@@ -186,10 +193,10 @@ export default async function ProjectPage({ params }: Props) {
           <div className="mx-auto max-w-6xl">
             <GoldDivider className="mb-12 mt-0" />
             <p className="font-ui text-xs text-grimoire-muted uppercase tracking-[0.2em] mb-2">
-              Next Project
+              {t("nextProject")}
             </p>
             <Link
-              href={`/grimoire/${nextProject.slug.current}`}
+              href={{ pathname: "/grimoire/[slug]", params: { slug: nextProject.slug.current } }}
               className="group inline-flex items-center gap-3"
             >
               <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide group-hover:text-grimoire-gold-light transition-colors duration-200">

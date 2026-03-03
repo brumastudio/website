@@ -1,13 +1,14 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
 import { GoldDivider } from "@/components/gold-divider";
 
 const footerLinks = [
-  { href: "/arts", label: "Arts" },
-  { href: "/grimoire", label: "Grimoire" },
-  { href: "/scrolls", label: "Scrolls" },
-  { href: "/the-order", label: "The Order" },
-  { href: "/summon", label: "Summon" },
+  { href: "/arts" as const, key: "arts" },
+  { href: "/grimoire" as const, key: "grimoire" },
+  { href: "/scrolls" as const, key: "scrolls" },
+  { href: "/the-order" as const, key: "theOrder" },
+  { href: "/summon" as const, key: "summon" },
 ];
 
 const socialLinks = [
@@ -17,7 +18,9 @@ const socialLinks = [
   { href: "https://instagram.com/brumastudio", label: "Instagram", icon: Instagram },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("Footer");
+
   return (
     <footer className="px-6 pb-12 pt-0">
       <div className="mx-auto max-w-6xl">
@@ -36,13 +39,13 @@ export function Footer() {
 
           {/* Tagline */}
           <p className="mt-4 font-body text-sm italic text-grimoire-muted">
-            Dark arts of digital craft.
+            {t("tagline")}
           </p>
 
           {/* Nav links */}
           <nav
             className="mt-6 flex items-center gap-2 font-ui text-sm text-grimoire-text/70"
-            aria-label="Footer navigation"
+            aria-label={t("footerNav")}
           >
             {footerLinks.map((link, i) => (
               <span key={link.href} className="flex items-center gap-2">
@@ -55,7 +58,7 @@ export function Footer() {
                   href={link.href}
                   className="hover:text-grimoire-gold transition-colors duration-200"
                 >
-                  {link.label}
+                  {t(link.key)}
                 </Link>
               </span>
             ))}
@@ -63,7 +66,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="mt-6 font-ui text-xs text-grimoire-muted">
-            &copy; {new Date().getFullYear()} Bruma Studio &middot; brumastudio.dev
+            {t("copyright", { year: new Date().getFullYear() })}
           </p>
 
           {/* Social icons */}

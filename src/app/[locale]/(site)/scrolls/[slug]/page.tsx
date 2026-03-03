@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { client, urlFor } from "@/lib/sanity";
 import { postBySlugQuery, postSlugsQuery } from "@/lib/queries";
 import { PortableTextBody } from "@/components/portable-text-body";
 import { GoldDivider } from "@/components/gold-divider";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { estimateReadingTime, formatDate, formatCategory } from "@/lib/utils";
+import { routing } from "@/i18n/routing";
 import type { Post } from "@/lib/types";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
   const slugs = await client.fetch<string[]>(postSlugsQuery);
-  return slugs.map((slug) => ({ slug }));
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -34,7 +38,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ScrollPage({ params }: Props) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("ScrollsPost");
   const post = await client.fetch<Post | null>(postBySlugQuery, { slug });
 
   if (!post) {
@@ -53,7 +60,7 @@ export default async function ScrollPage({ params }: Props) {
             href="/scrolls"
             className="font-ui text-sm text-grimoire-muted hover:text-grimoire-gold transition-colors duration-200 mb-8 inline-block"
           >
-            &larr; Back to Scrolls
+            {t("backLink")}
           </Link>
 
           {/* Meta line */}
@@ -67,10 +74,10 @@ export default async function ScrollPage({ params }: Props) {
               </>
             )}
             <time dateTime={post.publishedAt}>
-              {formatDate(post.publishedAt)}
+              {formatDate(post.publishedAt, locale)}
             </time>
             <span>&middot;</span>
-            <span>{readingTime} min read</span>
+            <span>{t("minRead", { minutes: readingTime })}</span>
           </div>
 
           {/* Title */}
@@ -95,7 +102,7 @@ export default async function ScrollPage({ params }: Props) {
               <PortableTextBody value={post.body} />
             ) : (
               <p className="font-body text-lg text-grimoire-muted italic">
-                Content coming soon.
+                {t("contentComingSoon")}
               </p>
             )}
           </div>
@@ -115,14 +122,14 @@ export default async function ScrollPage({ params }: Props) {
                 )}
                 <div>
                   <p className="font-ui text-sm text-grimoire-text">
-                    Written by{" "}
+                    {t("writtenBy")}{" "}
                     <span className="font-medium text-grimoire-gold">
                       {post.author.name}
                     </span>
                   </p>
                   {post.author.role && (
                     <p className="font-ui text-xs text-grimoire-muted">
-                      {post.author.role} at Bruma Studio
+                      {t("atStudio", { role: post.author.role })}
                     </p>
                   )}
                 </div>
@@ -135,18 +142,18 @@ export default async function ScrollPage({ params }: Props) {
             <div className="mt-16">
               <GoldDivider className="mb-12" />
               <h2 className="font-display text-xl text-grimoire-gold uppercase tracking-wide mb-8">
-                Related Scrolls
+                {t("relatedScrolls")}
               </h2>
               <div className="space-y-1">
                 {post.relatedPosts.map((related) => (
                   <Link
                     key={related._id}
-                    href={`/scrolls/${related.slug.current}`}
+                    href={{ pathname: "/scrolls/[slug]", params: { slug: related.slug.current } }}
                     className="group block border-l-2 border-transparent hover:border-grimoire-gold pl-6 py-4 -ml-6 transition-colors duration-200"
                   >
                     <div className="flex flex-wrap items-center gap-x-2 font-ui text-xs text-grimoire-muted">
                       <time dateTime={related.publishedAt}>
-                        {formatDate(related.publishedAt)}
+                        {formatDate(related.publishedAt, locale)}
                       </time>
                       {related.category && (
                         <>

@@ -1,7 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import { urlFor } from "@/lib/sanity";
@@ -16,6 +17,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("ProjectGrid");
 
   const activeTag = searchParams.get("tag") || "all";
 
@@ -47,7 +49,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
               : "border-grimoire-border text-grimoire-muted hover:border-grimoire-gold/30 hover:text-grimoire-text"
           }`}
         >
-          All
+          {t("all")}
         </button>
         {allTags.map((tag) => (
           <button
@@ -69,7 +71,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
         {filtered.map((project) => (
           <Link
             key={project._id}
-            href={`/grimoire/${project.slug.current}`}
+            href={{ pathname: "/grimoire/[slug]", params: { slug: project.slug.current } }}
             className="group bg-grimoire-surface border border-grimoire-border rounded-lg overflow-hidden hover:border-grimoire-gold/30 hover:shadow-[0_0_20px_rgba(201,166,105,0.08)] transition-all duration-300 hover:scale-[1.02]"
           >
             {/* Cover image or placeholder */}
@@ -85,7 +87,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-grimoire-bg/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="font-ui text-sm font-medium uppercase tracking-wider text-grimoire-gold">
-                      View Tome &rarr;
+                      {t("viewTome")}
                     </span>
                   </div>
                 </>
@@ -94,7 +96,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
                   <div className="flex flex-col items-center gap-2 text-grimoire-muted group-hover:text-grimoire-gold transition-colors duration-200">
                     <Sparkles className="h-6 w-6" />
                     <span className="font-ui text-xs uppercase tracking-wider">
-                      View Tome &rarr;
+                      {t("viewTome")}
                     </span>
                   </div>
                 </div>
@@ -132,7 +134,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
         <div className="text-center py-16">
           <Sparkles className="h-8 w-8 text-grimoire-muted mx-auto mb-4" />
           <p className="font-body text-lg text-grimoire-muted">
-            No projects match this filter yet.
+            {t("emptyState")}
           </p>
         </div>
       )}
@@ -140,7 +142,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
       {/* Footer note if few projects */}
       {projects.length < 4 && projects.length > 0 && (
         <p className="mt-12 text-center font-body text-sm italic text-grimoire-muted">
-          More spells are in progress. Check back soon.
+          {t("moreComingSoon")}
         </p>
       )}
     </>

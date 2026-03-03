@@ -1,0 +1,306 @@
+{
+  "Nav": {
+    "arts": "Artes",
+    "grimoire": "Grimorio",
+    "scrolls": "Pergaminos",
+    "theOrder": "La Orden",
+    "summon": "Invocar",
+    "startProject": "Iniciar un Proyecto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "mainNav": "Navegación principal"
+  },
+  "Footer": {
+    "tagline": "Artes oscuras del oficio digital.",
+    "arts": "Artes",
+    "grimoire": "Grimorio",
+    "scrolls": "Pergaminos",
+    "theOrder": "La Orden",
+    "summon": "Invocar",
+    "copyright": "© {year} Bruma Studio · brumastudio.dev",
+    "footerNav": "Navegación del pie de página"
+  },
+  "Home": {
+    "hero": {
+      "title": "Bruma Studio",
+      "tagline": "Artes oscuras del oficio digital.",
+      "body": "Construimos sitios web modernos y experiencias digitales con la precisión del código y la intención del oficio.",
+      "ctaPrimary": "Iniciar un Proyecto",
+      "ctaSecondary": "Ver Nuestro Trabajo"
+    },
+    "servicesPreview": {
+      "label": "Sección 01",
+      "heading": "Las Artes",
+      "subheading": "Lo que practicamos.",
+      "learnMore": "Más información →"
+    },
+    "grimoirePreview": {
+      "label": "Sección 02",
+      "heading": "El Grimorio",
+      "subheading": "Trabajos y experimentos seleccionados.",
+      "comingSoon": "Próximamente"
+    },
+    "credibilityStrip": {
+      "heading": "La Orden",
+      "body1": "Bruma Studio es un estudio digital enfocado, liderado por profesionales, no por gerentes. Ofrecemos calidad de agencia con la agilidad y atención de un equipo dedicado.",
+      "body2": "Nuestro stack es moderno. Nuestros estándares son rigurosos. Cada proyecto recibe atención de nivel senior de principio a fin.",
+      "techStack": "Next.js · React · TypeScript · Sanity CMS · Tailwind CSS · Vercel"
+    },
+    "ctaStrip": {
+      "heading": "¿Listo para Comenzar?",
+      "body": "Cada proyecto comienza con una conversación. Cuéntanos tu visión y crearemos un plan para hacerla realidad.",
+      "cta": "Invócanos"
+    }
+  },
+  "Arts": {
+    "meta": {
+      "title": "Servicios",
+      "description": "Desarrollo web, soluciones CMS y estrategia de diseño. Construimos con Next.js, Sanity CMS y WordPress headless."
+    },
+    "hero": {
+      "label": "Las Artes",
+      "heading": "Lo Que Practicamos",
+      "body": "Nos especializamos en un conjunto enfocado de disciplinas — desarrollo web moderno, sistemas de gestión de contenido y estrategia de diseño. Cada servicio se entrega con el mismo estándar: artesanal, rendimiento primero y construido para evolucionar."
+    },
+    "process": {
+      "heading": "El Ritual",
+      "subheading": "Cómo trabajamos.",
+      "steps": {
+        "discovery": {
+          "number": "01",
+          "title": "Descubrimiento",
+          "body": "Primero escuchamos. Entendemos tus objetivos, audiencia y limitaciones. Cada proyecto comienza con claridad."
+        },
+        "design": {
+          "number": "02",
+          "title": "Diseño",
+          "body": "Wireframes, mockups y prototipos en Figma. Ves la visión antes de que se escriba una sola línea de código."
+        },
+        "development": {
+          "number": "03",
+          "title": "Desarrollo",
+          "body": "Código limpio, artesanal. Revisiones regulares y vistas previas en staging para que nunca estés a oscuras."
+        },
+        "delivery": {
+          "number": "04",
+          "title": "Entrega",
+          "body": "Lanzamiento, pruebas y entrega. Documentación para tu equipo. Soporte continuo opcional para mantener todo funcionando."
+        }
+      }
+    },
+    "cta": {
+      "heading": "Inicia una Conversación",
+      "body": "Cuéntanos sobre tu proyecto y nosotros nos encargamos del resto.",
+      "button": "Invócanos"
+    },
+    "fallback": {
+      "webDev": {
+        "title": "Desarrollo Web",
+        "subtitle": "La Disciplina Central",
+        "body1": "Construimos sitios web y aplicaciones web rápidas, accesibles y personalizadas — desde sitios de marketing y landing pages hasta plataformas complejas y dashboards.",
+        "body2": "Nuestro stack es Next.js, React y TypeScript, desplegado en Vercel para velocidad y confiabilidad. Cada proyecto es artesanal. No usamos constructores de páginas ni herramientas de arrastrar y soltar. El resultado es código más limpio, tiempos de carga más rápidos y un sitio que escala con tu negocio.",
+        "features": [
+          "Desarrollo personalizado con Next.js",
+          "Diseño responsivo (mobile-first)",
+          "Optimización de rendimiento",
+          "Mejores prácticas de SEO integradas",
+          "Integraciones de API",
+          "Despliegue y hosting en Vercel",
+          "Accesibilidad (WCAG 2.2 AA)",
+          "Soporte post-lanzamiento disponible"
+        ]
+      },
+      "cms": {
+        "title": "CMS y Sistemas de Contenido",
+        "subtitle": "La Arquitectura Viva",
+        "body1": "Un sitio web es tan poderoso como su sistema de contenido. Construimos con Sanity CMS y WordPress headless — plataformas de contenido modernas que te dan control total sobre cada página, publicación y producto sin necesitar un desarrollador para cada actualización.",
+        "body2": "CMS headless significa que tu contenido está separado de tu diseño. Actualiza texto, cambia imágenes, publica artículos — todo desde una interfaz de edición intuitiva. Lo configuramos para que tu equipo pueda gestionarlo de forma independiente.",
+        "features": [
+          "Configuración y personalización de Sanity Studio",
+          "Desarrollo de WordPress headless",
+          "Esquemas de contenido personalizados",
+          "Edición visual y vista previa en vivo",
+          "Migración de contenido de sitios existentes",
+          "Capacitación y documentación del equipo",
+          "Soporte de contenido multilingüe",
+          "Modelado de contenido estructurado"
+        ]
+      },
+      "design": {
+        "title": "Diseño y Estrategia",
+        "subtitle": "El Plano",
+        "body1": "Un gran desarrollo comienza con un gran diseño y un plan claro. Ofrecemos diseño UI/UX, identidad de marca y estrategia digital como servicios independientes o como parte de un proyecto completo.",
+        "body2": "Ya sea que necesites una identidad visual completa, un conjunto de mockups en Figma antes de que comience el desarrollo, o guía estratégica sobre tu presencia digital, abordamos cada proyecto con intención y mesura.",
+        "features": [
+          "Diseño UI/UX (Figma)",
+          "Identidad de marca y sistemas visuales",
+          "Wireframing y prototipado",
+          "Creación de sistemas de diseño",
+          "Análisis competitivo",
+          "Estrategia digital y roadmapping",
+          "Estrategia de contenido",
+          "Orientación en optimización de conversión"
+        ]
+      }
+    }
+  },
+  "Grimoire": {
+    "meta": {
+      "title": "Portafolio",
+      "description": "Trabajos y experimentos seleccionados de Bruma Studio. Desarrollo web, soluciones CMS y proyectos de diseño construidos con Next.js, Sanity CMS y herramientas modernas."
+    },
+    "hero": {
+      "label": "El Grimorio",
+      "heading": "Nuestro Trabajo",
+      "body": "Cada proyecto es un hechizo lanzado con intención — construido con código moderno, moldeado por el diseño y entregado con oficio."
+    }
+  },
+  "GrimoireProject": {
+    "backLink": "← Volver al Grimorio",
+    "client": "Cliente",
+    "timeline": "Plazo",
+    "techStack": "Stack Tecnológico",
+    "viewLiveSite": "Ver Sitio en Vivo",
+    "caseStudyComingSoon": "Caso de estudio completo próximamente.",
+    "nextProject": "Siguiente Proyecto"
+  },
+  "Scrolls": {
+    "meta": {
+      "title": "Blog",
+      "description": "Conocimientos técnicos, registros de construcción y lecciones del oficio. Notas desde el taller."
+    },
+    "hero": {
+      "label": "Los Pergaminos",
+      "heading": "Códice",
+      "body": "Conocimientos técnicos, registros de construcción y lecciones del oficio. Notas desde el taller."
+    },
+    "minRead": "{minutes} min de lectura",
+    "emptyState": "El primer pergamino se está escribiendo. Vuelve pronto."
+  },
+  "ScrollsPost": {
+    "backLink": "← Volver a Pergaminos",
+    "minRead": "{minutes} min de lectura",
+    "writtenBy": "Escrito por",
+    "atStudio": "{role} en Bruma Studio",
+    "relatedScrolls": "Pergaminos Relacionados",
+    "contentComingSoon": "Contenido próximamente."
+  },
+  "TheOrder": {
+    "meta": {
+      "title": "Nosotros",
+      "description": "Un estudio deliberadamente pequeño. Las personas con las que hablas son las que construyen tu proyecto."
+    },
+    "hero": {
+      "label": "La Orden",
+      "heading": "Quiénes Somos",
+      "body": "Un estudio deliberadamente pequeño. Las personas con las que hablas son las que construyen tu proyecto."
+    },
+    "origins": {
+      "heading": "Orígenes",
+      "body1": "Bruma Studio fue fundado con una convicción simple: el mejor trabajo digital proviene de equipos pequeños y enfocados que se preocupan profundamente por el oficio.",
+      "body2": "Vimos demasiadas agencias vendiendo proceso sobre producto — capas de gerentes de cuenta, desarrolladores junior y soluciones de plantilla disfrazadas de trabajo personalizado. Construimos Bruma para ser lo opuesto: un estudio donde cada proyecto recibe atención directa de las personas que realmente hacen el trabajo.",
+      "body3": "Somos bilingües por naturaleza, no por estrategia. Inglés y español son nativos para nuestro equipo, lo que significa que no solo traducimos — pensamos, diseñamos y comunicamos con fluidez en ambos idiomas.",
+      "body4": "Con base en Tijuana, servimos a clientes en las Américas y más allá. Pequeños por diseño. Poderosos por oficio."
+    },
+    "team": {
+      "heading": "Los Practicantes"
+    },
+    "values": {
+      "heading": "Lo Que Creemos",
+      "craft": {
+        "title": "Oficio sobre velocidad.",
+        "body": "Preferimos tomar una semana extra que entregar algo mediocre."
+      },
+      "clarity": {
+        "title": "Claridad sobre ingenio.",
+        "body": "El mejor código y el mejor copy son fáciles de entender."
+      },
+      "bilingual": {
+        "title": "Bilingües por naturaleza.",
+        "body": "Dos idiomas, dos mercados, un estándar de calidad."
+      },
+      "small": {
+        "title": "Pequeños por diseño.",
+        "body": "Cada cliente recibe nuestra atención completa. Sin capas, sin traspasos."
+      }
+    }
+  },
+  "Summon": {
+    "meta": {
+      "title": "Contacto",
+      "description": "Inicia un proyecto con Bruma Studio. Desarrollo web y diseño para negocios en inglés y español."
+    },
+    "hero": {
+      "label": "Invocar",
+      "heading": "Comencemos",
+      "body": "Cada gran proyecto comienza con una conversación. Cuéntanos tu visión y nosotros nos encargamos del resto."
+    },
+    "sidebar": {
+      "direct": "Directo",
+      "basedIn": "Ubicación",
+      "responseTime": "Tiempo de respuesta",
+      "social": "Redes"
+    }
+  },
+  "ContactForm": {
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "projectTypeLabel": "Tipo de Proyecto",
+    "projectTypePlaceholder": "Selecciona un tipo…",
+    "projectTypes": {
+      "website": "Sitio web",
+      "cms": "CMS",
+      "design": "Diseño",
+      "other": "Otro"
+    },
+    "budgetLabel": "Rango de Presupuesto",
+    "budgetPlaceholder": "Selecciona un rango…",
+    "budgetRanges": {
+      "under3k": "Menos de $3K",
+      "3kTo5k": "$3K–$5K",
+      "5kTo10k": "$5K–$10K",
+      "over10k": "$10K+",
+      "notSure": "Aún no sé"
+    },
+    "messageLabel": "Cuéntanos Sobre Tu Proyecto",
+    "messagePlaceholder": "Describe tu visión…",
+    "sending": "Enviando…",
+    "sendMessage": "Enviar Mensaje",
+    "successTitle": "Mensaje Recibido",
+    "successBody": "Nos pondremos en contacto en 24 horas. Gracias por escribirnos.",
+    "required": "*"
+  },
+  "Newsletter": {
+    "title": "La Señal",
+    "body": "Conocimientos técnicos, historias de proyectos y algún descubrimiento arcano ocasional. Sin spam. Cancela cuando quieras.",
+    "placeholder": "tu@correo.com",
+    "subscribe": "Suscribirse",
+    "sending": "...",
+    "frequency": "Enviamos 1–2 veces al mes.",
+    "successTitle": "Estás Dentro",
+    "successBody": "Bienvenido a La Señal. Pronto tendrás noticias nuestras."
+  },
+  "ProjectGrid": {
+    "all": "Todos",
+    "viewTome": "Ver Tomo →",
+    "emptyState": "Aún no hay proyectos que coincidan con este filtro.",
+    "moreComingSoon": "Más hechizos en progreso. Vuelve pronto."
+  },
+  "NotFound": {
+    "label": "404",
+    "heading": "Perdido en la Bruma",
+    "body": "Esta página se ha desvanecido — o quizás nunca existió. El camino que buscas está en otro lugar.",
+    "cta": "Volver al Origen"
+  },
+  "Metadata": {
+    "titleDefault": "Bruma Studio — Artes oscuras del oficio digital",
+    "titleTemplate": "{title} — Bruma Studio",
+    "description": "Bruma Studio es un estudio digital bilingüe especializado en Next.js, Sanity CMS y desarrollo web moderno. Sitios web personalizados construidos con oficio e intención.",
+    "ogDescription": "Estudio digital bilingüe especializado en Next.js, Sanity CMS y desarrollo web moderno."
+  },
+  "Common": {
+    "skipToContent": "Ir al contenido"
+  }
+}

@@ -1,8 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export function NewsletterSignup() {
+  const t = useTranslations("Newsletter");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -38,10 +40,10 @@ export function NewsletterSignup() {
     return (
       <div className="border border-grimoire-gold/20 bg-grimoire-surface rounded-lg p-8 text-center">
         <p className="font-display text-lg text-grimoire-gold uppercase tracking-wide">
-          You&rsquo;re In
+          {t("successTitle")}
         </p>
         <p className="mt-2 font-body text-base md:text-lg leading-relaxed text-grimoire-text">
-          Welcome to The Signal. You&rsquo;ll hear from us soon.
+          {t("successBody")}
         </p>
       </div>
     );
@@ -50,18 +52,17 @@ export function NewsletterSignup() {
   return (
     <div className="border border-grimoire-border bg-grimoire-surface rounded-lg p-8">
       <p className="font-display text-lg text-grimoire-gold uppercase tracking-wide text-center">
-        The Signal
+        {t("title")}
       </p>
       <p className="mt-3 font-body text-base md:text-lg leading-relaxed text-grimoire-text text-center">
-        Technical insights, project stories, and the occasional arcane
-        discovery. No spam. Unsubscribe anytime.
+        {t("body")}
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 flex gap-3 max-w-md mx-auto">
         <input
           type="email"
           required
-          placeholder="your@email.com"
+          placeholder={t("placeholder")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === "sending"}
@@ -72,7 +73,7 @@ export function NewsletterSignup() {
           disabled={status === "sending"}
           className="font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-5 py-2.5 rounded-md hover:bg-grimoire-gold-light transition-colors duration-200 disabled:opacity-50 shrink-0"
         >
-          {status === "sending" ? "..." : "Subscribe"}
+          {status === "sending" ? t("sending") : t("subscribe")}
         </button>
       </form>
 
@@ -83,7 +84,7 @@ export function NewsletterSignup() {
       )}
 
       <p className="mt-4 font-ui text-xs text-grimoire-muted text-center">
-        We send 1–2 times per month.
+        {t("frequency")}
       </p>
     </div>
   );

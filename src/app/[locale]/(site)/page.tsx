@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/home/hero";
 import { ServicesPreview } from "@/components/home/services-preview";
 import { GrimoirePreview } from "@/components/home/grimoire-preview";
@@ -27,7 +28,14 @@ const jsonLd = {
   ],
 };
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const [services, projects] = await Promise.all([
     client.fetch<Service[]>(allServicesQuery),
     client.fetch<Project[]>(featuredProjectsQuery),

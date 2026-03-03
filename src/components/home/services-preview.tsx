@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Code2, Database, PenTool, type LucideIcon } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import type { Service } from "@/lib/types";
@@ -37,23 +38,22 @@ interface ServicesPreviewProps {
   services?: Service[];
 }
 
-export function ServicesPreview({ services }: ServicesPreviewProps) {
+export async function ServicesPreview({ services }: ServicesPreviewProps) {
+  const t = await getTranslations("Home.servicesPreview");
   const items = services && services.length > 0 ? services : fallbackServices;
 
   return (
     <section className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
-          label="Section 01"
-          heading="The Arts"
-          subheading="What we practice."
+          label={t("label")}
+          heading={t("heading")}
+          subheading={t("subheading")}
         />
 
         <div className="grid gap-6 md:grid-cols-3">
           {items.map((service) => {
             const Icon = iconMap[service.icon || ""] || Code2;
-            const href = `/arts#${service.slug?.current || ""}`;
-
             return (
               <div
                 key={service.title}
@@ -67,10 +67,10 @@ export function ServicesPreview({ services }: ServicesPreviewProps) {
                   {service.description}
                 </p>
                 <Link
-                  href={href}
+                  href={{ pathname: "/arts", hash: service.slug?.current || "" }}
                   className="mt-4 inline-block font-ui text-sm font-medium text-grimoire-gold hover:text-grimoire-gold-light transition-colors duration-200"
                 >
-                  Learn more &rarr;
+                  {t("learnMore")}
                 </Link>
               </div>
             );

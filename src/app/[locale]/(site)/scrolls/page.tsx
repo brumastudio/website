@@ -1,22 +1,40 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { client } from "@/lib/sanity";
 import { allPostsQuery } from "@/lib/queries";
 import { estimateReadingTime, formatDate, formatCategory } from "@/lib/utils";
 import type { Post } from "@/lib/types";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Technical insights, build logs, and lessons from the craft. Notes from the workshop floor.",
-  alternates: {
-    types: {
-      "application/rss+xml": "/scrolls/feed.xml",
-    },
-  },
-};
+interface Props {
+  params: Promise<{ locale: string }>;
+}
 
-export default async function ScrollsPage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Scrolls.meta" });
+  const otherLocale = locale === "en" ? "es" : "en";
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: {
+      types: {
+        "application/rss+xml": "/scrolls/feed.xml",
+      },
+      languages: {
+        [locale]: `https://brumastudio.dev/${locale}/${locale === "en" ? "scrolls" : "pergaminos"}`,
+        [otherLocale]: `https://brumastudio.dev/${otherLocale}/${otherLocale === "en" ? "scrolls" : "pergaminos"}`,
+      },
+    },
+  };
+}
+
+export default async function ScrollsPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("Scrolls");
   const posts = await client.fetch<Post[]>(allPostsQuery);
 
   return (
@@ -25,17 +43,16 @@ export default async function ScrollsPage() {
       <section className="px-6 pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="mx-auto max-w-3xl">
           <p className="font-ui text-xs text-grimoire-muted uppercase tracking-[0.2em] mb-2">
-            The Scrolls
+            {t("hero.label")}
           </p>
           <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
-            Codex
+            {t("hero.heading")}
           </h1>
           <div className="mt-4 h-px max-w-sm bg-gradient-to-r from-grimoire-gold/60 via-grimoire-gold to-grimoire-gold/60 relative">
             <div className="absolute left-1/2 -translate-x-1/2 -top-1 w-2 h-2 bg-grimoire-gold rotate-45" />
           </div>
           <p className="mt-8 font-body text-lg leading-relaxed text-grimoire-text">
-            Technical insights, build logs, and lessons from the craft. Notes
-            from the workshop floor.
+            {t("hero.body")}
           </p>
         </div>
       </section>
@@ -51,16 +68,16 @@ export default async function ScrollsPage() {
                 return (
                   <Link
                     key={post._id}
-                    href={`/scrolls/${post.slug.current}`}
+                    href={{ pathname: "/scrolls/[slug]", params: { slug: post.slug.current } }}
                     className="group block border-l-2 border-transparent hover:border-grimoire-gold pl-6 py-6 -ml-6 transition-colors duration-200"
                   >
                     {/* Meta line */}
                     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-ui text-xs text-grimoire-muted">
                       <time dateTime={post.publishedAt}>
-                        {formatDate(post.publishedAt)}
+                        {formatDate(post.publishedAt, locale)}
                       </time>
                       <span>&middot;</span>
-                      <span>{readingTime} min read</span>
+                      <span>{t("minRead", { minutes: readingTime })}</span>
                       {post.category && (
                         <>
                           <span>&middot;</span>
@@ -101,7 +118,7 @@ export default async function ScrollsPage() {
           ) : (
             <div className="text-center py-16">
               <p className="font-body text-lg text-grimoire-muted italic">
-                The first scroll is being written. Check back soon.
+                {t("emptyState")}
               </p>
             </div>
           )}

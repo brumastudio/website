@@ -1,0 +1,306 @@
+{
+  "Nav": {
+    "arts": "Arts",
+    "grimoire": "Grimoire",
+    "scrolls": "Scrolls",
+    "theOrder": "The Order",
+    "summon": "Summon",
+    "startProject": "Start a Project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation"
+  },
+  "Footer": {
+    "tagline": "Dark arts of digital craft.",
+    "arts": "Arts",
+    "grimoire": "Grimoire",
+    "scrolls": "Scrolls",
+    "theOrder": "The Order",
+    "summon": "Summon",
+    "copyright": "© {year} Bruma Studio · brumastudio.dev",
+    "footerNav": "Footer navigation"
+  },
+  "Home": {
+    "hero": {
+      "title": "Bruma Studio",
+      "tagline": "Dark arts of digital craft.",
+      "body": "We build modern websites and digital experiences with the precision of code and the intention of craft.",
+      "ctaPrimary": "Start a Project",
+      "ctaSecondary": "View Our Work"
+    },
+    "servicesPreview": {
+      "label": "Section 01",
+      "heading": "The Arts",
+      "subheading": "What we practice.",
+      "learnMore": "Learn more →"
+    },
+    "grimoirePreview": {
+      "label": "Section 02",
+      "heading": "The Grimoire",
+      "subheading": "Selected works and experiments.",
+      "comingSoon": "Coming Soon"
+    },
+    "credibilityStrip": {
+      "heading": "The Order",
+      "body1": "Bruma Studio is a focused digital studio led by practitioners, not managers. We bring agency-level craft with the agility and attention of a dedicated team.",
+      "body2": "Our stack is modern. Our standards are exacting. Every project receives senior-level attention from start to finish.",
+      "techStack": "Next.js · React · TypeScript · Sanity CMS · Tailwind CSS · Vercel"
+    },
+    "ctaStrip": {
+      "heading": "Ready to Begin?",
+      "body": "Every project starts with a conversation. Tell us about your vision and we'll craft a plan to bring it to life.",
+      "cta": "Summon Us"
+    }
+  },
+  "Arts": {
+    "meta": {
+      "title": "Services",
+      "description": "Web development, CMS solutions, and design strategy. We build with Next.js, Sanity CMS, and headless WordPress."
+    },
+    "hero": {
+      "label": "The Arts",
+      "heading": "What We Practice",
+      "body": "We specialize in a focused set of disciplines — modern web development, content management systems, and design strategy. Every service is delivered with the same standard: hand-crafted, performance-first, and built to evolve."
+    },
+    "process": {
+      "heading": "The Ritual",
+      "subheading": "How we work.",
+      "steps": {
+        "discovery": {
+          "number": "01",
+          "title": "Discovery",
+          "body": "We listen first. Understand your goals, audience, and constraints. Every project begins with clarity."
+        },
+        "design": {
+          "number": "02",
+          "title": "Design",
+          "body": "Wireframes, mockups, and prototypes in Figma. You see the vision before a single line of code is written."
+        },
+        "development": {
+          "number": "03",
+          "title": "Development",
+          "body": "Clean, hand-crafted code. Regular check-ins and staging previews so you're never in the dark."
+        },
+        "delivery": {
+          "number": "04",
+          "title": "Delivery",
+          "body": "Launch, testing, and handoff. Documentation for your team. Optional ongoing support to keep things running."
+        }
+      }
+    },
+    "cta": {
+      "heading": "Start a Conversation",
+      "body": "Tell us about your project and we'll take it from there.",
+      "button": "Summon Us"
+    },
+    "fallback": {
+      "webDev": {
+        "title": "Web Development",
+        "subtitle": "The Core Discipline",
+        "body1": "We build fast, accessible, custom websites and web applications — from marketing sites and landing pages to complex platforms and dashboards.",
+        "body2": "Our stack is Next.js, React, and TypeScript, deployed on Vercel for speed and reliability. Every project is hand-crafted. We don't use page builders or drag-and-drop tools. The result is cleaner code, faster load times, and a site that scales with your business.",
+        "features": [
+          "Custom Next.js development",
+          "Responsive design (mobile-first)",
+          "Performance optimization",
+          "SEO best practices baked in",
+          "API integrations",
+          "Vercel deployment & hosting",
+          "Accessibility (WCAG 2.2 AA)",
+          "Post-launch support available"
+        ]
+      },
+      "cms": {
+        "title": "CMS & Content Systems",
+        "subtitle": "The Living Architecture",
+        "body1": "A website is only as powerful as its content system. We build with Sanity CMS and headless WordPress — modern content platforms that give you full control over every page, post, and product without needing a developer for every update.",
+        "body2": "Headless CMS means your content is separate from your design. Update text, swap images, publish blog posts — all from an intuitive editing interface. We set it up so your team can manage it independently.",
+        "features": [
+          "Sanity Studio setup & customization",
+          "Headless WordPress development",
+          "Custom content schemas",
+          "Visual editing & live preview",
+          "Content migration from existing sites",
+          "Team training & documentation",
+          "Multi-language content support",
+          "Structured content modeling"
+        ]
+      },
+      "design": {
+        "title": "Design & Strategy",
+        "subtitle": "The Blueprint",
+        "body1": "Great development starts with great design and a clear plan. We offer UI/UX design, brand identity, and digital strategy as standalone services or as part of a full-build project.",
+        "body2": "Whether you need a complete visual identity, a set of Figma mockups before development begins, or strategic guidance on your digital presence, we approach every project with intention and restraint.",
+        "features": [
+          "UI/UX design (Figma)",
+          "Brand identity & visual systems",
+          "Wireframing & prototyping",
+          "Design system creation",
+          "Competitive analysis",
+          "Digital strategy & roadmapping",
+          "Content strategy",
+          "Conversion optimization guidance"
+        ]
+      }
+    }
+  },
+  "Grimoire": {
+    "meta": {
+      "title": "Portfolio",
+      "description": "Selected works and experiments from Bruma Studio. Web development, CMS solutions, and design projects built with Next.js, Sanity CMS, and modern tools."
+    },
+    "hero": {
+      "label": "The Grimoire",
+      "heading": "Our Work",
+      "body": "Every project is a spell cast with intention — built from modern code, shaped by design, and delivered with craft."
+    }
+  },
+  "GrimoireProject": {
+    "backLink": "← Back to Grimoire",
+    "client": "Client",
+    "timeline": "Timeline",
+    "techStack": "Tech Stack",
+    "viewLiveSite": "View Live Site",
+    "caseStudyComingSoon": "Full case study coming soon.",
+    "nextProject": "Next Project"
+  },
+  "Scrolls": {
+    "meta": {
+      "title": "Blog",
+      "description": "Technical insights, build logs, and lessons from the craft. Notes from the workshop floor."
+    },
+    "hero": {
+      "label": "The Scrolls",
+      "heading": "Codex",
+      "body": "Technical insights, build logs, and lessons from the craft. Notes from the workshop floor."
+    },
+    "minRead": "{minutes} min read",
+    "emptyState": "The first scroll is being written. Check back soon."
+  },
+  "ScrollsPost": {
+    "backLink": "← Back to Scrolls",
+    "minRead": "{minutes} min read",
+    "writtenBy": "Written by",
+    "atStudio": "{role} at Bruma Studio",
+    "relatedScrolls": "Related Scrolls",
+    "contentComingSoon": "Content coming soon."
+  },
+  "TheOrder": {
+    "meta": {
+      "title": "About",
+      "description": "A deliberately small studio. The people you talk to are the people who build your project."
+    },
+    "hero": {
+      "label": "The Order",
+      "heading": "Who We Are",
+      "body": "A deliberately small studio. The people you talk to are the people who build your project."
+    },
+    "origins": {
+      "heading": "Origins",
+      "body1": "Bruma Studio was founded on a simple conviction: the best digital work comes from small, focused teams who care deeply about craft.",
+      "body2": "We saw too many agencies selling process over product — layers of account managers, junior developers, and templated solutions dressed up as custom work. We built Bruma to be the opposite: a studio where every project gets direct attention from the people actually doing the work.",
+      "body3": "We're bilingual by nature, not by strategy. English and Spanish are both native to our team, which means we don't just translate — we think, design, and communicate fluently in both languages.",
+      "body4": "Based in Tijuana, we serve clients across the Americas and beyond. Small by design. Powerful by craft."
+    },
+    "team": {
+      "heading": "The Practitioners"
+    },
+    "values": {
+      "heading": "What We Believe",
+      "craft": {
+        "title": "Craft over speed.",
+        "body": "We'd rather take an extra week than ship something mediocre."
+      },
+      "clarity": {
+        "title": "Clarity over cleverness.",
+        "body": "The best code and the best copy are both easy to understand."
+      },
+      "bilingual": {
+        "title": "Bilingual by nature.",
+        "body": "Two languages, two markets, one standard of quality."
+      },
+      "small": {
+        "title": "Small by design.",
+        "body": "Every client gets our full attention. No layers, no handoffs."
+      }
+    }
+  },
+  "Summon": {
+    "meta": {
+      "title": "Contact",
+      "description": "Start a project with Bruma Studio. Web development and design for businesses in English and Spanish."
+    },
+    "hero": {
+      "label": "Summon",
+      "heading": "Let's Begin",
+      "body": "Every great project starts with a conversation. Tell us about your vision and we'll take it from there."
+    },
+    "sidebar": {
+      "direct": "Direct",
+      "basedIn": "Based in",
+      "responseTime": "Response time",
+      "social": "Social"
+    }
+  },
+  "ContactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "projectTypeLabel": "Project Type",
+    "projectTypePlaceholder": "Select a type…",
+    "projectTypes": {
+      "website": "Website",
+      "cms": "CMS",
+      "design": "Design",
+      "other": "Other"
+    },
+    "budgetLabel": "Budget Range",
+    "budgetPlaceholder": "Select a range…",
+    "budgetRanges": {
+      "under3k": "Under $3K",
+      "3kTo5k": "$3K–$5K",
+      "5kTo10k": "$5K–$10K",
+      "over10k": "$10K+",
+      "notSure": "Not sure yet"
+    },
+    "messageLabel": "Tell Us About Your Project",
+    "messagePlaceholder": "Describe your vision…",
+    "sending": "Sending…",
+    "sendMessage": "Send Message",
+    "successTitle": "Message Received",
+    "successBody": "We'll be in touch within 24 hours. Thank you for reaching out.",
+    "required": "*"
+  },
+  "Newsletter": {
+    "title": "The Signal",
+    "body": "Technical insights, project stories, and the occasional arcane discovery. No spam. Unsubscribe anytime.",
+    "placeholder": "your@email.com",
+    "subscribe": "Subscribe",
+    "sending": "...",
+    "frequency": "We send 1–2 times per month.",
+    "successTitle": "You're In",
+    "successBody": "Welcome to The Signal. You'll hear from us soon."
+  },
+  "ProjectGrid": {
+    "all": "All",
+    "viewTome": "View Tome →",
+    "emptyState": "No projects match this filter yet.",
+    "moreComingSoon": "More spells are in progress. Check back soon."
+  },
+  "NotFound": {
+    "label": "404",
+    "heading": "Lost in the Mist",
+    "body": "This page has vanished — or perhaps it never existed. The path you seek lies elsewhere.",
+    "cta": "Return to the Origin"
+  },
+  "Metadata": {
+    "titleDefault": "Bruma Studio — Dark arts of digital craft",
+    "titleTemplate": "{title} — Bruma Studio",
+    "description": "Bruma Studio is a bilingual digital studio specializing in Next.js, Sanity CMS, and modern web development. Custom websites built with craft and intention.",
+    "ogDescription": "Bilingual digital studio specializing in Next.js, Sanity CMS, and modern web development."
+  },
+  "Common": {
+    "skipToContent": "Skip to content"
+  }
+}

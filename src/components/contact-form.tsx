@@ -1,15 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState, type FormEvent } from "react";
 
-const projectTypes = ["Website", "CMS", "Design", "Other"];
-const budgetRanges = [
-  "Under $3K",
-  "$3K–$5K",
-  "$5K–$10K",
-  "$10K+",
-  "Not sure yet",
-];
+const projectTypeKeys = ["website", "cms", "design", "other"] as const;
+const budgetRangeKeys = ["under3k", "3kTo5k", "5kTo10k", "over10k", "notSure"] as const;
 
 const inputStyles =
   "w-full bg-grimoire-surface border border-grimoire-border rounded-md px-4 py-3 text-grimoire-text font-body text-base md:text-lg leading-relaxed placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 focus:outline-none transition-colors duration-200";
@@ -18,6 +13,7 @@ const labelStyles =
   "block font-ui text-sm text-grimoire-muted uppercase tracking-wider mb-2";
 
 export function ContactForm() {
+  const t = useTranslations("ContactForm");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -60,10 +56,10 @@ export function ContactForm() {
     return (
       <div className="flex flex-col items-center justify-center rounded-lg border border-grimoire-border bg-grimoire-surface p-12 text-center">
         <h3 className="font-display text-2xl uppercase tracking-wide text-grimoire-gold">
-          Message Received
+          {t("successTitle")}
         </h3>
         <p className="mt-4 max-w-sm font-body text-base md:text-lg leading-relaxed text-grimoire-text">
-          We&rsquo;ll be in touch within 24 hours. Thank you for reaching out.
+          {t("successBody")}
         </p>
       </div>
     );
@@ -73,7 +69,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <label htmlFor="name" className={labelStyles}>
-          Name <span className="text-grimoire-gold">*</span>
+          {t("nameLabel")} <span className="text-grimoire-gold">{t("required")}</span>
         </label>
         <input
           type="text"
@@ -81,13 +77,13 @@ export function ContactForm() {
           name="name"
           required
           className={inputStyles}
-          placeholder="Your name"
+          placeholder={t("namePlaceholder")}
         />
       </div>
 
       <div>
         <label htmlFor="email" className={labelStyles}>
-          Email <span className="text-grimoire-gold">*</span>
+          {t("emailLabel")} <span className="text-grimoire-gold">{t("required")}</span>
         </label>
         <input
           type="email"
@@ -95,13 +91,13 @@ export function ContactForm() {
           name="email"
           required
           className={inputStyles}
-          placeholder="you@example.com"
+          placeholder={t("emailPlaceholder")}
         />
       </div>
 
       <div>
         <label htmlFor="projectType" className={labelStyles}>
-          Project Type
+          {t("projectTypeLabel")}
         </label>
         <div className="relative">
           <select
@@ -111,11 +107,11 @@ export function ContactForm() {
             defaultValue=""
           >
             <option value="" disabled>
-              Select a type…
+              {t("projectTypePlaceholder")}
             </option>
-            {projectTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
+            {projectTypeKeys.map((key) => (
+              <option key={key} value={key}>
+                {t(`projectTypes.${key}`)}
               </option>
             ))}
           </select>
@@ -129,7 +125,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="budget" className={labelStyles}>
-          Budget Range
+          {t("budgetLabel")}
         </label>
         <div className="relative">
           <select
@@ -139,11 +135,11 @@ export function ContactForm() {
             defaultValue=""
           >
             <option value="" disabled>
-              Select a range…
+              {t("budgetPlaceholder")}
             </option>
-            {budgetRanges.map((range) => (
-              <option key={range} value={range}>
-                {range}
+            {budgetRangeKeys.map((key) => (
+              <option key={key} value={key}>
+                {t(`budgetRanges.${key}`)}
               </option>
             ))}
           </select>
@@ -157,8 +153,8 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className={labelStyles}>
-          Tell Us About Your Project{" "}
-          <span className="text-grimoire-gold">*</span>
+          {t("messageLabel")}{" "}
+          <span className="text-grimoire-gold">{t("required")}</span>
         </label>
         <textarea
           id="message"
@@ -166,7 +162,7 @@ export function ContactForm() {
           required
           rows={4}
           className={inputStyles + " resize-none"}
-          placeholder="Describe your vision…"
+          placeholder={t("messagePlaceholder")}
         />
       </div>
 
@@ -181,7 +177,7 @@ export function ContactForm() {
         disabled={status === "sending"}
         className="w-full font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-6 py-3 rounded-md hover:bg-grimoire-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {status === "sending" ? "Sending…" : "Send Message"}
+        {status === "sending" ? t("sending") : t("sendMessage")}
       </button>
     </form>
   );

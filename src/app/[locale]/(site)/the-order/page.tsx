@@ -1,35 +1,32 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { client, urlFor } from "@/lib/sanity";
 import { allAuthorsQuery } from "@/lib/queries";
 import { GoldDivider } from "@/components/gold-divider";
 import type { Author } from "@/lib/types";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "A deliberately small studio. The people you talk to are the people who build your project.",
-};
+interface Props {
+  params: Promise<{ locale: string }>;
+}
 
-const values = [
-  {
-    title: "Craft over speed.",
-    body: "We'd rather take an extra week than ship something mediocre.",
-  },
-  {
-    title: "Clarity over cleverness.",
-    body: "The best code and the best copy are both easy to understand.",
-  },
-  {
-    title: "Bilingual by nature.",
-    body: "Two languages, two markets, one standard of quality.",
-  },
-  {
-    title: "Small by design.",
-    body: "Every client gets our full attention. No layers, no handoffs.",
-  },
-];
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "TheOrder.meta" });
+  const otherLocale = locale === "en" ? "es" : "en";
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: {
+      languages: {
+        [locale]: `https://brumastudio.dev/${locale}/${locale === "en" ? "the-order" : "la-orden"}`,
+        [otherLocale]: `https://brumastudio.dev/${otherLocale}/${otherLocale === "en" ? "the-order" : "la-orden"}`,
+      },
+    },
+  };
+}
 
 const socialIcons = {
   github: Github,
@@ -38,7 +35,13 @@ const socialIcons = {
   instagram: Instagram,
 } as const;
 
-export default async function TheOrderPage() {
+const valueKeys = ["craft", "clarity", "bilingual", "small"] as const;
+
+export default async function TheOrderPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("TheOrder");
   const authors = await client.fetch<Author[]>(allAuthorsQuery);
 
   return (
@@ -47,17 +50,16 @@ export default async function TheOrderPage() {
       <section className="px-6 pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="mx-auto max-w-3xl">
           <p className="font-ui text-xs text-grimoire-muted uppercase tracking-[0.2em] mb-2">
-            The Order
+            {t("hero.label")}
           </p>
           <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
-            Who We Are
+            {t("hero.heading")}
           </h1>
           <div className="mt-4 h-px max-w-sm bg-gradient-to-r from-grimoire-gold/60 via-grimoire-gold to-grimoire-gold/60 relative">
             <div className="absolute left-1/2 -translate-x-1/2 -top-1 w-2 h-2 bg-grimoire-gold rotate-45" />
           </div>
           <p className="mt-8 font-body text-lg leading-relaxed text-grimoire-text">
-            A deliberately small studio. The people you talk to are the people
-            who build your project.
+            {t("hero.body")}
           </p>
         </div>
       </section>
@@ -66,29 +68,14 @@ export default async function TheOrderPage() {
       <section className="px-6 pb-24 md:pb-32">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide mb-8">
-            Origins
+            {t("origins.heading")}
           </h2>
           <div className="space-y-6 font-body text-base md:text-lg leading-relaxed text-grimoire-text">
-            <p>
-              Bruma Studio was founded on a simple conviction: the best digital
-              work comes from small, focused teams who care deeply about craft.
-            </p>
-            <p>
-              We saw too many agencies selling process over product — layers of
-              account managers, junior developers, and templated solutions
-              dressed up as custom work. We built Bruma to be the opposite: a
-              studio where every project gets direct attention from the people
-              actually doing the work.
-            </p>
-            <p>
-              We&rsquo;re bilingual by nature, not by strategy. English and
-              Spanish are both native to our team, which means we don&rsquo;t
-              just translate — we think, design, and communicate fluently in
-              both languages.
-            </p>
+            <p>{t("origins.body1")}</p>
+            <p>{t("origins.body2")}</p>
+            <p>{t("origins.body3")}</p>
             <p className="text-grimoire-gold-light italic">
-              Based in Tijuana, we serve clients across the Americas and beyond.
-              Small by design. Powerful by craft.
+              {t("origins.body4")}
             </p>
           </div>
         </div>
@@ -100,7 +87,7 @@ export default async function TheOrderPage() {
           <div className="mx-auto max-w-4xl">
             <GoldDivider className="mb-16" />
             <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide text-center mb-12">
-              The Practitioners
+              {t("team.heading")}
             </h2>
 
             <div
@@ -201,17 +188,17 @@ export default async function TheOrderPage() {
         <div className="mx-auto max-w-4xl">
           <GoldDivider className="mb-16" />
           <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide text-center mb-12">
-            What We Believe
+            {t("values.heading")}
           </h2>
 
           <div className="grid gap-8 sm:grid-cols-2">
-            {values.map((value) => (
-              <div key={value.title}>
+            {valueKeys.map((key) => (
+              <div key={key}>
                 <h3 className="font-display text-base uppercase tracking-wide text-grimoire-gold">
-                  {value.title}
+                  {t(`values.${key}.title`)}
                 </h3>
                 <p className="mt-2 font-body text-base md:text-lg leading-relaxed text-grimoire-text/80">
-                  {value.body}
+                  {t(`values.${key}.body`)}
                 </p>
               </div>
             ))}
