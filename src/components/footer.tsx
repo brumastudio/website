@@ -4,7 +4,9 @@ import { GoldDivider } from "@/components/gold-divider";
 
 const footerLinks = [
   { href: "/arts", label: "Arts" },
-  { href: "/#grimoire", label: "Grimoire" },
+  { href: "/grimoire", label: "Grimoire" },
+  { href: "/scrolls", label: "Scrolls" },
+  { href: "/the-order", label: "The Order" },
   { href: "/summon", label: "Summon" },
 ];
 

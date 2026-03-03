@@ -3,6 +3,9 @@ import { ServicesPreview } from "@/components/home/services-preview";
 import { GrimoirePreview } from "@/components/home/grimoire-preview";
 import { CredibilityStrip } from "@/components/home/credibility-strip";
 import { CtaStrip } from "@/components/home/cta-strip";
+import { client } from "@/lib/sanity";
+import { allServicesQuery, featuredProjectsQuery } from "@/lib/queries";
+import type { Service, Project } from "@/lib/types";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -24,7 +27,12 @@ const jsonLd = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  const [services, projects] = await Promise.all([
+    client.fetch<Service[]>(allServicesQuery),
+    client.fetch<Project[]>(featuredProjectsQuery),
+  ]);
+
   return (
     <>
       <script
@@ -32,8 +40,8 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <ServicesPreview />
-      <GrimoirePreview />
+      <ServicesPreview services={services} />
+      <GrimoirePreview projects={projects} />
       <CredibilityStrip />
       <CtaStrip />
     </>

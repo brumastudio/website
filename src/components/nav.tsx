@@ -8,7 +8,9 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/arts", label: "Arts" },
-  { href: "/#grimoire", label: "Grimoire" },
+  { href: "/grimoire", label: "Grimoire" },
+  { href: "/scrolls", label: "Scrolls" },
+  { href: "/the-order", label: "The Order" },
   { href: "/summon", label: "Summon" },
 ];
 
@@ -57,7 +59,7 @@ export function Nav() {
               href={link.href}
               className={cn(
                 "font-ui text-sm font-medium uppercase tracking-wider transition-colors duration-200 hover:text-grimoire-gold",
-                pathname === link.href
+                pathname === link.href || pathname.startsWith(link.href + "/")
                   ? "text-grimoire-gold"
                   : "text-grimoire-text/80"
               )}

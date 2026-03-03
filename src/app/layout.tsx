@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Cinzel, Crimson_Text, Inter, JetBrains_Mono } from "next/font/google";
-import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -63,6 +61,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": "/scrolls/feed.xml",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -76,12 +79,7 @@ export default function RootLayout({
       className={`${cinzel.variable} ${crimsonText.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-grimoire-bg text-grimoire-text antialiased">
-        <a href="#main" className="skip-to-content">
-          Skip to content
-        </a>
-        <Nav />
-        <main id="main">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

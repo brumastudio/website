@@ -12,7 +12,7 @@ const budgetRanges = [
 ];
 
 const inputStyles =
-  "w-full bg-grimoire-surface border border-grimoire-border rounded-md px-4 py-3 text-grimoire-text font-body text-base placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 focus:outline-none transition-colors duration-200";
+  "w-full bg-grimoire-surface border border-grimoire-border rounded-md px-4 py-3 text-grimoire-text font-body text-base md:text-lg leading-relaxed placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 focus:outline-none transition-colors duration-200";
 
 const labelStyles =
   "block font-ui text-sm text-grimoire-muted uppercase tracking-wider mb-2";
@@ -62,7 +62,7 @@ export function ContactForm() {
         <h3 className="font-display text-2xl uppercase tracking-wide text-grimoire-gold">
           Message Received
         </h3>
-        <p className="mt-4 max-w-sm font-body text-base leading-relaxed text-grimoire-text">
+        <p className="mt-4 max-w-sm font-body text-base md:text-lg leading-relaxed text-grimoire-text">
           We&rsquo;ll be in touch within 24 hours. Thank you for reaching out.
         </p>
       </div>
