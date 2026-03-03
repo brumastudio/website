@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Github, Twitter, Linkedin, Instagram, Mail, MapPin, Clock } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ContactForm } from "@/components/contact-form";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/scroll-reveal";
 import { client } from "@/lib/sanity";
 import { siteSettingsQuery } from "@/lib/queries";
 import type { SiteSettings } from "@/lib/types";
@@ -78,11 +79,11 @@ export default async function SummonPage({ params }: Props) {
     <>
       {/* Hero */}
       <section className="px-6 pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="mx-auto max-w-6xl">
+        <ScrollReveal className="mx-auto max-w-6xl">
           <p className="font-ui text-xs text-grimoire-muted uppercase tracking-[0.2em] mb-2">
             {t("hero.label")}
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
+          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide text-balance">
             {t("hero.heading")}
           </h1>
           <div className="mt-4 h-px max-w-sm bg-gradient-to-r from-grimoire-gold/60 via-grimoire-gold to-grimoire-gold/60 relative">
@@ -91,19 +92,22 @@ export default async function SummonPage({ params }: Props) {
           <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-grimoire-text">
             {t("hero.body")}
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Form + Contact Info */}
       <section className="px-6 pb-24 md:pb-32">
         <div className="mx-auto max-w-6xl grid gap-16 md:grid-cols-[1fr_auto] lg:grid-cols-[1fr_380px]">
           {/* Form */}
-          <ContactForm />
+          <ScrollReveal>
+            <ContactForm />
+          </ScrollReveal>
 
           {/* Sidebar */}
-          <aside className="space-y-10">
+          <StaggerContainer className="space-y-10" stagger={0.1}>
             {contactInfo.map((item) => (
-              <div key={item.labelKey}>
+              <StaggerItem key={item.labelKey}>
+              <div>
                 <div className="flex items-center gap-2 mb-2">
                   <item.icon className="h-4 w-4 text-grimoire-gold" />
                   <h3 className="font-ui text-sm font-medium uppercase tracking-wider text-grimoire-muted">
@@ -123,10 +127,12 @@ export default async function SummonPage({ params }: Props) {
                   </p>
                 )}
               </div>
+              </StaggerItem>
             ))}
 
             {/* Social */}
             {socialLinks.length > 0 && (
+              <StaggerItem>
               <div>
                 <h3 className="font-ui text-sm font-medium uppercase tracking-wider text-grimoire-muted mb-3">
                   {t("sidebar.social")}
@@ -146,8 +152,9 @@ export default async function SummonPage({ params }: Props) {
                   ))}
                 </div>
               </div>
+              </StaggerItem>
             )}
-          </aside>
+          </StaggerContainer>
         </div>
       </section>
     </>

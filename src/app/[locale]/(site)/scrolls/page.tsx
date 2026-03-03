@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { client } from "@/lib/sanity";
 import { allPostsQuery } from "@/lib/queries";
 import { estimateReadingTime, formatDate, formatCategory } from "@/lib/utils";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/scroll-reveal";
 import type { Post } from "@/lib/types";
 
 interface Props {
@@ -41,11 +42,11 @@ export default async function ScrollsPage({ params }: Props) {
     <>
       {/* Hero */}
       <section className="px-6 pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="mx-auto max-w-3xl">
+        <ScrollReveal className="mx-auto max-w-3xl">
           <p className="font-ui text-xs text-grimoire-muted uppercase tracking-[0.2em] mb-2">
             {t("hero.label")}
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
+          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide text-balance">
             {t("hero.heading")}
           </h1>
           <div className="mt-4 h-px max-w-sm bg-gradient-to-r from-grimoire-gold/60 via-grimoire-gold to-grimoire-gold/60 relative">
@@ -54,20 +55,20 @@ export default async function ScrollsPage({ params }: Props) {
           <p className="mt-8 font-body text-lg leading-relaxed text-grimoire-text">
             {t("hero.body")}
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Post list */}
       <section className="px-6 pb-24 md:pb-32">
         <div className="mx-auto max-w-3xl">
           {posts.length > 0 ? (
-            <div className="space-y-1">
+            <StaggerContainer className="space-y-1" stagger={0.1}>
               {posts.map((post) => {
                 const readingTime = estimateReadingTime(post.body || []);
 
                 return (
+                  <StaggerItem key={post._id}>
                   <Link
-                    key={post._id}
                     href={{ pathname: "/scrolls/[slug]", params: { slug: post.slug.current } }}
                     className="group block border-l-2 border-transparent hover:border-grimoire-gold pl-6 py-6 -ml-6 transition-colors duration-200"
                   >
@@ -112,9 +113,10 @@ export default async function ScrollsPage({ params }: Props) {
                       </div>
                     )}
                   </Link>
+                  </StaggerItem>
                 );
               })}
-            </div>
+            </StaggerContainer>
           ) : (
             <div className="text-center py-16">
               <p className="font-body text-lg text-grimoire-muted italic">

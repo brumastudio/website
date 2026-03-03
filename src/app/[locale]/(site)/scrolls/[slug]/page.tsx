@@ -81,7 +81,7 @@ export default async function ScrollPage({ params }: Props) {
           </div>
 
           {/* Title */}
-          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-grimoire-gold uppercase tracking-wide leading-tight">
+          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-grimoire-gold uppercase tracking-wide leading-tight text-balance">
             {post.title}
           </h1>
 

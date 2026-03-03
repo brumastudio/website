@@ -3,6 +3,8 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
+import { BackgroundGlow } from "@/components/background-glow";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/scroll-reveal";
 import { urlFor } from "@/lib/sanity";
 import type { Project } from "@/lib/types";
 
@@ -30,15 +32,18 @@ export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
   const items = projects && projects.length > 0 ? projects : fallbackProjects;
 
   return (
-    <section id="grimoire" className="px-6 py-24 md:py-32 scroll-mt-20">
+    <section id="grimoire" className="relative px-6 py-24 md:py-32 scroll-mt-20 overflow-hidden">
+      <BackgroundGlow color="rune" className="top-0 -right-40" />
       <div className="mx-auto max-w-6xl">
-        <SectionHeader
-          label={t("label")}
-          heading={t("heading")}
-          subheading={t("subheading")}
-        />
+        <ScrollReveal>
+          <SectionHeader
+            label={t("label")}
+            heading={t("heading")}
+            subheading={t("subheading")}
+          />
+        </ScrollReveal>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <StaggerContainer className="grid gap-6 md:grid-cols-2">
           {items.map((project) => {
             const hasSlug = "slug" in project && project.slug?.current;
             const hasCover = "coverImage" in project && project.coverImage;
@@ -89,15 +94,17 @@ export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
 
             if (hasSlug) {
               return (
-                <Link key={project.title} href={{ pathname: "/grimoire/[slug]", params: { slug: project.slug.current } }}>
-                  {card}
-                </Link>
+                <StaggerItem key={project.title}>
+                  <Link href={{ pathname: "/grimoire/[slug]", params: { slug: project.slug.current } }}>
+                    {card}
+                  </Link>
+                </StaggerItem>
               );
             }
 
-            return <div key={project.title}>{card}</div>;
+            return <StaggerItem key={project.title}>{card}</StaggerItem>;
           })}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

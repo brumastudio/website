@@ -114,6 +114,12 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        {/* Noise texture overlay — dithers gradients to prevent 8-bit banding */}
+        <div
+          className="fixed inset-0 pointer-events-none z-50 bg-repeat opacity-[0.04]"
+          style={{ backgroundImage: "url('/noise.svg')", backgroundSize: "200px 200px" }}
+          aria-hidden="true"
+        />
       </body>
     </html>
   );

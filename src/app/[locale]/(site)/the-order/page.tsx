@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { client, urlFor } from "@/lib/sanity";
 import { allAuthorsQuery } from "@/lib/queries";
 import { GoldDivider } from "@/components/gold-divider";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/scroll-reveal";
 import type { Author } from "@/lib/types";
 
 interface Props {
@@ -48,11 +49,11 @@ export default async function TheOrderPage({ params }: Props) {
     <>
       {/* Hero */}
       <section className="px-6 pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="mx-auto max-w-3xl">
+        <ScrollReveal className="mx-auto max-w-3xl">
           <p className="font-ui text-xs text-grimoire-muted uppercase tracking-[0.2em] mb-2">
             {t("hero.label")}
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
+          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide text-balance">
             {t("hero.heading")}
           </h1>
           <div className="mt-4 h-px max-w-sm bg-gradient-to-r from-grimoire-gold/60 via-grimoire-gold to-grimoire-gold/60 relative">
@@ -61,23 +62,27 @@ export default async function TheOrderPage({ params }: Props) {
           <p className="mt-8 font-body text-lg leading-relaxed text-grimoire-text">
             {t("hero.body")}
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Origins */}
       <section className="px-6 pb-24 md:pb-32">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide mb-8">
-            {t("origins.heading")}
-          </h2>
-          <div className="space-y-6 font-body text-base md:text-lg leading-relaxed text-grimoire-text">
-            <p>{t("origins.body1")}</p>
-            <p>{t("origins.body2")}</p>
-            <p>{t("origins.body3")}</p>
-            <p className="text-grimoire-gold-light italic">
-              {t("origins.body4")}
-            </p>
-          </div>
+          <ScrollReveal>
+            <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide mb-8">
+              {t("origins.heading")}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <div className="space-y-6 font-body text-base md:text-lg leading-relaxed text-grimoire-text">
+              <p>{t("origins.body1")}</p>
+              <p>{t("origins.body2")}</p>
+              <p>{t("origins.body3")}</p>
+              <p className="text-grimoire-gold-light italic">
+                {t("origins.body4")}
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -86,11 +91,13 @@ export default async function TheOrderPage({ params }: Props) {
         <section className="px-6 pb-24 md:pb-32">
           <div className="mx-auto max-w-4xl">
             <GoldDivider className="mb-16" />
-            <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide text-center mb-12">
-              {t("team.heading")}
-            </h2>
+            <ScrollReveal>
+              <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide text-center mb-12">
+                {t("team.heading")}
+              </h2>
+            </ScrollReveal>
 
-            <div
+            <StaggerContainer
               className={`grid gap-8 ${
                 authors.length === 1
                   ? "max-w-md mx-auto"
@@ -100,8 +107,8 @@ export default async function TheOrderPage({ params }: Props) {
               }`}
             >
               {authors.map((author) => (
+                <StaggerItem key={author._id}>
                 <div
-                  key={author._id}
                   className="bg-grimoire-surface border border-grimoire-border rounded-lg p-6 md:p-8 text-center"
                 >
                   {/* Photo or initials */}
@@ -177,8 +184,9 @@ export default async function TheOrderPage({ params }: Props) {
                     </div>
                   )}
                 </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </section>
       )}
@@ -187,22 +195,24 @@ export default async function TheOrderPage({ params }: Props) {
       <section className="px-6 pb-24 md:pb-32">
         <div className="mx-auto max-w-4xl">
           <GoldDivider className="mb-16" />
-          <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide text-center mb-12">
-            {t("values.heading")}
-          </h2>
+          <ScrollReveal>
+            <h2 className="font-display text-2xl md:text-3xl text-grimoire-gold uppercase tracking-wide text-center mb-12">
+              {t("values.heading")}
+            </h2>
+          </ScrollReveal>
 
-          <div className="grid gap-8 sm:grid-cols-2">
+          <StaggerContainer className="grid gap-8 sm:grid-cols-2">
             {valueKeys.map((key) => (
-              <div key={key}>
+              <StaggerItem key={key}>
                 <h3 className="font-display text-base uppercase tracking-wide text-grimoire-gold">
                   {t(`values.${key}.title`)}
                 </h3>
                 <p className="mt-2 font-body text-base md:text-lg leading-relaxed text-grimoire-text/80">
                   {t(`values.${key}.body`)}
                 </p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
     </>

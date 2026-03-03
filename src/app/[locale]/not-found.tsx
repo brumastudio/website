@@ -9,7 +9,7 @@ export default async function NotFound() {
       <p className="font-ui text-xs text-grimoire-muted uppercase tracking-[0.2em] mb-4">
         {t("label")}
       </p>
-      <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
+      <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide text-balance">
         {t("heading")}
       </h1>
 
@@ -21,7 +21,7 @@ export default async function NotFound() {
 
       <Link
         href="/"
-        className="mt-10 inline-block font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-6 py-3 rounded-md hover:bg-grimoire-gold-light transition-colors duration-200"
+        className="mt-10 inline-block font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-6 py-3 rounded-md hover:bg-grimoire-gold-light active:scale-95 transition-all duration-200"
       >
         {t("cta")}
       </Link>

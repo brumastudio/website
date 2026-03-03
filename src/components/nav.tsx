@@ -60,10 +60,11 @@ export function Nav() {
               key={link.href}
               href={link.href}
               className={cn(
-                "font-ui text-sm font-medium uppercase tracking-wider transition-colors duration-200 hover:text-grimoire-gold",
+                "relative font-ui text-sm font-medium uppercase tracking-wider transition-colors duration-200 hover:text-grimoire-gold",
+                "after:absolute after:left-0 after:-bottom-1 after:h-px after:bg-grimoire-gold after:transition-all after:duration-300",
                 pathname === link.href || pathname.startsWith(link.href + "/")
-                  ? "text-grimoire-gold"
-                  : "text-grimoire-text/80"
+                  ? "text-grimoire-gold after:w-full"
+                  : "text-grimoire-text/80 after:w-0 hover:after:w-full"
               )}
             >
               {t(link.key)}
@@ -72,7 +73,7 @@ export function Nav() {
           <LanguageSwitcher />
           <Link
             href="/summon"
-            className="font-ui text-sm font-medium uppercase tracking-wider border border-grimoire-gold text-grimoire-gold px-5 py-2 rounded-md hover:bg-grimoire-gold/10 transition-colors duration-200"
+            className="font-ui text-sm font-medium uppercase tracking-wider border border-grimoire-gold text-grimoire-gold px-5 py-2 rounded-md hover:bg-grimoire-gold/10 active:scale-95 transition-all duration-200"
           >
             {t("startProject")}
           </Link>
@@ -132,7 +133,7 @@ export function Nav() {
           <Link
             href="/summon"
             onClick={closeMobile}
-            className="mt-4 w-64 text-center font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-6 py-3 rounded-md hover:bg-grimoire-gold-light transition-colors duration-200"
+            className="mt-4 w-64 text-center font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-6 py-3 rounded-md hover:bg-grimoire-gold-light active:scale-95 transition-all duration-200"
           >
             {t("startProject")}
           </Link>

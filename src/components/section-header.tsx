@@ -22,7 +22,7 @@ export function SectionHeader({
           {label}
         </p>
       )}
-      <h2 className="font-display text-3xl md:text-4xl text-grimoire-gold uppercase tracking-wide">
+      <h2 className="font-display text-3xl md:text-4xl text-grimoire-gold uppercase tracking-wide text-balance">
         {heading}
       </h2>
       {subheading && (

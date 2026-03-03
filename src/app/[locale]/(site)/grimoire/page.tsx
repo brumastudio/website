@@ -4,6 +4,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { client } from "@/lib/sanity";
 import { allProjectsQuery } from "@/lib/queries";
 import { ProjectGrid } from "@/components/project-grid";
+import { BackgroundGlow } from "@/components/background-glow";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import type { Project } from "@/lib/types";
 
 interface Props {
@@ -49,12 +51,13 @@ export default async function GrimoirePage({ params }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="px-6 pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative px-6 pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <BackgroundGlow color="rune" className="-top-40 -right-40" />
+        <ScrollReveal className="mx-auto max-w-6xl">
           <p className="font-ui text-xs text-grimoire-muted uppercase tracking-[0.2em] mb-2">
             {t("hero.label")}
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
+          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide text-balance">
             {t("hero.heading")}
           </h1>
           <div className="mt-4 h-px max-w-sm bg-gradient-to-r from-grimoire-gold/60 via-grimoire-gold to-grimoire-gold/60 relative">
@@ -63,7 +66,7 @@ export default async function GrimoirePage({ params }: Props) {
           <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-grimoire-text">
             {t("hero.body")}
           </p>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Filter + Grid */}

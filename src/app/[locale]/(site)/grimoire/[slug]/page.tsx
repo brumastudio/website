@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: Props) {
             {t("backLink")}
           </Link>
 
-          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide">
+          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide text-balance">
             {project.title}
           </h1>
 

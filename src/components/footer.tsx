@@ -78,7 +78,7 @@ export async function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="text-grimoire-muted hover:text-grimoire-gold transition-colors duration-200"
+                className="text-grimoire-muted/50 hover:text-grimoire-gold hover:opacity-100 transition-all duration-200"
               >
                 <link.icon className="h-5 w-5" />
               </a>

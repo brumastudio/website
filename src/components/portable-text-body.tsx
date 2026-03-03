@@ -11,7 +11,7 @@ const components: PortableTextComponents = {
       </p>
     ),
     h2: ({ children }) => (
-      <h2 className="font-display text-2xl text-grimoire-gold uppercase tracking-wide mt-12 mb-4">
+      <h2 className="font-display text-2xl text-grimoire-gold uppercase tracking-wide text-balance mt-12 mb-4">
         {children}
       </h2>
     ),

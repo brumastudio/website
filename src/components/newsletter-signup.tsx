@@ -71,7 +71,7 @@ export function NewsletterSignup() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-5 py-2.5 rounded-md hover:bg-grimoire-gold-light transition-colors duration-200 disabled:opacity-50 shrink-0"
+          className="font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-5 py-2.5 rounded-md hover:bg-grimoire-gold-light active:scale-95 transition-all duration-200 disabled:opacity-50 shrink-0"
         >
           {status === "sending" ? t("sending") : t("subscribe")}
         </button>
