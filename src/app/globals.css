@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Grimoire Color Tokens */
+  --color-grimoire-bg: #0D0D12;
+  --color-grimoire-surface: #1A1425;
+  --color-grimoire-gold: #C9A669;
+  --color-grimoire-gold-light: #E0D0A0;
+  --color-grimoire-text: #E8E2D6;
+  --color-grimoire-rune: #6A0DAD;
+  --color-grimoire-rune-soft: #8B5FBF;
+  --color-grimoire-ember: #9A3412;
+  --color-grimoire-border: #2A2833;
+  --color-grimoire-muted: #4A4558;
+  --color-grimoire-success: #7ECF8A;
+  --color-grimoire-error: #CF7E7E;
+  --color-grimoire-info: #7EA8CF;
+
+  /* Font Families */
+  --font-display: var(--font-cinzel), "Times New Roman", serif;
+  --font-body: var(--font-crimson-text), "Georgia", serif;
+  --font-ui: var(--font-inter), "Helvetica Neue", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "Fira Code", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-grimoire-bg);
+  color: var(--color-grimoire-text);
+  font-family: var(--font-body);
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-grimoire-gold);
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-grimoire-gold);
+  color: var(--color-grimoire-bg);
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skip-to-content:focus {
+  left: 1rem;
+}
