@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { client, urlFor } from "@/lib/sanity";
 import { postBySlugQuery, postSlugsQuery } from "@/lib/queries";
 import { PortableTextBody } from "@/components/portable-text-body";
+import { FadeImage } from "@/components/fade-image";
 import { GoldDivider } from "@/components/gold-divider";
 import { NewsletterSignup } from "@/components/newsletter-signup";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { estimateReadingTime, formatDate, formatCategory } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
 import type { Post } from "@/lib/types";
@@ -63,38 +64,40 @@ export default async function ScrollPage({ params }: Props) {
             {t("backLink")}
           </Link>
 
-          {/* Meta line */}
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-ui text-xs text-grimoire-muted mb-4">
-            {post.category && (
-              <>
-                <span className="text-grimoire-gold/70">
-                  {formatCategory(post.category)}
-                </span>
-                <span>&middot;</span>
-              </>
+          <ScrollReveal>
+            {/* Meta line */}
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-ui text-xs text-grimoire-muted mb-4">
+              {post.category && (
+                <>
+                  <span className="text-grimoire-gold/70">
+                    {formatCategory(post.category)}
+                  </span>
+                  <span>&middot;</span>
+                </>
+              )}
+              <time dateTime={post.publishedAt}>
+                {formatDate(post.publishedAt, locale)}
+              </time>
+              <span>&middot;</span>
+              <span>{t("minRead", { minutes: readingTime })}</span>
+            </div>
+
+            {/* Title */}
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-grimoire-gold uppercase tracking-wide leading-tight text-balance">
+              {post.title}
+            </h1>
+
+            {/* Excerpt / subtitle */}
+            {post.excerpt && (
+              <p className="mt-4 font-body text-lg italic text-grimoire-gold-light leading-relaxed">
+                {post.excerpt}
+              </p>
             )}
-            <time dateTime={post.publishedAt}>
-              {formatDate(post.publishedAt, locale)}
-            </time>
-            <span>&middot;</span>
-            <span>{t("minRead", { minutes: readingTime })}</span>
-          </div>
 
-          {/* Title */}
-          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-grimoire-gold uppercase tracking-wide leading-tight text-balance">
-            {post.title}
-          </h1>
-
-          {/* Excerpt / subtitle */}
-          {post.excerpt && (
-            <p className="mt-4 font-body text-lg italic text-grimoire-gold-light leading-relaxed">
-              {post.excerpt}
-            </p>
-          )}
-
-          <div className="mt-8 h-px bg-gradient-to-r from-grimoire-gold/60 via-grimoire-gold to-grimoire-gold/60 relative">
-            <div className="absolute left-1/2 -translate-x-1/2 -top-1 w-2 h-2 bg-grimoire-gold rotate-45" />
-          </div>
+            <div className="mt-8 h-px bg-gradient-to-r from-grimoire-gold/60 via-grimoire-gold to-grimoire-gold/60 relative">
+              <div className="absolute left-1/2 -translate-x-1/2 -top-1 w-2 h-2 bg-grimoire-gold rotate-45" />
+            </div>
+          </ScrollReveal>
 
           {/* Body */}
           <div className="mt-12">
@@ -112,7 +115,7 @@ export default async function ScrollPage({ params }: Props) {
             <div className="mt-16 pt-8 border-t border-grimoire-border">
               <div className="flex items-center gap-4">
                 {post.author.photo && (
-                  <Image
+                  <FadeImage
                     src={urlFor(post.author.photo).width(80).height(80).url()}
                     alt={post.author.name}
                     width={40}

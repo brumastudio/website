@@ -10,6 +10,7 @@ import { projectBySlugQuery, projectSlugsQuery, allProjectsQuery } from "@/lib/q
 import { PortableTextBody } from "@/components/portable-text-body";
 import { BrowserFrame } from "@/components/browser-frame";
 import { GoldDivider } from "@/components/gold-divider";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { routing } from "@/i18n/routing";
 import type { Project } from "@/lib/types";
 
@@ -71,29 +72,31 @@ export default async function ProjectPage({ params }: Props) {
             {t("backLink")}
           </Link>
 
-          <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide text-balance">
-            {project.title}
-          </h1>
+          <ScrollReveal>
+            <h1 className="font-display text-4xl md:text-5xl text-grimoire-gold uppercase tracking-wide text-balance">
+              {project.title}
+            </h1>
 
-          {project.description && (
-            <p className="mt-4 max-w-2xl font-body text-lg leading-relaxed text-grimoire-text">
-              {project.description}
-            </p>
-          )}
+            {project.description && (
+              <p className="mt-4 max-w-2xl font-body text-lg leading-relaxed text-grimoire-text">
+                {project.description}
+              </p>
+            )}
 
-          {/* Tags */}
-          {project.tags && project.tags.length > 0 && (
-            <div className="mt-6 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-grimoire-surface border border-grimoire-border text-grimoire-muted font-ui text-xs px-3 py-1 rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
+            {/* Tags */}
+            {project.tags && project.tags.length > 0 && (
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="bg-grimoire-surface border border-grimoire-border text-grimoire-muted font-ui text-xs px-3 py-1 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </ScrollReveal>
         </div>
       </section>
 
