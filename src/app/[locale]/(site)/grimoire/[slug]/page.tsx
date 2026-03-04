@@ -8,6 +8,7 @@ import { client } from "@/lib/sanity";
 import { urlFor } from "@/lib/sanity";
 import { projectBySlugQuery, projectSlugsQuery, allProjectsQuery } from "@/lib/queries";
 import { PortableTextBody } from "@/components/portable-text-body";
+import { BrowserFrame } from "@/components/browser-frame";
 import { GoldDivider } from "@/components/gold-divider";
 import { routing } from "@/i18n/routing";
 import type { Project } from "@/lib/types";
@@ -100,7 +101,7 @@ export default async function ProjectPage({ params }: Props) {
       {project.coverImage && (
         <section className="px-6 pb-16">
           <div className="mx-auto max-w-6xl">
-            <div className="relative w-full overflow-hidden rounded-lg border border-grimoire-border">
+            <BrowserFrame url={project.liveUrl || undefined}>
               <Image
                 src={urlFor(project.coverImage).width(1400).height(700).url()}
                 alt={project.title}
@@ -109,7 +110,7 @@ export default async function ProjectPage({ params }: Props) {
                 className="w-full h-auto"
                 priority
               />
-            </div>
+            </BrowserFrame>
           </div>
         </section>
       )}

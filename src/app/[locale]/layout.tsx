@@ -60,7 +60,7 @@ export async function generateMetadata({
       description: t("ogDescription"),
       images: [
         {
-          url: "/og-image.png",
+          url: "/opengraph-image",
           width: 1200,
           height: 630,
           alt: t("titleDefault"),
@@ -73,8 +73,10 @@ export async function generateMetadata({
       creator: "@brumastudio",
     },
     icons: {
-      icon: "/favicon.ico",
+      icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+      apple: "/apple-icon",
     },
+    manifest: "/site.webmanifest",
     alternates: {
       canonical: `https://brumastudio.dev/${locale}`,
       languages: {

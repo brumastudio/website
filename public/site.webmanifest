@@ -1,0 +1,16 @@
+{
+  "name": "Bruma Studio",
+  "short_name": "Bruma",
+  "description": "Dark arts of the digital craft.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D12",
+  "theme_color": "#0D0D12",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}
