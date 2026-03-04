@@ -43,8 +43,8 @@
     },
     "credibilityStrip": {
       "heading": "La Orden",
-      "body1": "Bruma Studio es un estudio digital enfocado, liderado por profesionales, no por gerentes. Ofrecemos calidad de agencia con la agilidad y atención de un equipo dedicado.",
-      "body2": "Nuestro stack es moderno. Nuestros estándares son rigurosos. Cada proyecto recibe atención de nivel senior de principio a fin.",
+      "body1": "Bruma Studio es un estudio digital enfocado, liderado por personas que valoran la precision. Ofrecemos calidad de agencia con la agilidad y atención de un equipo dedicado.",
+      "body2": "Nuestro stack es moderno. Nuestros estándares son rigurosos. Cada proyecto recibe la atención que merece de principio a fin.",
       "techStack": "Next.js · React · TypeScript · Sanity CMS · Tailwind CSS · Vercel"
     },
     "ctaStrip": {
