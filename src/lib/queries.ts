@@ -20,7 +20,7 @@ export const allProjectsQuery = groq`
 `;
 
 export const featuredProjectsQuery = groq`
-  *[_type == "project" && featured == true] | order(order asc) {
+  *[_type == "project" && featured == true] | order(order asc) [0...4] {
     _id,
     title,
     slug,
@@ -133,6 +133,7 @@ export const allAuthorsQuery = groq`
     name,
     slug,
     role,
+    email,
     bio,
     photo,
     socialLinks,

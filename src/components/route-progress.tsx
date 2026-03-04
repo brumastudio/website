@@ -37,6 +37,10 @@ export function RouteProgress() {
       const href = anchor.getAttribute("href");
       if (!href || href.startsWith("http") || href.startsWith("#") || href.startsWith("mailto:")) return;
 
+      // Skip if navigating to the current page
+      const hrefPath = href.split(/[?#]/)[0];
+      if (hrefPath === prevPathname.current) return;
+
       // Internal navigation detected
       if (timerRef.current) clearInterval(timerRef.current);
       if (hideTimerRef.current) clearTimeout(hideTimerRef.current);

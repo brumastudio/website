@@ -43,6 +43,7 @@ export interface Author {
   name: string;
   slug: SanitySlug;
   role?: string;
+  email?: string;
   bio?: PortableTextBlock[];
   photo?: SanityImage;
   socialLinks?: {

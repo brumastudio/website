@@ -11,7 +11,7 @@
     "mainNav": "Navegación principal"
   },
   "Footer": {
-    "tagline": "Artes oscuras del oficio digital.",
+    "tagline": "Artes oscuras del desarrollo web.",
     "arts": "Artes",
     "grimoire": "Grimorio",
     "scrolls": "Pergaminos",
@@ -23,8 +23,8 @@
   "Home": {
     "hero": {
       "title": "Bruma Studio",
-      "tagline": "Artes oscuras del oficio digital.",
-      "body": "Construimos sitios web modernos y experiencias digitales con la precisión del código y la intención del oficio.",
+      "tagline": "Artes oscuras del desarrollo web.",
+      "body": "Construimos sitios web modernos y experiencias digitales con la precisión del código y el amor a nuestro oficio.",
       "ctaPrimary": "Iniciar un Proyecto",
       "ctaSecondary": "Ver Nuestro Trabajo"
     },
@@ -38,7 +38,8 @@
       "label": "Sección 02",
       "heading": "El Grimorio",
       "subheading": "Trabajos y experimentos seleccionados.",
-      "comingSoon": "Próximamente"
+      "comingSoon": "Próximamente",
+      "viewAll": "Ver todos los proyectos →"
     },
     "credibilityStrip": {
       "heading": "La Orden",
@@ -152,7 +153,7 @@
     "hero": {
       "label": "El Grimorio",
       "heading": "Nuestro Trabajo",
-      "body": "Cada proyecto es un hechizo lanzado con intención — construido con código moderno, moldeado por el diseño y entregado con oficio."
+      "body": "Cada proyecto es un hechizo lanzado con intención — construido con código moderno, moldeado por el diseño y entregado con amor a nuestro oficio."
     }
   },
   "GrimoireProject": {
@@ -167,12 +168,12 @@
   "Scrolls": {
     "meta": {
       "title": "Blog",
-      "description": "Conocimientos técnicos, registros de construcción y lecciones del oficio. Notas desde el taller."
+      "description": "Conocimientos técnicos, registros de construcción y aprendizajes del oficio. Notas desde el taller."
     },
     "hero": {
       "label": "Los Pergaminos",
       "heading": "Códice",
-      "body": "Conocimientos técnicos, registros de construcción y lecciones del oficio. Notas desde el taller."
+      "body": "Conocimientos técnicos, registros de construcción y aprendizajes del oficio. Notas desde el taller."
     },
     "minRead": "{minutes} min de lectura",
     "emptyState": "El primer pergamino se está escribiendo. Vuelve pronto."
@@ -197,23 +198,24 @@
     },
     "origins": {
       "heading": "Orígenes",
-      "body1": "Bruma Studio fue fundado con una convicción simple: el mejor trabajo digital proviene de equipos pequeños y enfocados que se preocupan profundamente por el oficio.",
+      "body1": "Bruma Studio fue fundado con una convicción simple: el mejor trabajo digital proviene de equipos pequeños y enfocados que se preocupan profundamente por su oficio.",
       "body2": "Vimos demasiadas agencias vendiendo proceso sobre producto — capas de gerentes de cuenta, desarrolladores junior y soluciones de plantilla disfrazadas de trabajo personalizado. Construimos Bruma para ser lo opuesto: un estudio donde cada proyecto recibe atención directa de las personas que realmente hacen el trabajo.",
       "body3": "Somos bilingües por naturaleza, no por estrategia. Inglés y español son nativos para nuestro equipo, lo que significa que no solo traducimos — pensamos, diseñamos y comunicamos con fluidez en ambos idiomas.",
-      "body4": "Con base en Tijuana, servimos a clientes en las Américas y más allá. Pequeños por diseño. Poderosos por oficio."
+      "body4": "Con base en Tijuana, servimos a clientes en las Américas y más allá. Pequeños por diseño. Poderosos por el amor a nuestro oficio."
     },
     "team": {
-      "heading": "Los Practicantes"
+      "heading": "Los Practicantes",
+      "contact": "Contactar"
     },
     "values": {
       "heading": "Lo Que Creemos",
       "craft": {
-        "title": "Oficio sobre velocidad.",
+        "title": "Calidad sobre velocidad.",
         "body": "Preferimos tomar una semana extra que entregar algo mediocre."
       },
       "clarity": {
         "title": "Claridad sobre ingenio.",
-        "body": "El mejor código y el mejor copy son fáciles de entender."
+        "body": "El mejor código y las mejores ideas son fáciles de entender."
       },
       "bilingual": {
         "title": "Bilingües por naturaleza.",
@@ -221,7 +223,7 @@
       },
       "small": {
         "title": "Pequeños por diseño.",
-        "body": "Cada cliente recibe nuestra atención completa. Sin capas, sin traspasos."
+        "body": "Cada cliente recibe nuestra atención completa. Sin intermediarios."
       }
     }
   },
@@ -295,9 +297,9 @@
     "cta": "Volver al Origen"
   },
   "Metadata": {
-    "titleDefault": "Bruma Studio — Artes oscuras del oficio digital",
+    "titleDefault": "Bruma Studio — Artes oscuras del desarrollo web",
     "titleTemplate": "{title} — Bruma Studio",
-    "description": "Bruma Studio es un estudio digital bilingüe especializado en Next.js, Sanity CMS y desarrollo web moderno. Sitios web personalizados construidos con oficio e intención.",
+    "description": "Bruma Studio es un estudio digital bilingüe especializado en Next.js, Sanity CMS y desarrollo web moderno. Sitios web personalizados construidos con amor a nuestro oficio.",
     "ogDescription": "Estudio digital bilingüe especializado en Next.js, Sanity CMS y desarrollo web moderno."
   },
   "Common": {
@@ -339,9 +341,18 @@
       }
     },
     "authors": {
-      "conrado-bojorquez": "Fundador",
-      "oscar-mercado": "Ventas",
-      "aracely-rivera": "Operaciones"
+      "conrado-bojorquez": {
+        "role": "Fundador",
+        "bio": "Fundador de Bruma Studio, ofreciendo desarrollo digital premium a negocios que valoran la atmósfera y la precisión por igual. Con más de 10 años de experiencia en roles relacionados al marketing digital como diseño, desarrollo web y gestión de proyectos."
+      },
+      "oscar-mercado": {
+        "role": "Ventas",
+        "bio": "Conecta al estudio con clientes que valoran el desarrollo digital de calidad, liderando el desarrollo de negocios, alianzas y relaciones con clientes. Enfocado en alinear lo que Bruma construye con lo que los negocios necesitan para crecer, asegurando que cada colaboración sea un sólido encaje estratégico."
+      },
+      "aracely-rivera": {
+        "role": "Operaciones",
+        "bio": "Mantiene al estudio funcionando de manera óptima gestionando cronogramas de proyectos, comunicación con clientes y la logística diaria que convierte ideas ambiciosas en trabajo entregado—asegurando que cada proyecto se mantenga en curso desde el inicio hasta el lanzamiento."
+      }
     },
     "categories": {
       "tutorial": "Tutorial",

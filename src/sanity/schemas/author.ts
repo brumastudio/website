@@ -43,6 +43,13 @@ export const author = defineType({
       ],
     }),
     defineField({
+      name: "email",
+      title: "Email",
+      type: "string",
+      validation: (rule) =>
+        rule.regex(/^[^@]+@[^@]+\.[^@]+$/, { name: "email", invert: false }),
+    }),
+    defineField({
       name: "socialLinks",
       title: "Social Links",
       type: "object",

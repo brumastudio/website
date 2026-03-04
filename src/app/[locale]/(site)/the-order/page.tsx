@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FadeImage } from "@/components/fade-image";
-import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Github, Twitter, Linkedin, Instagram, Mail } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { client, urlFor } from "@/lib/sanity";
 import { allAuthorsQuery } from "@/lib/queries";
@@ -46,12 +46,13 @@ export default async function TheOrderPage({ params }: Props) {
   const tc = await getTranslations("Content");
   const rawAuthors = await client.fetch<Author[]>(allAuthorsQuery);
 
-  // Overlay translated roles on author data
+  // Overlay translated roles and bios on author data
   const authors = rawAuthors.map((author) => {
     const slug = author.slug?.current || "";
     return {
       ...author,
-      role: tc.has(`authors.${slug}`) ? tc(`authors.${slug}`) : author.role,
+      role: tc.has(`authors.${slug}.role`) ? tc(`authors.${slug}.role`) : author.role,
+      translatedBio: tc.has(`authors.${slug}.bio`) ? tc(`authors.${slug}.bio`) : undefined,
     };
   });
 
@@ -142,7 +143,12 @@ export default async function TheOrderPage({ params }: Props) {
                   )}
 
                   <h3 className="font-display text-lg uppercase tracking-wide text-grimoire-gold">
-                    {author.name}
+                    {(() => {
+                      const parts = author.name.split(" ");
+                      const firstName = parts.slice(0, -1).join(" ");
+                      const lastName = parts[parts.length - 1];
+                      return parts.length > 1 ? <>{firstName}<br />{lastName}</> : author.name;
+                    })()}
                   </h3>
 
                   {author.role && (
@@ -151,19 +157,19 @@ export default async function TheOrderPage({ params }: Props) {
                     </p>
                   )}
 
-                  {author.bio && author.bio.length > 0 && (
-                    <div className="mt-4 font-body text-base leading-relaxed text-grimoire-text/80">
-                      {author.bio
-                        .filter((block) => block._type === "block")
-                        .map((block, i) => (
-                          <p key={i}>
-                            {(block.children || [])
+                  {(author.translatedBio || (author.bio && author.bio.length > 0)) && (
+                    <p className="mt-4 font-body text-base leading-relaxed text-grimoire-text/80">
+                      {author.translatedBio ??
+                        author.bio
+                          ?.filter((block) => block._type === "block")
+                          .map((block) =>
+                            (block.children || [])
                               // eslint-disable-next-line @typescript-eslint/no-explicit-any
                               .map((child: any) => child.text || "")
-                              .join("")}
-                          </p>
-                        ))}
-                    </div>
+                              .join("")
+                          )
+                          .join(" ")}
+                    </p>
                   )}
 
                   {/* Social links */}
@@ -192,6 +198,16 @@ export default async function TheOrderPage({ params }: Props) {
                           );
                         })}
                     </div>
+                  )}
+
+                  {author.email && (
+                    <a
+                      href={`mailto:${author.email}`}
+                      className="mt-4 inline-flex items-center gap-2 rounded-md border border-grimoire-border bg-grimoire-bg/50 px-4 py-2 font-ui text-xs uppercase tracking-wider text-grimoire-muted transition-all duration-200 hover:border-grimoire-gold/40 hover:text-grimoire-gold"
+                    >
+                      <Mail className="h-3.5 w-3.5" />
+                      {t("team.contact")}
+                    </a>
                   )}
                 </div>
                 </StaggerItem>

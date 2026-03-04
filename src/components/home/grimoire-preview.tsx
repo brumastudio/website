@@ -102,6 +102,17 @@ export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
             return <StaggerItem key={project.title}>{card}</StaggerItem>;
           })}
         </StaggerContainer>
+
+        <ScrollReveal>
+          <div className="mt-10 text-center">
+            <Link
+              href="/grimoire"
+              className="inline-block font-ui text-sm uppercase tracking-wider text-grimoire-gold transition-colors duration-200 hover:text-grimoire-gold-light"
+            >
+              {t("viewAll")}
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

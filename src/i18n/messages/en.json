@@ -24,7 +24,7 @@
     "hero": {
       "title": "Bruma Studio",
       "tagline": "Dark arts of digital craft.",
-      "body": "We build modern websites and digital experiences with the precision of code and the intention of craft.",
+      "body": "We build modern websites and digital experiences with the precision of code and a love for the craft.",
       "ctaPrimary": "Start a Project",
       "ctaSecondary": "View Our Work"
     },
@@ -38,7 +38,8 @@
       "label": "Section 02",
       "heading": "The Grimoire",
       "subheading": "Selected works and experiments.",
-      "comingSoon": "Coming Soon"
+      "comingSoon": "Coming Soon",
+      "viewAll": "View all projects →"
     },
     "credibilityStrip": {
       "heading": "The Order",
@@ -203,7 +204,8 @@
       "body4": "Based in Tijuana, we serve clients across the Americas and beyond. Small by design. Powerful by craft."
     },
     "team": {
-      "heading": "The Practitioners"
+      "heading": "The Practitioners",
+      "contact": "Contact"
     },
     "values": {
       "heading": "What We Believe",
@@ -339,9 +341,18 @@
       }
     },
     "authors": {
-      "conrado-bojorquez": "Founder",
-      "oscar-mercado": "Sales",
-      "aracely-rivera": "Operations"
+      "conrado-bojorquez": {
+        "role": "Founder",
+        "bio": "Founder of Bruma Studio, bringing premium digital craft to businesses that value atmosphere and precision in equal measure. With 10+ years of experience in digital marketing related roles like design, web development and project management."
+      },
+      "oscar-mercado": {
+        "role": "Sales",
+        "bio": "Connects the studio with clients who value quality digital craft, leading business development, partnerships, and client relationships. Focused on aligning what Bruma builds with what businesses need to grow, ensuring every collaboration is a strong strategic fit."
+      },
+      "aracely-rivera": {
+        "role": "Operations",
+        "bio": "Keeps the studio running smoothly by managing project timelines, client communications, and day-to-day logistics that turn ambitious ideas into delivered work—ensuring every project stays on track from kickoff to launch."
+      }
     },
     "categories": {
       "tutorial": "Tutorial",
