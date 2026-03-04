@@ -31,6 +31,13 @@ const nextConfig: NextConfig = {
         { key: "X-Robots-Tag", value: "noindex, nofollow" },
       ],
     },
+    {
+      source: "/vault/(.*)",
+      headers: [
+        { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        { key: "Cache-Control", value: "no-store, no-cache, must-revalidate" },
+      ],
+    },
   ],
 };
 

@@ -12,6 +12,6 @@ export const config = {
     // - /_vercel (Vercel internals)
     // - /scrolls/feed.xml (RSS feed)
     // - Static files (with extensions)
-    "/((?!api|studio|_next|_vercel|scrolls/feed\\.xml|.*\\..*).*)",
+    "/((?!api|studio|vault|_next|_vercel|scrolls/feed\\.xml|.*\\..*).*)",
   ],
 };
