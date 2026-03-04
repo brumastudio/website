@@ -7,7 +7,7 @@ const projectTypeKeys = ["website", "cms", "design", "other"] as const;
 const budgetRangeKeys = ["under3k", "3kTo5k", "5kTo10k", "over10k", "notSure"] as const;
 
 const inputStyles =
-  "w-full bg-grimoire-surface border border-grimoire-border rounded-md px-4 py-3 text-grimoire-text font-body text-base md:text-lg leading-relaxed placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 focus:outline-none transition-colors duration-200";
+  "w-full bg-grimoire-surface-elevated border border-grimoire-border rounded-md px-4 py-3 text-grimoire-text font-body text-base md:text-lg leading-relaxed placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 focus:outline-none transition-colors duration-200";
 
 const labelStyles =
   "block font-ui text-sm text-grimoire-muted uppercase tracking-wider mb-2";
@@ -54,7 +54,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-lg border border-grimoire-border bg-grimoire-surface p-12 text-center">
+      <div className="flex flex-col items-center justify-center rounded-lg border border-grimoire-gold/20 bg-grimoire-surface p-12 text-center shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
         <h3 className="font-display text-2xl uppercase tracking-wide text-grimoire-gold">
           {t("successTitle")}
         </h3>

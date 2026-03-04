@@ -49,7 +49,7 @@ export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
             const hasCover = "coverImage" in project && project.coverImage;
 
             const card = (
-              <div className="bg-grimoire-surface border border-grimoire-border rounded-lg overflow-hidden hover:border-grimoire-gold/30 hover:shadow-[0_0_20px_rgba(201,166,105,0.08)] transition-all duration-300">
+              <div className="bg-grimoire-surface border border-grimoire-border rounded-lg overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:border-grimoire-gold/30 hover:shadow-[0_4px_20px_rgba(0,0,0,0.3),0_0_20px_rgba(201,166,105,0.08)] transition-all duration-300">
                 {/* Cover image or placeholder */}
                 {hasCover ? (
                   <div className="relative h-48 border-b border-grimoire-border">

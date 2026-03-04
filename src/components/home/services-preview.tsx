@@ -59,7 +59,7 @@ export async function ServicesPreview({ services }: ServicesPreviewProps) {
             const Icon = iconMap[service.icon || ""] || Code2;
             return (
               <StaggerItem key={service.title}>
-                <div className="bg-grimoire-surface border border-grimoire-border rounded-lg p-6 md:p-8 hover:border-grimoire-gold/30 hover:shadow-[0_0_20px_rgba(201,166,105,0.08)] hover:-translate-y-0.5 transition-all duration-300 h-full">
+                <div className="bg-grimoire-surface border border-grimoire-border rounded-lg p-6 md:p-8 shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:border-grimoire-gold/30 hover:shadow-[0_4px_20px_rgba(0,0,0,0.3),0_0_20px_rgba(201,166,105,0.08)] hover:-translate-y-0.5 transition-all duration-300 h-full">
                   <Icon className="h-8 w-8 text-grimoire-gold" />
                   <h3 className="mt-4 font-display text-lg uppercase tracking-wide text-grimoire-gold">
                     {service.title}

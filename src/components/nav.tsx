@@ -61,7 +61,7 @@ export function Nav() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-grimoire-bg/80 border-b border-grimoire-border/50">
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-grimoire-bg/80 border-b border-grimoire-border/40 shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
           aria-label={t("mainNav")}
@@ -117,7 +117,7 @@ export function Nav() {
       {mobileOpen && (
         <div
           className={cn(
-            "fixed inset-0 z-[60] flex flex-col bg-grimoire-bg/95 backdrop-blur-lg md:hidden transition-all duration-300 ease-out",
+            "fixed inset-0 z-[60] flex flex-col bg-grimoire-surface-elevated/95 backdrop-blur-lg md:hidden transition-all duration-300 ease-out",
             isAnimating
               ? "opacity-100 scale-100"
               : "opacity-0 scale-[0.97]"

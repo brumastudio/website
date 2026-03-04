@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { FadeImage } from "@/components/fade-image";
 import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { client, urlFor } from "@/lib/sanity";
@@ -109,11 +109,11 @@ export default async function TheOrderPage({ params }: Props) {
               {authors.map((author) => (
                 <StaggerItem key={author._id}>
                 <div
-                  className="bg-grimoire-surface border border-grimoire-border rounded-lg p-6 md:p-8 text-center h-full"
+                  className="bg-grimoire-surface border border-grimoire-border rounded-lg p-6 md:p-8 text-center h-full shadow-[0_2px_8px_rgba(0,0,0,0.2)]"
                 >
                   {/* Photo or initials */}
                   {author.photo ? (
-                    <Image
+                    <FadeImage
                       src={urlFor(author.photo).width(160).height(160).url()}
                       alt={author.name}
                       width={80}

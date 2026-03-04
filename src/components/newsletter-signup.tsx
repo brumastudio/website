@@ -50,7 +50,7 @@ export function NewsletterSignup() {
   }
 
   return (
-    <div className="border border-grimoire-border bg-grimoire-surface rounded-lg p-8">
+    <div className="border border-grimoire-border bg-grimoire-surface rounded-lg p-8 shadow-[0_2px_8px_rgba(0,0,0,0.2)]">
       <p className="font-display text-lg text-grimoire-gold uppercase tracking-wide text-center">
         {t("title")}
       </p>
