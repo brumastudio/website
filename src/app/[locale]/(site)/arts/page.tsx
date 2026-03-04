@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Code2, Database, PenTool, type LucideIcon } from "lucide-react";
-import { PortableText } from "@portabletext/react";
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { SectionHeader } from "@/components/section-header";
 import { GoldDivider } from "@/components/gold-divider";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/scroll-reveal";
@@ -35,6 +35,66 @@ const iconMap: Record<string, LucideIcon> = {
   Code2,
   Database,
   PenTool,
+};
+
+const serviceBodyComponents: PortableTextComponents = {
+  block: {
+    normal: ({ children }) => (
+      <p className="font-body text-base md:text-lg leading-relaxed text-grimoire-text mb-4">
+        {children}
+      </p>
+    ),
+    h2: ({ children }) => (
+      <div className="mt-10 mb-6">
+        <h3 className="font-display text-lg text-grimoire-gold-light uppercase tracking-wider">
+          {children}
+        </h3>
+        <div className="mt-2 h-px w-16 bg-grimoire-gold/40" />
+      </div>
+    ),
+  },
+  marks: {
+    strong: ({ children }) => (
+      <strong className="font-semibold">{children}</strong>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="space-y-6">{children}</ul>
+    ),
+  },
+  listItem: {
+    bullet: ({ value }) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const children: any[] = value.children || [];
+      const titleParts: string[] = [];
+      const descParts: string[] = [];
+
+      for (const child of children) {
+        if (child.marks?.includes("strong")) {
+          titleParts.push(child.text || "");
+        } else {
+          descParts.push(child.text || "");
+        }
+      }
+
+      const title = titleParts.join("");
+      const desc = descParts.join("").replace(/^\s*[—–-]\s*/, "");
+
+      return (
+        <li>
+          <span className="font-ui font-semibold text-base text-grimoire-gold block">
+            {title}
+          </span>
+          {desc && (
+            <span className="font-body text-base leading-relaxed text-grimoire-text/80 block mt-1">
+              {desc}
+            </span>
+          )}
+        </li>
+      );
+    },
+  },
 };
 
 export default async function ArtsPage({ params }: Props) {
@@ -149,46 +209,26 @@ export default async function ArtsPage({ params }: Props) {
               </ScrollReveal>
 
               <ScrollReveal delay={0.1}>
-                <div className="max-w-3xl space-y-4">
+                <div className="max-w-3xl">
                   {service.body && service.body.length > 0 ? (
-                    <div className="prose-grimoire">
-                      <PortableText
-                        value={service.body}
-                        components={{
-                          block: {
-                            normal: ({ children }) => (
-                              <p className="font-body text-base md:text-lg leading-relaxed text-grimoire-text mb-4">
-                                {children}
-                              </p>
-                            ),
-                          },
-                        }}
-                      />
-                    </div>
+                    <PortableText
+                      value={service.body}
+                      components={serviceBodyComponents}
+                    />
                   ) : (
-                    fallbackBodies[service.title]?.map((paragraph, j) => (
-                      <p
-                        key={j}
-                        className="font-body text-base md:text-lg leading-relaxed text-grimoire-text"
-                      >
-                        {paragraph}
-                      </p>
-                    ))
+                    <div className="space-y-4">
+                      {fallbackBodies[service.title]?.map((paragraph, j) => (
+                        <p
+                          key={j}
+                          className="font-body text-base md:text-lg leading-relaxed text-grimoire-text"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
                   )}
                 </div>
               </ScrollReveal>
-
-              {service.features && service.features.length > 0 && (
-                <StaggerContainer className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 max-w-3xl">
-                  {service.features.map((feature) => (
-                    <StaggerItem key={feature}>
-                      <p className="font-ui text-sm text-grimoire-text/80 before:content-['·'] before:mr-2 before:text-grimoire-gold">
-                        {feature}
-                      </p>
-                    </StaggerItem>
-                  ))}
-                </StaggerContainer>
-              )}
             </div>
           </section>
         );
