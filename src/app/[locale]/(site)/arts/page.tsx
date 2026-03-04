@@ -105,7 +105,7 @@ export default async function ArtsPage({ params }: Props) {
 
   const sanityServices = await client.fetch<Service[]>(allServicesQuery);
 
-  // Build fallback services from translations
+  // Build fallback services from translations (used when Sanity is empty or for ES locale)
   const fallbackServices: Service[] = [
     {
       _id: "fallback-1",
@@ -151,10 +151,14 @@ export default async function ArtsPage({ params }: Props) {
     ],
   };
 
+  // For non-English locales, always use translated fallback content.
+  // For English, use Sanity content when available.
   const services =
-    sanityServices && sanityServices.length > 0
-      ? sanityServices
-      : fallbackServices;
+    locale !== "en"
+      ? fallbackServices
+      : sanityServices && sanityServices.length > 0
+        ? sanityServices
+        : fallbackServices;
 
   const processStepKeys = ["discovery", "design", "development", "delivery"] as const;
 

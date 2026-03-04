@@ -302,5 +302,58 @@
   },
   "Common": {
     "skipToContent": "Ir al contenido"
+  },
+  "Content": {
+    "services": {
+      "web-development": {
+        "title": "Desarrollo Web",
+        "subtitle": "La Disciplina Central",
+        "description": "Sitios web y aplicaciones a medida con frameworks modernos. Rápidos, accesibles y diseñados para escalar con tu negocio."
+      },
+      "cms-content-architecture": {
+        "title": "CMS y Arquitectura de Contenido",
+        "subtitle": "Conocimiento Estructurado",
+        "description": "Sistemas de gestión de contenido que le dan a tu equipo control total. Estructurados, flexibles y hechos para cómo realmente trabajas."
+      },
+      "ui-ux-design": {
+        "title": "Diseño UI/UX",
+        "subtitle": "Alquimia Visual",
+        "description": "Interfaces que lucen excepcionales y funcionan de forma intuitiva. Desde sistemas de diseño hasta producto completo, cada píxel tiene un propósito."
+      }
+    },
+    "projects": {
+      "obsidian-commerce": {
+        "title": "Obsidian Commerce",
+        "description": "Plataforma de e-commerce headless para una marca de velas de lujo, con narrativa de producto inmersiva y checkout bilingüe impecable.",
+        "timeline": "6 semanas"
+      },
+      "arcana-dashboard": {
+        "title": "Arcana Dashboard",
+        "description": "Dashboard analítico interno para una startup fintech, transformando datos financieros complejos en visualizaciones claras y accionables.",
+        "timeline": "8 semanas"
+      },
+      "verdant-press": {
+        "title": "Verdant Press",
+        "description": "Plataforma editorial con CMS para una editorial independiente, construida para velocidad, accesibilidad y una experiencia de lectura impecable.",
+        "timeline": "4 semanas"
+      }
+    },
+    "authors": {
+      "conrado-bojorquez": "Fundador",
+      "oscar-mercado": "Ventas",
+      "aracely-rivera": "Operaciones"
+    },
+    "categories": {
+      "tutorial": "Tutorial",
+      "build-log": "Registro de Desarrollo",
+      "strategy": "Estrategia",
+      "tools": "Herramientas"
+    },
+    "tags": {
+      "Web Development": "Desarrollo Web",
+      "CMS": "CMS",
+      "Design": "Diseño",
+      "Bilingual": "Bilingüe"
+    }
   }
 }

@@ -83,7 +83,7 @@ export default async function ScrollsPage({ params }: Props) {
                         <>
                           <span>&middot;</span>
                           <span className="text-grimoire-gold/70">
-                            {formatCategory(post.category)}
+                            {formatCategory(post.category, locale)}
                           </span>
                         </>
                       )}

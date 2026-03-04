@@ -302,5 +302,58 @@
   },
   "Common": {
     "skipToContent": "Skip to content"
+  },
+  "Content": {
+    "services": {
+      "web-development": {
+        "title": "Web Development",
+        "subtitle": "The Core Discipline",
+        "description": "Custom websites and web applications built with modern frameworks. Fast, accessible, and designed to scale with your business."
+      },
+      "cms-content-architecture": {
+        "title": "CMS & Content Architecture",
+        "subtitle": "Structured Knowledge",
+        "description": "Content management systems that give your team full control. Structured, flexible, and built for how you actually work."
+      },
+      "ui-ux-design": {
+        "title": "UI/UX Design",
+        "subtitle": "Visual Alchemy",
+        "description": "Interfaces that look exceptional and work intuitively. From design systems to full product design, every pixel serves a purpose."
+      }
+    },
+    "projects": {
+      "obsidian-commerce": {
+        "title": "Obsidian Commerce",
+        "description": "A headless e-commerce platform for a luxury candle brand, featuring immersive product storytelling and a seamless bilingual checkout experience.",
+        "timeline": "6 weeks"
+      },
+      "arcana-dashboard": {
+        "title": "Arcana Dashboard",
+        "description": "An internal analytics dashboard for a fintech startup, transforming complex financial data into clear, actionable visualizations.",
+        "timeline": "8 weeks"
+      },
+      "verdant-press": {
+        "title": "Verdant Press",
+        "description": "A content-managed editorial platform for an independent publisher, built for speed, accessibility, and beautiful long-form reading.",
+        "timeline": "4 weeks"
+      }
+    },
+    "authors": {
+      "conrado-bojorquez": "Founder",
+      "oscar-mercado": "Sales",
+      "aracely-rivera": "Operations"
+    },
+    "categories": {
+      "tutorial": "Tutorial",
+      "build-log": "Build Log",
+      "strategy": "Strategy",
+      "tools": "Tools"
+    },
+    "tags": {
+      "Web Development": "Web Development",
+      "CMS": "CMS",
+      "Design": "Design",
+      "Bilingual": "Bilingual"
+    }
   }
 }

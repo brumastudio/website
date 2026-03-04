@@ -35,7 +35,19 @@ export function formatDate(dateString: string, locale: string = "en"): string {
 }
 
 /** Format a category slug as a display label */
-export function formatCategory(category: string): string {
+const categoryTranslations: Record<string, Record<string, string>> = {
+  es: {
+    tutorial: "Tutorial",
+    "build-log": "Registro de Desarrollo",
+    strategy: "Estrategia",
+    tools: "Herramientas",
+  },
+};
+
+export function formatCategory(category: string, locale: string = "en"): string {
+  if (locale !== "en" && categoryTranslations[locale]?.[category]) {
+    return categoryTranslations[locale][category];
+  }
   return category
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))

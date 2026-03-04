@@ -43,7 +43,17 @@ export default async function TheOrderPage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("TheOrder");
-  const authors = await client.fetch<Author[]>(allAuthorsQuery);
+  const tc = await getTranslations("Content");
+  const rawAuthors = await client.fetch<Author[]>(allAuthorsQuery);
+
+  // Overlay translated roles on author data
+  const authors = rawAuthors.map((author) => {
+    const slug = author.slug?.current || "";
+    return {
+      ...author,
+      role: tc.has(`authors.${slug}`) ? tc(`authors.${slug}`) : author.role,
+    };
+  });
 
   return (
     <>

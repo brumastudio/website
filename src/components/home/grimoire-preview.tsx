@@ -8,28 +8,24 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/scroll
 import { urlFor } from "@/lib/sanity";
 import type { Project } from "@/lib/types";
 
-const fallbackProjects = [
-  {
-    title: "Velo",
-    description:
-      "A premium single-page site for an artisan bicycle shop. Product showcases, CMS-powered content, and a refined dark/light experience.",
-    tags: ["Next.js", "Sanity CMS", "Tailwind CSS", "E-commerce"],
-  },
-  {
-    title: "Bufete Reyes",
-    description:
-      "A bilingual corporate site for a law firm. Clean, authoritative design with attorney profiles and practice area pages.",
-    tags: ["Next.js", "Sanity CMS", "Bilingual", "Corporate"],
-  },
-];
-
 interface GrimoirePreviewProps {
   projects?: Project[];
 }
 
 export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
   const t = await getTranslations("Home.grimoirePreview");
-  const items = projects && projects.length > 0 ? projects : fallbackProjects;
+  const tc = await getTranslations("Content");
+
+  // Translate Sanity projects or use as-is (fallback projects removed — Sanity is the source)
+  const items = (projects && projects.length > 0 ? projects : []).map((p) => {
+    const slug = p.slug?.current || "";
+    return {
+      ...p,
+      title: tc.has(`projects.${slug}.title`) ? tc(`projects.${slug}.title`) : p.title,
+      description: tc.has(`projects.${slug}.description`) ? tc(`projects.${slug}.description`) : p.description,
+      tags: p.tags?.map((tag) => tc.has(`tags.${tag}`) ? tc(`tags.${tag}`) : tag),
+    };
+  });
 
   return (
     <section id="grimoire" className="relative px-6 py-24 md:py-32 scroll-mt-20 overflow-hidden">

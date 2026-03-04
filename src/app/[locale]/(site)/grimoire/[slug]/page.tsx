@@ -44,21 +44,37 @@ export default async function ProjectPage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("GrimoireProject");
-  const project = await client.fetch<Project | null>(projectBySlugQuery, { slug });
+  const tc = await getTranslations("Content");
+  const rawProject = await client.fetch<Project | null>(projectBySlugQuery, { slug });
 
-  if (!project) {
+  if (!rawProject) {
     notFound();
   }
+
+  // Overlay translated content
+  const projectSlug = rawProject.slug?.current || "";
+  const project = {
+    ...rawProject,
+    title: tc.has(`projects.${projectSlug}.title`) ? tc(`projects.${projectSlug}.title`) : rawProject.title,
+    description: tc.has(`projects.${projectSlug}.description`) ? tc(`projects.${projectSlug}.description`) : rawProject.description,
+    timeline: tc.has(`projects.${projectSlug}.timeline`) ? tc(`projects.${projectSlug}.timeline`) : rawProject.timeline,
+    tags: rawProject.tags?.map((tag) => tc.has(`tags.${tag}`) ? tc(`tags.${tag}`) : tag),
+  };
 
   // Find next project for "Next Project" link
   const allProjects = await client.fetch<Project[]>(allProjectsQuery);
   const currentIndex = allProjects.findIndex(
     (p) => p.slug.current === slug
   );
-  const nextProject =
+  const rawNext =
     currentIndex >= 0 && currentIndex < allProjects.length - 1
       ? allProjects[currentIndex + 1]
       : allProjects[0];
+  const nextProject = rawNext ? {
+    ...rawNext,
+    title: tc.has(`projects.${rawNext.slug?.current}.title`) ? tc(`projects.${rawNext.slug?.current}.title`) : rawNext.title,
+    description: tc.has(`projects.${rawNext.slug?.current}.description`) ? tc(`projects.${rawNext.slug?.current}.description`) : rawNext.description,
+  } : null;
 
   return (
     <>

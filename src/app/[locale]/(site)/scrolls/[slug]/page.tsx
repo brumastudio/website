@@ -43,11 +43,23 @@ export default async function ScrollPage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("ScrollsPost");
-  const post = await client.fetch<Post | null>(postBySlugQuery, { slug });
+  const tc = await getTranslations("Content");
+  const rawPost = await client.fetch<Post | null>(postBySlugQuery, { slug });
 
-  if (!post) {
+  if (!rawPost) {
     notFound();
   }
+
+  // Overlay translated author role
+  const post = {
+    ...rawPost,
+    author: rawPost.author ? {
+      ...rawPost.author,
+      role: tc.has(`authors.${rawPost.author.slug?.current}`)
+        ? tc(`authors.${rawPost.author.slug?.current}`)
+        : rawPost.author.role,
+    } : rawPost.author,
+  };
 
   const readingTime = estimateReadingTime(post.body || []);
 
@@ -70,7 +82,7 @@ export default async function ScrollPage({ params }: Props) {
               {post.category && (
                 <>
                   <span className="text-grimoire-gold/70">
-                    {formatCategory(post.category)}
+                    {formatCategory(post.category, locale)}
                   </span>
                   <span>&middot;</span>
                 </>
@@ -162,7 +174,7 @@ export default async function ScrollPage({ params }: Props) {
                         <>
                           <span>&middot;</span>
                           <span className="text-grimoire-gold/70">
-                            {formatCategory(related.category)}
+                            {formatCategory(related.category, locale)}
                           </span>
                         </>
                       )}

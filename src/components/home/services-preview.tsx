@@ -11,29 +11,12 @@ const iconMap: Record<string, LucideIcon> = {
   PenTool,
 };
 
-const fallbackServices = [
-  {
-    title: "Web Development",
-    description:
-      "Custom websites and web applications built with Next.js, React, and TypeScript. Fast, accessible, and built to last.",
-    icon: "Code2",
-    slug: { current: "web-development" },
-  },
-  {
-    title: "CMS & Content Systems",
-    description:
-      "Content management with Sanity CMS and headless WordPress. Edit your site without touching code.",
-    icon: "Database",
-    slug: { current: "cms" },
-  },
-  {
-    title: "Design & Strategy",
-    description:
-      "Brand identity, UI/UX design, and digital strategy. From wireframe to launch, every detail considered.",
-    icon: "PenTool",
-    slug: { current: "design" },
-  },
-];
+const fallbackSlugs = ["web-development", "cms-content-architecture", "ui-ux-design"] as const;
+const fallbackIcons: Record<string, string> = {
+  "web-development": "Code2",
+  "cms-content-architecture": "Database",
+  "ui-ux-design": "PenTool",
+};
 
 interface ServicesPreviewProps {
   services?: Service[];
@@ -41,7 +24,24 @@ interface ServicesPreviewProps {
 
 export async function ServicesPreview({ services }: ServicesPreviewProps) {
   const t = await getTranslations("Home.servicesPreview");
-  const items = services && services.length > 0 ? services : fallbackServices;
+  const tc = await getTranslations("Content");
+
+  // Translate Sanity services or build fallback from translations
+  const items = services && services.length > 0
+    ? services.map((s) => {
+        const slug = s.slug?.current || "";
+        return {
+          ...s,
+          title: tc.has(`services.${slug}.title`) ? tc(`services.${slug}.title`) : s.title,
+          description: tc.has(`services.${slug}.description`) ? tc(`services.${slug}.description`) : s.description,
+        };
+      })
+    : fallbackSlugs.map((slug) => ({
+        title: tc(`services.${slug}.title`),
+        description: tc(`services.${slug}.description`),
+        icon: fallbackIcons[slug],
+        slug: { current: slug },
+      }));
 
   return (
     <section className="px-6 py-24 md:py-32">

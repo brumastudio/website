@@ -34,7 +34,19 @@ export default async function GrimoirePage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations("Grimoire");
-  const projects = await client.fetch<Project[]>(allProjectsQuery);
+  const tc = await getTranslations("Content");
+  const rawProjects = await client.fetch<Project[]>(allProjectsQuery);
+
+  // Overlay translated content on projects
+  const projects = rawProjects.map((p) => {
+    const slug = p.slug?.current || "";
+    return {
+      ...p,
+      title: tc.has(`projects.${slug}.title`) ? tc(`projects.${slug}.title`) : p.title,
+      description: tc.has(`projects.${slug}.description`) ? tc(`projects.${slug}.description`) : p.description,
+      tags: p.tags?.map((tag) => tc.has(`tags.${tag}`) ? tc(`tags.${tag}`) : tag),
+    };
+  });
 
   // Sort: featured first, then by order
   const sorted = [...projects].sort((a, b) => {
@@ -43,7 +55,7 @@ export default async function GrimoirePage({ params }: Props) {
     return (a.order ?? 0) - (b.order ?? 0);
   });
 
-  // Collect unique tags across all projects
+  // Collect unique tags across all projects (already translated)
   const allTags = Array.from(
     new Set(projects.flatMap((p) => p.tags ?? []))
   ).sort();
