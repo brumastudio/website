@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
+import { FadeImage } from "@/components/fade-image";
 import { Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import { BackgroundGlow } from "@/components/background-glow";
@@ -53,7 +53,7 @@ export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
                 {/* Cover image or placeholder */}
                 {hasCover ? (
                   <div className="relative h-48 border-b border-grimoire-border">
-                    <Image
+                    <FadeImage
                       src={urlFor(project.coverImage).width(800).height(400).url()}
                       alt={project.title}
                       fill

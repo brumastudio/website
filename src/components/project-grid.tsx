@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
+import { FadeImage } from "@/components/fade-image";
 import { Sparkles } from "lucide-react";
 import { urlFor } from "@/lib/sanity";
 import type { Project } from "@/lib/types";
@@ -78,11 +78,11 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
             <div className="relative h-52 border-b border-grimoire-border overflow-hidden">
               {project.coverImage ? (
                 <>
-                  <Image
+                  <FadeImage
                     src={urlFor(project.coverImage).width(800).height(416).url()}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover transition-[opacity,transform] duration-300 group-hover:scale-105"
                   />
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-grimoire-bg/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

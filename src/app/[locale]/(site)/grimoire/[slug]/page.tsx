@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { FadeImage } from "@/components/fade-image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -102,7 +102,7 @@ export default async function ProjectPage({ params }: Props) {
         <section className="px-6 pb-16">
           <div className="mx-auto max-w-6xl">
             <BrowserFrame url={project.liveUrl || undefined}>
-              <Image
+              <FadeImage
                 src={urlFor(project.coverImage).width(1400).height(700).url()}
                 alt={project.title}
                 width={1400}
