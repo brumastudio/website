@@ -4,6 +4,7 @@
     "grimoire": "Grimorio",
     "scrolls": "Pergaminos",
     "theOrder": "La Orden",
+    "theRitual": "El Ritual",
     "offerings": "Ofrendas",
     "summon": "Invocar",
     "startProject": "Iniciar un Proyecto",
@@ -18,6 +19,7 @@
     "scrolls": "Pergaminos",
     "theOrder": "La Orden",
     "offerings": "Ofrendas",
+    "theRitual": "El Ritual",
     "summon": "Invocar",
     "copyright": "© {year} Bruma Studio · brumastudio.dev",
     "footerNav": "Navegación del pie de página"
@@ -326,6 +328,76 @@
     "cta": {
       "heading": "¿Listo para Hablar de Tu Proyecto?",
       "body": "Cada proyecto comienza con una conversación. Cuéntanos tu visión y crearemos una propuesta.",
+      "button": "Invócanos"
+    }
+  },
+  "TheRitual": {
+    "meta": {
+      "title": "Nuestro Proceso",
+      "description": "Un proceso probado de cuatro fases, del descubrimiento a la entrega. Suficientemente estructurado para mantener el rumbo, suficientemente flexible para adaptarse a tus necesidades."
+    },
+    "hero": {
+      "label": "El Ritual",
+      "heading": "Cómo Trabajamos",
+      "body": "Cada proyecto sigue un proceso probado — suficientemente estructurado para mantener el rumbo, suficientemente flexible para adaptarse a tus necesidades."
+    },
+    "phases": {
+      "discovery": {
+        "number": "01",
+        "title": "Descubrimiento",
+        "timeline": "3–5 días",
+        "body": "Comienza con escuchar. Agendamos una llamada de descubrimiento para entender tu negocio, tu audiencia, tus objetivos y tus restricciones. Sin plantillas de cuestionarios — una conversación real.",
+        "deliverables": [
+          "Brief del proyecto",
+          "Mapa del sitio",
+          "Requerimientos técnicos",
+          "Cronograma",
+          "Propuesta a precio fijo"
+        ]
+      },
+      "design": {
+        "number": "02",
+        "title": "Diseño",
+        "timeline": "1–2 semanas",
+        "body": "Diseñamos en Figma, comenzando con wireframes y avanzando a mockups de alta fidelidad. Revisas y apruebas la dirección visual antes de que comience el desarrollo. Sin sorpresas.",
+        "deliverables": [
+          "Wireframes",
+          "Mockups (escritorio + móvil)",
+          "Prototipo interactivo",
+          "Sistema de diseño",
+          "2 rondas de revisión"
+        ]
+      },
+      "development": {
+        "number": "03",
+        "title": "Desarrollo",
+        "timeline": "2–4 semanas",
+        "body": "Código limpio, artesanal. Construimos en Next.js con TypeScript y desplegamos en un ambiente de staging donde puedes revisar el progreso en tiempo real. Nos comunicamos regularmente — nunca te quedarás preguntándote qué está pasando.",
+        "deliverables": [
+          "Aplicación Next.js",
+          "Sanity CMS",
+          "Ambiente de staging",
+          "Responsivo + accesible",
+          "Lighthouse 90+"
+        ]
+      },
+      "delivery": {
+        "number": "04",
+        "title": "Entrega y Más Allá",
+        "timeline": "3–5 días + continuo",
+        "body": "Día de lanzamiento. Nos encargamos del despliegue, DNS, SSL y todo lo técnico. Capacitamos a tu equipo en el CMS y entregamos documentación completa. Y nos quedamos cerca.",
+        "deliverables": [
+          "Despliegue a producción",
+          "Configuración de dominio",
+          "Capacitación en CMS (grabada)",
+          "Documentación",
+          "Soporte post-lanzamiento"
+        ]
+      }
+    },
+    "cta": {
+      "heading": "¿Listo para Comenzar?",
+      "body": "Cada proyecto comienza con una conversación. Cuéntanos tu visión y crearemos un plan para hacerla realidad.",
       "button": "Invócanos"
     }
   },

@@ -17,6 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/scrolls",
     "/the-order",
     "/offerings",
+    "/the-ritual",
     "/summon",
   ];
 
@@ -28,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/scrolls": { en: "/scrolls", es: "/pergaminos" },
     "/the-order": { en: "/the-order", es: "/la-orden" },
     "/offerings": { en: "/offerings", es: "/ofrendas" },
+    "/the-ritual": { en: "/the-ritual", es: "/el-ritual" },
     "/summon": { en: "/summon", es: "/invocar" },
   };
 

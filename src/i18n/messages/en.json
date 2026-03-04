@@ -4,6 +4,7 @@
     "grimoire": "Grimoire",
     "scrolls": "Scrolls",
     "theOrder": "The Order",
+    "theRitual": "The Ritual",
     "offerings": "Offerings",
     "summon": "Summon",
     "startProject": "Start a Project",
@@ -18,6 +19,7 @@
     "scrolls": "Scrolls",
     "theOrder": "The Order",
     "offerings": "Offerings",
+    "theRitual": "The Ritual",
     "summon": "Summon",
     "copyright": "© {year} Bruma Studio · brumastudio.dev",
     "footerNav": "Footer navigation"
@@ -326,6 +328,76 @@
     "cta": {
       "heading": "Ready to Discuss Your Project?",
       "body": "Every project starts with a conversation. Tell us about your vision and we'll craft a proposal.",
+      "button": "Summon Us"
+    }
+  },
+  "TheRitual": {
+    "meta": {
+      "title": "Our Process",
+      "description": "A proven four-phase process from discovery to delivery. Structured enough to keep things on track, flexible enough to adapt to your needs."
+    },
+    "hero": {
+      "label": "The Ritual",
+      "heading": "How We Work",
+      "body": "Every project follows a proven process — structured enough to keep things on track, flexible enough to adapt to your needs."
+    },
+    "phases": {
+      "discovery": {
+        "number": "01",
+        "title": "Discovery",
+        "timeline": "3–5 days",
+        "body": "It starts with listening. We schedule a discovery call to understand your business, your audience, your goals, and your constraints. No questionnaire templates — a real conversation.",
+        "deliverables": [
+          "Project brief",
+          "Sitemap",
+          "Technical requirements",
+          "Timeline",
+          "Fixed-price proposal"
+        ]
+      },
+      "design": {
+        "number": "02",
+        "title": "Design",
+        "timeline": "1–2 weeks",
+        "body": "We design in Figma, starting with wireframes and progressing to full-fidelity mockups. You review and approve the visual direction before development begins. No surprises.",
+        "deliverables": [
+          "Wireframes",
+          "Mockups (desktop + mobile)",
+          "Interactive prototype",
+          "Design system",
+          "2 revision rounds"
+        ]
+      },
+      "development": {
+        "number": "03",
+        "title": "Development",
+        "timeline": "2–4 weeks",
+        "body": "Clean, hand-crafted code. We build in Next.js with TypeScript and deploy to a staging environment where you can review progress in real time. We check in regularly — you're never left wondering what's happening.",
+        "deliverables": [
+          "Next.js application",
+          "Sanity CMS",
+          "Staging environment",
+          "Responsive + accessible",
+          "Lighthouse 90+"
+        ]
+      },
+      "delivery": {
+        "number": "04",
+        "title": "Delivery & Beyond",
+        "timeline": "3–5 days + ongoing",
+        "body": "Launch day. We handle deployment, DNS, SSL, and everything technical. We train your team on the CMS and hand over complete documentation. Then we stick around.",
+        "deliverables": [
+          "Production deployment",
+          "Domain setup",
+          "CMS training (recorded)",
+          "Documentation",
+          "Post-launch support"
+        ]
+      }
+    },
+    "cta": {
+      "heading": "Ready to Begin?",
+      "body": "Every project starts with a conversation. Tell us about your vision and we'll craft a plan to bring it to life.",
       "button": "Summon Us"
     }
   },

@@ -5,10 +5,11 @@ import { GoldDivider } from "@/components/gold-divider";
 
 const footerLinks = [
   { href: "/arts" as const, key: "arts" },
+  { href: "/offerings" as const, key: "offerings" },
+  { href: "/the-ritual" as const, key: "theRitual" },
   { href: "/grimoire" as const, key: "grimoire" },
   { href: "/scrolls" as const, key: "scrolls" },
   { href: "/the-order" as const, key: "theOrder" },
-  { href: "/offerings" as const, key: "offerings" },
   { href: "/summon" as const, key: "summon" },
 ];
 
