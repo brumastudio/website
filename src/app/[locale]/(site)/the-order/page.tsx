@@ -109,7 +109,7 @@ export default async function TheOrderPage({ params }: Props) {
               {authors.map((author) => (
                 <StaggerItem key={author._id}>
                 <div
-                  className="bg-grimoire-surface border border-grimoire-border rounded-lg p-6 md:p-8 text-center"
+                  className="bg-grimoire-surface border border-grimoire-border rounded-lg p-6 md:p-8 text-center h-full"
                 >
                   {/* Photo or initials */}
                   {author.photo ? (
@@ -142,7 +142,7 @@ export default async function TheOrderPage({ params }: Props) {
                   )}
 
                   {author.bio && author.bio.length > 0 && (
-                    <div className="mt-4 font-body text-sm leading-relaxed text-grimoire-text/80">
+                    <div className="mt-4 font-body text-base leading-relaxed text-grimoire-text/80">
                       {author.bio
                         .filter((block) => block._type === "block")
                         .map((block, i) => (
