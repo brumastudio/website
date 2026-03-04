@@ -16,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/grimoire",
     "/scrolls",
     "/the-order",
+    "/offerings",
     "/summon",
   ];
 
@@ -26,6 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/grimoire": { en: "/grimoire", es: "/grimorio" },
     "/scrolls": { en: "/scrolls", es: "/pergaminos" },
     "/the-order": { en: "/the-order", es: "/la-orden" },
+    "/offerings": { en: "/offerings", es: "/ofrendas" },
     "/summon": { en: "/summon", es: "/invocar" },
   };
 

@@ -4,6 +4,7 @@
     "grimoire": "Grimorio",
     "scrolls": "Pergaminos",
     "theOrder": "La Orden",
+    "offerings": "Ofrendas",
     "summon": "Invocar",
     "startProject": "Iniciar un Proyecto",
     "openMenu": "Abrir menú",
@@ -16,6 +17,7 @@
     "grimoire": "Grimorio",
     "scrolls": "Pergaminos",
     "theOrder": "La Orden",
+    "offerings": "Ofrendas",
     "summon": "Invocar",
     "copyright": "© {year} Bruma Studio · brumastudio.dev",
     "footerNav": "Navegación del pie de página"
@@ -225,6 +227,106 @@
         "title": "Pequeños por diseño.",
         "body": "Cada cliente recibe nuestra atención completa. Sin intermediarios."
       }
+    }
+  },
+  "Offerings": {
+    "meta": {
+      "title": "Ofrendas",
+      "description": "Alcance transparente para trabajo de calidad. Paquetes de desarrollo web desde landing pages hasta plataformas complejas multilingües."
+    },
+    "hero": {
+      "label": "Las Ofrendas",
+      "heading": "Lo Que Ofrecemos",
+      "body": "Alcance transparente para trabajo de calidad. Cada proyecto incluye comunicación directa con las personas que realmente lo construyen."
+    },
+    "tiers": {
+      "parchment": {
+        "name": "El Pergamino",
+        "subtitle": "Lanza rápido, lanza bien",
+        "scope": [
+          "Landing page o sitio de una sola página",
+          "Desarrollo personalizado con Next.js",
+          "Diseño responsivo (mobile-first)",
+          "Configuración básica de Sanity CMS",
+          "Despliegue en Vercel",
+          "1 ronda de revisiones",
+          "30 días de soporte post-lanzamiento"
+        ],
+        "timeline": "2–3 semanas",
+        "cta": "Solicitar un Pergamino"
+      },
+      "tome": {
+        "name": "El Tomo",
+        "subtitle": "La obra completa",
+        "badge": "Más Popular",
+        "scope": [
+          "Sitio multi-página (hasta 8 páginas)",
+          "Desarrollo personalizado Next.js + Sanity CMS",
+          "Diseño UI/UX en Figma",
+          "Modelado y migración de contenido",
+          "Auditoría completa de responsividad + accesibilidad",
+          "2 rondas de revisiones",
+          "Capacitación del equipo en CMS",
+          "60 días de soporte post-lanzamiento",
+          "Mantenimiento mensual disponible"
+        ],
+        "timeline": "4–6 semanas",
+        "cta": "Encargar un Tomo"
+      },
+      "codex": {
+        "name": "El Códice",
+        "subtitle": "Para proyectos complejos y ambiciosos",
+        "scope": [
+          "Todo lo incluido en El Tomo, más:",
+          "Documentación de sistema de diseño",
+          "Implementación bilingüe (EN/ES)",
+          "Integraciones avanzadas (APIs, e-commerce, dashboards)",
+          "Biblioteca de componentes personalizada",
+          "Optimización de rendimiento (Lighthouse 95+)",
+          "Soporte continuo incluido (3 meses)",
+          "Comunicación prioritaria"
+        ],
+        "timeline": "6–10 semanas",
+        "cta": "Encargar un Códice"
+      }
+    },
+    "howItWorks": {
+      "heading": "Cómo Funciona",
+      "body": "Cotizamos por alcance del proyecto, no por hora. Después de una conversación inicial, proporcionamos una propuesta detallada con precio fijo — sin sorpresas, sin cambios de alcance. Cada proyecto incluye propiedad del código fuente, ambiente de staging para revisión y soporte post-lanzamiento."
+    },
+    "faq": {
+      "heading": "Preguntas Frecuentes",
+      "items": [
+        {
+          "question": "¿Qué pasa si mi proyecto no encaja en estos niveles?",
+          "answer": "Son puntos de partida. Diseñaremos una propuesta personalizada según tus necesidades específicas después de nuestra primera conversación."
+        },
+        {
+          "question": "¿Requieren un anticipo?",
+          "answer": "Sí — 30% al inicio, 30% al aprobar el diseño y 40% al entregar. Esto protege a ambas partes."
+        },
+        {
+          "question": "¿Puedo empezar con El Pergamino y escalar después?",
+          "answer": "Por supuesto. Muchos clientes comienzan con un lanzamiento enfocado y expanden a medida que su negocio crece. Construimos pensando en la escalabilidad."
+        },
+        {
+          "question": "¿Trabajan con clientes internacionales?",
+          "answer": "Sí. La mayoría de nuestros clientes están en Estados Unidos y América Latina. Nos comunicamos en inglés y español y trabajamos con diferentes zonas horarias."
+        },
+        {
+          "question": "¿Cuál es su stack tecnológico?",
+          "answer": "Next.js, React, TypeScript, Tailwind CSS, Sanity CMS, WordPress headless y Vercel. Moderno, rápido y mantenible."
+        },
+        {
+          "question": "¿Hacen sitios de WordPress?",
+          "answer": "Construimos sitios headless de WordPress donde WordPress sirve como el backend de contenido y Next.js impulsa el frontend. No construimos sitios tradicionales con temas de WordPress."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "¿Listo para Hablar de Tu Proyecto?",
+      "body": "Cada proyecto comienza con una conversación. Cuéntanos tu visión y crearemos una propuesta.",
+      "button": "Invócanos"
     }
   },
   "Summon": {

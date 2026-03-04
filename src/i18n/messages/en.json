@@ -4,6 +4,7 @@
     "grimoire": "Grimoire",
     "scrolls": "Scrolls",
     "theOrder": "The Order",
+    "offerings": "Offerings",
     "summon": "Summon",
     "startProject": "Start a Project",
     "openMenu": "Open menu",
@@ -16,6 +17,7 @@
     "grimoire": "Grimoire",
     "scrolls": "Scrolls",
     "theOrder": "The Order",
+    "offerings": "Offerings",
     "summon": "Summon",
     "copyright": "© {year} Bruma Studio · brumastudio.dev",
     "footerNav": "Footer navigation"
@@ -225,6 +227,106 @@
         "title": "Small by design.",
         "body": "Every client gets our full attention. No layers, no handoffs."
       }
+    }
+  },
+  "Offerings": {
+    "meta": {
+      "title": "Offerings",
+      "description": "Transparent scope for quality craft. Web development packages from landing pages to complex multi-language platforms."
+    },
+    "hero": {
+      "label": "The Offerings",
+      "heading": "What We Offer",
+      "body": "Transparent scope for quality craft. Every project includes direct communication with the people actually building it."
+    },
+    "tiers": {
+      "parchment": {
+        "name": "The Parchment",
+        "subtitle": "Launch fast, launch right",
+        "scope": [
+          "Landing page or single-page site",
+          "Custom Next.js development",
+          "Responsive design (mobile-first)",
+          "Basic Sanity CMS setup",
+          "Vercel deployment",
+          "1 round of revisions",
+          "30-day post-launch support"
+        ],
+        "timeline": "2–3 weeks",
+        "cta": "Request a Parchment"
+      },
+      "tome": {
+        "name": "The Tome",
+        "subtitle": "The complete build",
+        "badge": "Most Popular",
+        "scope": [
+          "Multi-page site (up to 8 pages)",
+          "Custom Next.js + Sanity CMS development",
+          "UI/UX design in Figma",
+          "Content modeling & migration",
+          "Full responsive + accessibility audit",
+          "2 rounds of revisions",
+          "Team training on CMS",
+          "60-day post-launch support",
+          "Monthly maintenance available"
+        ],
+        "timeline": "4–6 weeks",
+        "cta": "Commission a Tome"
+      },
+      "codex": {
+        "name": "The Codex",
+        "subtitle": "For complex, ambitious projects",
+        "scope": [
+          "Everything in The Tome, plus:",
+          "Design system documentation",
+          "Bilingual (EN/ES) implementation",
+          "Advanced integrations (APIs, e-commerce, dashboards)",
+          "Custom component library",
+          "Performance optimization (Lighthouse 95+)",
+          "Ongoing support retainer included (3 months)",
+          "Priority communication"
+        ],
+        "timeline": "6–10 weeks",
+        "cta": "Commission a Codex"
+      }
+    },
+    "howItWorks": {
+      "heading": "How Pricing Works",
+      "body": "We price by project scope, not by hour. After an initial conversation, we provide a detailed proposal with a fixed price — no surprises, no scope creep. Every project includes source code ownership, staging environment for review, and post-launch support."
+    },
+    "faq": {
+      "heading": "Common Questions",
+      "items": [
+        {
+          "question": "What if my project doesn't fit these tiers?",
+          "answer": "These are starting points. We'll scope a custom proposal based on your specific needs after our first conversation."
+        },
+        {
+          "question": "Do you require a deposit?",
+          "answer": "Yes — 30% upfront to begin, 30% at design approval, and 40% upon delivery. This protects both parties."
+        },
+        {
+          "question": "Can I start with The Parchment and upgrade later?",
+          "answer": "Absolutely. Many clients begin with a focused launch and expand as their business grows. We build with scalability in mind."
+        },
+        {
+          "question": "Do you work with international clients?",
+          "answer": "Yes. Most of our clients are in the US and Latin America. We communicate in English and Spanish and work across time zones."
+        },
+        {
+          "question": "What's your tech stack?",
+          "answer": "Next.js, React, TypeScript, Tailwind CSS, Sanity CMS, headless WordPress, and Vercel. Modern, fast, maintainable."
+        },
+        {
+          "question": "Do you do WordPress sites?",
+          "answer": "We build headless WordPress sites where WordPress serves as the content backend and Next.js powers the frontend. We don't build traditional WordPress theme sites."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Ready to Discuss Your Project?",
+      "body": "Every project starts with a conversation. Tell us about your vision and we'll craft a proposal.",
+      "button": "Summon Us"
     }
   },
   "Summon": {

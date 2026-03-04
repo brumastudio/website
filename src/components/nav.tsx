@@ -10,8 +10,8 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 const navLinks = [
   { href: "/arts" as const, key: "arts" },
   { href: "/grimoire" as const, key: "grimoire" },
-  { href: "/scrolls" as const, key: "scrolls" },
   { href: "/the-order" as const, key: "theOrder" },
+  { href: "/offerings" as const, key: "offerings" },
   { href: "/summon" as const, key: "summon" },
 ];
 

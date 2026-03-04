@@ -8,6 +8,7 @@ const footerLinks = [
   { href: "/grimoire" as const, key: "grimoire" },
   { href: "/scrolls" as const, key: "scrolls" },
   { href: "/the-order" as const, key: "theOrder" },
+  { href: "/offerings" as const, key: "offerings" },
   { href: "/summon" as const, key: "summon" },
 ];
 

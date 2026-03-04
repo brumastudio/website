@@ -30,6 +30,10 @@ export const routing = defineRouting({
       en: "/the-order",
       es: "/la-orden",
     },
+    "/offerings": {
+      en: "/offerings",
+      es: "/ofrendas",
+    },
     "/summon": {
       en: "/summon",
       es: "/invocar",
