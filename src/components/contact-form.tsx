@@ -7,7 +7,7 @@ const projectTypeKeys = ["website", "cms", "design", "other"] as const;
 const budgetRangeKeys = ["under3k", "3kTo5k", "5kTo10k", "over10k", "notSure"] as const;
 
 const inputStyles =
-  "w-full bg-grimoire-surface-elevated border border-grimoire-border rounded-md px-4 py-3 text-grimoire-text font-body text-base md:text-lg leading-relaxed placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 focus:outline-none transition-colors duration-200";
+  "w-full min-h-[44px] bg-grimoire-surface-elevated border border-grimoire-border rounded-md px-4 py-3 text-grimoire-text font-body text-base md:text-lg leading-relaxed placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 focus:outline-none transition-colors duration-200";
 
 const labelStyles =
   "block font-ui text-sm text-grimoire-muted uppercase tracking-wider mb-2";

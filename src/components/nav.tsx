@@ -104,7 +104,7 @@ export function Nav() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-grimoire-text hover:text-grimoire-gold transition-colors"
+            className="md:hidden flex items-center justify-center w-11 h-11 -mr-2 text-grimoire-text hover:text-grimoire-gold transition-colors"
             onClick={openMobile}
             aria-label={t("openMenu")}
           >
@@ -136,7 +136,7 @@ export function Nav() {
             <button
               onClick={closeMobile}
               aria-label={t("closeMenu")}
-              className="text-grimoire-text hover:text-grimoire-gold transition-colors"
+              className="flex items-center justify-center w-11 h-11 -mr-2 text-grimoire-text hover:text-grimoire-gold transition-colors"
             >
               <X className="h-6 w-6" />
             </button>

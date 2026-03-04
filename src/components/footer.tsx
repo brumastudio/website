@@ -44,7 +44,7 @@ export async function Footer() {
 
           {/* Nav links */}
           <nav
-            className="mt-6 flex items-center gap-2 font-ui text-sm text-grimoire-text/70"
+            className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-ui text-sm text-grimoire-text/70"
             aria-label={t("footerNav")}
           >
             {footerLinks.map((link, i) => (
@@ -56,7 +56,7 @@ export async function Footer() {
                 )}
                 <Link
                   href={link.href}
-                  className="hover:text-grimoire-gold transition-colors duration-200"
+                  className="py-1 hover:text-grimoire-gold transition-colors duration-200"
                 >
                   {t(link.key)}
                 </Link>
@@ -70,7 +70,7 @@ export async function Footer() {
           </p>
 
           {/* Social icons */}
-          <div className="mt-6 flex items-center gap-5">
+          <div className="mt-6 flex items-center gap-2">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
@@ -78,7 +78,7 @@ export async function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="text-grimoire-muted/50 hover:text-grimoire-gold hover:opacity-100 transition-all duration-200"
+                className="flex items-center justify-center w-11 h-11 rounded-md text-grimoire-muted/50 hover:text-grimoire-gold hover:opacity-100 transition-all duration-200"
               >
                 <link.icon className="h-5 w-5" />
               </a>

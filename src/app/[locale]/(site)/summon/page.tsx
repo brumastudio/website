@@ -137,7 +137,7 @@ export default async function SummonPage({ params }: Props) {
                 <h3 className="font-ui text-sm font-medium uppercase tracking-wider text-grimoire-muted mb-3">
                   {t("sidebar.social")}
                 </h3>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-1">
                   {socialLinks.map((link) => (
                     <a
                       key={link.label}
@@ -145,7 +145,7 @@ export default async function SummonPage({ params }: Props) {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
-                      className="text-grimoire-muted hover:text-grimoire-gold transition-colors duration-200"
+                      className="flex items-center justify-center w-11 h-11 rounded-md text-grimoire-muted hover:text-grimoire-gold transition-colors duration-200"
                     >
                       <link.icon className="h-5 w-5" />
                     </a>

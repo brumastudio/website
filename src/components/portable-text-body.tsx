@@ -101,7 +101,7 @@ const components: PortableTextComponents = {
             {value.filename}
           </div>
         )}
-        <code className="font-mono text-sm leading-relaxed text-grimoire-text">
+        <code className="font-mono text-xs md:text-sm leading-relaxed text-grimoire-text">
           {value.code}
         </code>
       </pre>

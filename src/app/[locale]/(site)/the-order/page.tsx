@@ -158,7 +158,7 @@ export default async function TheOrderPage({ params }: Props) {
 
                   {/* Social links */}
                   {author.socialLinks && (
-                    <div className="mt-4 flex items-center justify-center gap-3">
+                    <div className="mt-4 flex items-center justify-center gap-1">
                       {(
                         Object.entries(author.socialLinks) as [
                           keyof typeof socialIcons,
@@ -175,7 +175,7 @@ export default async function TheOrderPage({ params }: Props) {
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label={key}
-                              className="text-grimoire-muted hover:text-grimoire-gold transition-colors duration-200"
+                              className="flex items-center justify-center w-10 h-10 rounded-md text-grimoire-muted hover:text-grimoire-gold transition-colors duration-200"
                             >
                               <Icon className="h-4 w-4" />
                             </a>

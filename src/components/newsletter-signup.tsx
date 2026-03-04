@@ -58,7 +58,7 @@ export function NewsletterSignup() {
         {t("body")}
       </p>
 
-      <form onSubmit={handleSubmit} className="mt-6 flex gap-3 max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
         <input
           type="email"
           required
@@ -66,12 +66,12 @@ export function NewsletterSignup() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === "sending"}
-          className="flex-1 bg-grimoire-bg border border-grimoire-border rounded-md px-4 py-2.5 font-ui text-sm text-grimoire-text placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 outline-none transition-colors duration-200 disabled:opacity-50"
+          className="flex-1 bg-grimoire-bg border border-grimoire-border rounded-md px-4 py-3 font-ui text-sm text-grimoire-text placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 outline-none transition-colors duration-200 disabled:opacity-50"
         />
         <button
           type="submit"
           disabled={status === "sending"}
-          className="font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-5 py-2.5 rounded-md hover:bg-grimoire-gold-light active:scale-95 transition-all duration-200 disabled:opacity-50 shrink-0"
+          className="font-ui text-sm font-medium uppercase tracking-wider bg-grimoire-gold text-grimoire-bg px-5 py-3 rounded-md hover:bg-grimoire-gold-light active:scale-95 transition-all duration-200 disabled:opacity-50 sm:shrink-0"
         >
           {status === "sending" ? t("sending") : t("subscribe")}
         </button>

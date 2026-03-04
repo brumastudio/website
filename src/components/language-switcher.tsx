@@ -39,11 +39,11 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-1 font-ui text-sm">
+    <div className="flex items-center font-ui text-sm">
       <button
         onClick={() => switchLocale("en")}
         className={cn(
-          "px-1.5 py-0.5 transition-colors duration-200",
+          "px-2.5 py-2 rounded-md transition-colors duration-200",
           locale === "en"
             ? "text-grimoire-gold font-medium"
             : "text-grimoire-muted hover:text-grimoire-text"
@@ -56,7 +56,7 @@ export function LanguageSwitcher() {
       <button
         onClick={() => switchLocale("es")}
         className={cn(
-          "px-1.5 py-0.5 transition-colors duration-200",
+          "px-2.5 py-2 rounded-md transition-colors duration-200",
           locale === "es"
             ? "text-grimoire-gold font-medium"
             : "text-grimoire-muted hover:text-grimoire-text"

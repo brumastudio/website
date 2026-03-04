@@ -75,7 +75,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
             className="group bg-grimoire-surface border border-grimoire-border rounded-lg overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.2)] hover:border-grimoire-gold/30 hover:shadow-[0_4px_20px_rgba(0,0,0,0.3),0_0_20px_rgba(201,166,105,0.08)] transition-all duration-300 hover:scale-[1.02]"
           >
             {/* Cover image or placeholder */}
-            <div className="relative h-52 border-b border-grimoire-border overflow-hidden">
+            <div className="relative h-40 md:h-52 border-b border-grimoire-border overflow-hidden">
               {project.coverImage ? (
                 <>
                   <FadeImage
