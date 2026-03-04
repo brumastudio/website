@@ -112,6 +112,10 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${cinzel.variable} ${crimsonText.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://cdn.sanity.io" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+      </head>
       <body className="bg-grimoire-bg text-grimoire-text antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}

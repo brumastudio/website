@@ -1,75 +1,42 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.15 * i,
-      duration: 0.6,
-      ease: "easeOut" as const,
-    },
-  }),
-};
 
 /**
- * Hero text content with staggered fade-in animation.
- * Respects prefers-reduced-motion via framer-motion's built-in support.
+ * Hero text content with CSS-only staggered fade-in animation.
+ * Server-rendered for optimal LCP — text is visible in initial HTML.
+ * Respects prefers-reduced-motion via CSS media query.
  */
-export function HeroContent() {
-  const t = useTranslations("Home.hero");
+export async function HeroContent() {
+  const t = await getTranslations("Home.hero");
 
   return (
     <>
-      <motion.h1
-        className="font-display text-5xl md:text-7xl text-grimoire-gold uppercase tracking-wide text-balance"
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={0}
-      >
+      <h1 className="hero-fade font-display text-5xl md:text-7xl text-grimoire-gold uppercase tracking-wide text-balance">
         {t("title")}
-      </motion.h1>
+      </h1>
 
-      <motion.p
-        className="mt-4 font-body text-xl italic text-grimoire-gold-light"
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={1}
+      <p
+        className="hero-fade mt-4 font-body text-xl italic text-grimoire-gold-light"
+        style={{ animationDelay: "150ms" }}
       >
         {t("tagline")}
-      </motion.p>
+      </p>
 
-      <motion.div
-        className="mt-6 h-px w-24 bg-grimoire-gold/40"
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={2}
+      <div
+        className="hero-fade mt-6 h-px w-24 bg-grimoire-gold/40"
+        style={{ animationDelay: "300ms" }}
       />
 
-      <motion.p
-        className="mt-8 max-w-lg font-body text-lg leading-relaxed text-grimoire-text"
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={3}
+      <p
+        className="hero-fade mt-8 max-w-lg font-body text-lg leading-relaxed text-grimoire-text"
+        style={{ animationDelay: "450ms" }}
       >
         {t("body")}
-      </motion.p>
+      </p>
 
-      <motion.div
-        className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
-        variants={fadeUp}
-        initial="hidden"
-        animate="visible"
-        custom={4}
+      <div
+        className="hero-fade mt-10 flex flex-col items-center gap-4 sm:flex-row"
+        style={{ animationDelay: "600ms" }}
       >
         <Link
           href="/summon"
@@ -83,7 +50,7 @@ export function HeroContent() {
         >
           {t("ctaSecondary")}
         </a>
-      </motion.div>
+      </div>
     </>
   );
 }
