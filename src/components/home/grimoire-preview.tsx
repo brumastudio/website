@@ -57,6 +57,7 @@ export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
                       src={urlFor(project.coverImage).width(800).height(400).url()}
                       alt={project.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                     />
                   </div>

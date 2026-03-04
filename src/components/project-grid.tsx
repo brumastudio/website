@@ -82,6 +82,7 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
                     src={urlFor(project.coverImage).width(800).height(416).url()}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-[opacity,transform] duration-300 group-hover:scale-105"
                   />
                   {/* Hover overlay */}
