@@ -11,32 +11,32 @@ export async function HeroContent() {
 
   return (
     <>
-      <h1 className="hero-fade font-display text-5xl md:text-7xl text-grimoire-gold uppercase tracking-wide text-balance">
+      <h1 className="font-display text-5xl md:text-7xl text-grimoire-gold uppercase tracking-wide text-balance">
         {t("title")}
       </h1>
 
       <p
         className="hero-fade mt-4 font-body text-xl italic text-grimoire-gold-light"
-        style={{ animationDelay: "150ms" }}
+        style={{ animationDelay: "100ms" }}
       >
         {t("tagline")}
       </p>
 
       <div
         className="hero-fade mt-6 h-px w-24 bg-grimoire-gold/40"
-        style={{ animationDelay: "300ms" }}
+        style={{ animationDelay: "200ms" }}
       />
 
       <p
         className="hero-fade mt-8 max-w-lg font-body text-lg leading-relaxed text-grimoire-text"
-        style={{ animationDelay: "450ms" }}
+        style={{ animationDelay: "300ms" }}
       >
         {t("body")}
       </p>
 
       <div
         className="hero-fade mt-10 flex flex-col items-center gap-4 sm:flex-row"
-        style={{ animationDelay: "600ms" }}
+        style={{ animationDelay: "400ms" }}
       >
         <Link
           href="/summon"
