@@ -42,6 +42,18 @@ export const routing = defineRouting({
       en: "/summon",
       es: "/invocar",
     },
+    "/privacy": {
+      en: "/privacy",
+      es: "/privacidad",
+    },
+    "/terms": {
+      en: "/terms",
+      es: "/terminos",
+    },
+    "/cookies": {
+      en: "/cookies",
+      es: "/cookies",
+    },
   },
 });
 

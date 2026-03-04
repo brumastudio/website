@@ -22,6 +22,10 @@
     "theRitual": "The Ritual",
     "summon": "Summon",
     "copyright": "© {year} Bruma Studio · brumastudio.dev",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "legalNav": "Legal",
     "footerNav": "Footer navigation"
   },
   "Home": {
@@ -475,6 +479,199 @@
     "titleTemplate": "{title} — Bruma Studio",
     "description": "Bruma Studio is a bilingual digital studio specializing in Next.js, Sanity CMS, and modern web development. Custom websites built with craft and intention.",
     "ogDescription": "Bilingual digital studio specializing in Next.js, Sanity CMS, and modern web development."
+  },
+  "Privacy": {
+    "meta": {
+      "title": "Privacy Policy",
+      "description": "How Bruma Studio collects, uses, and protects your personal information."
+    },
+    "hero": {
+      "label": "Legal",
+      "heading": "Privacy Policy"
+    },
+    "lastUpdated": "Last updated: March 2026",
+    "sections": {
+      "intro": {
+        "heading": "Introduction",
+        "body": "Bruma Studio (\"we,\" \"us,\" or \"our\") operates brumastudio.dev. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or use our services."
+      },
+      "dataCollected": {
+        "heading": "Information We Collect",
+        "body": "We collect information that you voluntarily provide to us through:",
+        "items": [
+          "Contact form: your name, email address, project type, budget range, and project description",
+          "Newsletter signup: your email address",
+          "General browsing: anonymous usage data collected by Vercel Analytics (page views, referrers, device type — no personal identifiers)"
+        ]
+      },
+      "howUsed": {
+        "heading": "How We Use Your Information",
+        "body": "We use the information we collect to:",
+        "items": [
+          "Respond to your project inquiries and provide proposals",
+          "Send newsletter updates if you've subscribed",
+          "Understand how visitors use our website to improve the experience",
+          "Comply with legal obligations"
+        ]
+      },
+      "sharing": {
+        "heading": "Information Sharing",
+        "body": "We do not sell, trade, or rent your personal information to third parties. We may share your information only with service providers that help us operate our business:",
+        "items": [
+          "Vercel — website hosting and analytics",
+          "Sanity — content management system",
+          "Email service provider — for sending newsletter and contact form responses"
+        ]
+      },
+      "cookies": {
+        "heading": "Cookies",
+        "body": "Our website uses only essential cookies required for the site to function properly. We do not use third-party tracking cookies or advertising cookies. For more details, see our Cookie Policy."
+      },
+      "retention": {
+        "heading": "Data Retention",
+        "body": "We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, including to satisfy legal, accounting, or reporting requirements. Contact form submissions are retained for the duration of our business relationship. Newsletter subscriptions remain active until you unsubscribe."
+      },
+      "rights": {
+        "heading": "Your Rights",
+        "body": "You have the right to:",
+        "items": [
+          "Access the personal information we hold about you",
+          "Request correction of inaccurate information",
+          "Request deletion of your personal information",
+          "Unsubscribe from our newsletter at any time",
+          "Opt out of analytics tracking by using browser settings or extensions"
+        ]
+      },
+      "security": {
+        "heading": "Security",
+        "body": "We implement appropriate technical and organizational measures to protect your personal information, including HTTPS encryption, secure hosting on Vercel, input validation, and rate limiting on form submissions."
+      },
+      "children": {
+        "heading": "Children's Privacy",
+        "body": "Our website and services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children."
+      },
+      "changes": {
+        "heading": "Changes to This Policy",
+        "body": "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Continued use of the website after changes constitutes acceptance of the updated policy."
+      },
+      "contact": {
+        "heading": "Contact Us",
+        "body": "If you have questions about this Privacy Policy or wish to exercise your rights, contact us at hello@brumastudio.dev."
+      }
+    }
+  },
+  "Terms": {
+    "meta": {
+      "title": "Terms & Conditions",
+      "description": "Terms and conditions governing the use of Bruma Studio's website and services."
+    },
+    "hero": {
+      "label": "Legal",
+      "heading": "Terms & Conditions"
+    },
+    "lastUpdated": "Last updated: March 2026",
+    "sections": {
+      "intro": {
+        "heading": "Introduction",
+        "body": "These Terms & Conditions govern your use of the Bruma Studio website (brumastudio.dev) and the services we provide. By accessing or using our website, you agree to these terms."
+      },
+      "services": {
+        "heading": "Services",
+        "body": "Bruma Studio provides web development, CMS implementation, UI/UX design, and related digital services. The specific scope, deliverables, and timeline for each project are defined in individual project proposals and agreements."
+      },
+      "ip": {
+        "heading": "Intellectual Property",
+        "body": "Upon full payment, clients receive complete ownership of the source code and custom assets created for their project. Bruma Studio retains the right to showcase completed work in our portfolio unless otherwise agreed in writing. Third-party tools, libraries, and frameworks used in projects remain subject to their respective open-source licenses."
+      },
+      "payment": {
+        "heading": "Payment Terms",
+        "body": "Our standard payment structure is 30% upfront to begin work, 30% upon design approval, and 40% upon project delivery. Specific payment terms are outlined in each project proposal. All payments are non-refundable once the corresponding project phase has been completed and delivered."
+      },
+      "clientResponsibilities": {
+        "heading": "Client Responsibilities",
+        "body": "Clients are responsible for providing content, feedback, and approvals in a timely manner as outlined in the project timeline. Delays in client-side deliverables may affect the project timeline and delivery date."
+      },
+      "limitation": {
+        "heading": "Limitation of Liability",
+        "body": "Bruma Studio's total liability for any claim arising from our services shall not exceed the total amount paid by the client for the specific project in question. We are not liable for indirect, incidental, or consequential damages, including lost profits or business interruption."
+      },
+      "warranty": {
+        "heading": "Warranty & Support",
+        "body": "We provide post-launch support as specified in the project scope (30, 60, or 90 days depending on the tier). During this period, we address bugs and technical issues at no additional cost. Feature additions or scope changes after delivery are billed separately."
+      },
+      "termination": {
+        "heading": "Termination",
+        "body": "Either party may terminate a project agreement with written notice. In the event of termination, the client pays for all work completed up to the termination date. Completed deliverables will be transferred to the client upon payment."
+      },
+      "website": {
+        "heading": "Website Use",
+        "body": "You may use our website for lawful purposes only. You agree not to attempt unauthorized access to any part of the website, including the Sanity Studio administrative interface, or to interfere with the website's operation."
+      },
+      "governing": {
+        "heading": "Governing Law",
+        "body": "These terms are governed by and construed in accordance with the laws of Mexico. Any disputes arising from these terms or our services shall be resolved through good-faith negotiation first, and if necessary, through the courts of Tijuana, Baja California, Mexico."
+      },
+      "changes": {
+        "heading": "Changes to These Terms",
+        "body": "We reserve the right to update these Terms & Conditions at any time. Changes will be posted on this page with an updated revision date. Continued use of the website after changes constitutes acceptance."
+      },
+      "contact": {
+        "heading": "Contact Us",
+        "body": "For questions about these terms, contact us at hello@brumastudio.dev."
+      }
+    }
+  },
+  "Cookies": {
+    "meta": {
+      "title": "Cookie Policy",
+      "description": "How Bruma Studio uses cookies and similar technologies on our website."
+    },
+    "hero": {
+      "label": "Legal",
+      "heading": "Cookie Policy"
+    },
+    "lastUpdated": "Last updated: March 2026",
+    "sections": {
+      "intro": {
+        "heading": "What Are Cookies",
+        "body": "Cookies are small text files stored on your device when you visit a website. They help websites function properly and can provide information to site owners about how the site is being used."
+      },
+      "howWeUse": {
+        "heading": "How We Use Cookies",
+        "body": "Bruma Studio uses only essential cookies necessary for the website to function. We do not use advertising cookies, social media tracking cookies, or third-party marketing cookies."
+      },
+      "types": {
+        "heading": "Cookies We Use",
+        "essential": {
+          "heading": "Essential Cookies",
+          "body": "These cookies are necessary for the website to function and cannot be switched off. They include:",
+          "items": [
+            "Locale preference — remembers your language selection (English or Spanish)",
+            "Session cookies — required for form submissions and site functionality"
+          ]
+        },
+        "analytics": {
+          "heading": "Analytics",
+          "body": "We use Vercel Analytics, which collects anonymous, aggregated usage data (page views, referrers, country, device type) without setting cookies or collecting personal identifiers. This data helps us understand how visitors use our site."
+        }
+      },
+      "thirdParty": {
+        "heading": "Third-Party Cookies",
+        "body": "Our website does not set third-party tracking cookies. The Sanity Studio interface (accessible at /studio) may set its own session cookies for authenticated users, but these are limited to the studio administration area."
+      },
+      "managing": {
+        "heading": "Managing Cookies",
+        "body": "You can control and delete cookies through your browser settings. Most browsers allow you to block or delete cookies. However, blocking essential cookies may affect website functionality. Consult your browser's help documentation for instructions on managing cookies."
+      },
+      "changes": {
+        "heading": "Changes to This Policy",
+        "body": "We may update this Cookie Policy as our practices or technology changes. Updates will be posted on this page with a revised date."
+      },
+      "contact": {
+        "heading": "Contact Us",
+        "body": "If you have questions about our use of cookies, contact us at hello@brumastudio.dev."
+      }
+    }
   },
   "Common": {
     "skipToContent": "Skip to content"

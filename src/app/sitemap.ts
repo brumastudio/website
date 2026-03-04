@@ -19,6 +19,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/offerings",
     "/the-ritual",
     "/summon",
+    "/privacy",
+    "/terms",
+    "/cookies",
   ];
 
   const locales = ["en", "es"];
@@ -31,6 +34,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/offerings": { en: "/offerings", es: "/ofrendas" },
     "/the-ritual": { en: "/the-ritual", es: "/el-ritual" },
     "/summon": { en: "/summon", es: "/invocar" },
+    "/privacy": { en: "/privacy", es: "/privacidad" },
+    "/terms": { en: "/terms", es: "/terminos" },
+    "/cookies": { en: "/cookies", es: "/cookies" },
   };
 
   const entries: MetadataRoute.Sitemap = [];

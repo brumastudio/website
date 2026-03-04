@@ -22,6 +22,10 @@
     "theRitual": "El Ritual",
     "summon": "Invocar",
     "copyright": "© {year} Bruma Studio · brumastudio.dev",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "cookies": "Cookies",
+    "legalNav": "Legal",
     "footerNav": "Navegación del pie de página"
   },
   "Home": {
@@ -475,6 +479,199 @@
     "titleTemplate": "{title} — Bruma Studio",
     "description": "Bruma Studio es un estudio digital bilingüe especializado en Next.js, Sanity CMS y desarrollo web moderno. Sitios web personalizados construidos con amor a nuestro oficio.",
     "ogDescription": "Estudio digital bilingüe especializado en Next.js, Sanity CMS y desarrollo web moderno."
+  },
+  "Privacy": {
+    "meta": {
+      "title": "Política de Privacidad",
+      "description": "Cómo Bruma Studio recopila, usa y protege tu información personal."
+    },
+    "hero": {
+      "label": "Legal",
+      "heading": "Política de Privacidad"
+    },
+    "lastUpdated": "Última actualización: marzo 2026",
+    "sections": {
+      "intro": {
+        "heading": "Introducción",
+        "body": "Bruma Studio (\"nosotros\" o \"nuestro\") opera brumastudio.dev. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tu información personal cuando visitas nuestro sitio web o utilizas nuestros servicios."
+      },
+      "dataCollected": {
+        "heading": "Información Que Recopilamos",
+        "body": "Recopilamos información que proporcionas voluntariamente a través de:",
+        "items": [
+          "Formulario de contacto: tu nombre, correo electrónico, tipo de proyecto, rango de presupuesto y descripción del proyecto",
+          "Suscripción al newsletter: tu correo electrónico",
+          "Navegación general: datos de uso anónimos recopilados por Vercel Analytics (páginas vistas, referentes, tipo de dispositivo — sin identificadores personales)"
+        ]
+      },
+      "howUsed": {
+        "heading": "Cómo Usamos Tu Información",
+        "body": "Usamos la información que recopilamos para:",
+        "items": [
+          "Responder a tus consultas de proyectos y proporcionar propuestas",
+          "Enviar actualizaciones del newsletter si te has suscrito",
+          "Comprender cómo los visitantes usan nuestro sitio web para mejorar la experiencia",
+          "Cumplir con obligaciones legales"
+        ]
+      },
+      "sharing": {
+        "heading": "Compartir Información",
+        "body": "No vendemos, intercambiamos ni alquilamos tu información personal a terceros. Solo compartimos tu información con proveedores de servicios que nos ayudan a operar nuestro negocio:",
+        "items": [
+          "Vercel — hosting y analítica del sitio web",
+          "Sanity — sistema de gestión de contenido",
+          "Proveedor de correo electrónico — para enviar newsletter y respuestas del formulario de contacto"
+        ]
+      },
+      "cookies": {
+        "heading": "Cookies",
+        "body": "Nuestro sitio web utiliza solo cookies esenciales necesarias para que el sitio funcione correctamente. No usamos cookies de rastreo de terceros ni cookies publicitarias. Para más detalles, consulta nuestra Política de Cookies."
+      },
+      "retention": {
+        "heading": "Retención de Datos",
+        "body": "Retenemos tu información personal solo durante el tiempo necesario para cumplir con los fines para los que fue recopilada, incluyendo requisitos legales, contables o de informes. Los envíos del formulario de contacto se retienen durante la duración de nuestra relación comercial. Las suscripciones al newsletter permanecen activas hasta que canceles tu suscripción."
+      },
+      "rights": {
+        "heading": "Tus Derechos",
+        "body": "Tienes derecho a:",
+        "items": [
+          "Acceder a la información personal que tenemos sobre ti",
+          "Solicitar la corrección de información inexacta",
+          "Solicitar la eliminación de tu información personal",
+          "Cancelar tu suscripción al newsletter en cualquier momento",
+          "Desactivar el rastreo analítico mediante la configuración de tu navegador o extensiones"
+        ]
+      },
+      "security": {
+        "heading": "Seguridad",
+        "body": "Implementamos medidas técnicas y organizativas apropiadas para proteger tu información personal, incluyendo cifrado HTTPS, hosting seguro en Vercel, validación de entradas y limitación de frecuencia en envíos de formularios."
+      },
+      "children": {
+        "heading": "Privacidad de Menores",
+        "body": "Nuestro sitio web y servicios no están dirigidos a personas menores de 16 años. No recopilamos conscientemente información personal de menores."
+      },
+      "changes": {
+        "heading": "Cambios a Esta Política",
+        "body": "Podemos actualizar esta Política de Privacidad de vez en cuando. Los cambios se publicarán en esta página con una fecha de revisión actualizada. El uso continuado del sitio web después de los cambios constituye la aceptación de la política actualizada."
+      },
+      "contact": {
+        "heading": "Contáctanos",
+        "body": "Si tienes preguntas sobre esta Política de Privacidad o deseas ejercer tus derechos, contáctanos en hello@brumastudio.dev."
+      }
+    }
+  },
+  "Terms": {
+    "meta": {
+      "title": "Términos y Condiciones",
+      "description": "Términos y condiciones que rigen el uso del sitio web y servicios de Bruma Studio."
+    },
+    "hero": {
+      "label": "Legal",
+      "heading": "Términos y Condiciones"
+    },
+    "lastUpdated": "Última actualización: marzo 2026",
+    "sections": {
+      "intro": {
+        "heading": "Introducción",
+        "body": "Estos Términos y Condiciones rigen tu uso del sitio web de Bruma Studio (brumastudio.dev) y los servicios que proporcionamos. Al acceder o usar nuestro sitio web, aceptas estos términos."
+      },
+      "services": {
+        "heading": "Servicios",
+        "body": "Bruma Studio proporciona desarrollo web, implementación de CMS, diseño UI/UX y servicios digitales relacionados. El alcance específico, entregables y cronograma de cada proyecto se definen en propuestas y acuerdos individuales."
+      },
+      "ip": {
+        "heading": "Propiedad Intelectual",
+        "body": "Tras el pago completo, los clientes reciben la propiedad total del código fuente y los activos personalizados creados para su proyecto. Bruma Studio se reserva el derecho de mostrar el trabajo completado en nuestro portafolio a menos que se acuerde lo contrario por escrito. Las herramientas, bibliotecas y frameworks de terceros utilizados en los proyectos permanecen sujetos a sus respectivas licencias de código abierto."
+      },
+      "payment": {
+        "heading": "Términos de Pago",
+        "body": "Nuestra estructura de pago estándar es 30% por adelantado para iniciar, 30% al aprobar el diseño y 40% al entregar el proyecto. Los términos de pago específicos se detallan en cada propuesta de proyecto. Todos los pagos no son reembolsables una vez que la fase correspondiente del proyecto ha sido completada y entregada."
+      },
+      "clientResponsibilities": {
+        "heading": "Responsabilidades del Cliente",
+        "body": "Los clientes son responsables de proporcionar contenido, retroalimentación y aprobaciones de manera oportuna según lo establecido en el cronograma del proyecto. Los retrasos en los entregables del lado del cliente pueden afectar el cronograma y la fecha de entrega del proyecto."
+      },
+      "limitation": {
+        "heading": "Limitación de Responsabilidad",
+        "body": "La responsabilidad total de Bruma Studio por cualquier reclamo derivado de nuestros servicios no excederá el monto total pagado por el cliente por el proyecto específico en cuestión. No somos responsables por daños indirectos, incidentales o consecuentes, incluyendo pérdida de ganancias o interrupción del negocio."
+      },
+      "warranty": {
+        "heading": "Garantía y Soporte",
+        "body": "Proporcionamos soporte post-lanzamiento según lo especificado en el alcance del proyecto (30, 60 o 90 días dependiendo del nivel). Durante este período, abordamos errores y problemas técnicos sin costo adicional. Las adiciones de funcionalidades o cambios de alcance después de la entrega se facturan por separado."
+      },
+      "termination": {
+        "heading": "Terminación",
+        "body": "Cualquiera de las partes puede terminar un acuerdo de proyecto con aviso por escrito. En caso de terminación, el cliente paga por todo el trabajo completado hasta la fecha de terminación. Los entregables completados se transferirán al cliente tras el pago."
+      },
+      "website": {
+        "heading": "Uso del Sitio Web",
+        "body": "Puedes usar nuestro sitio web solo para fines legales. Aceptas no intentar acceso no autorizado a ninguna parte del sitio web, incluyendo la interfaz administrativa de Sanity Studio, ni interferir con el funcionamiento del sitio."
+      },
+      "governing": {
+        "heading": "Ley Aplicable",
+        "body": "Estos términos se rigen e interpretan de acuerdo con las leyes de México. Cualquier disputa derivada de estos términos o nuestros servicios se resolverá primero mediante negociación de buena fe y, si es necesario, a través de los tribunales de Tijuana, Baja California, México."
+      },
+      "changes": {
+        "heading": "Cambios a Estos Términos",
+        "body": "Nos reservamos el derecho de actualizar estos Términos y Condiciones en cualquier momento. Los cambios se publicarán en esta página con una fecha de revisión actualizada. El uso continuado del sitio web después de los cambios constituye la aceptación."
+      },
+      "contact": {
+        "heading": "Contáctanos",
+        "body": "Para preguntas sobre estos términos, contáctanos en hello@brumastudio.dev."
+      }
+    }
+  },
+  "Cookies": {
+    "meta": {
+      "title": "Política de Cookies",
+      "description": "Cómo Bruma Studio usa cookies y tecnologías similares en nuestro sitio web."
+    },
+    "hero": {
+      "label": "Legal",
+      "heading": "Política de Cookies"
+    },
+    "lastUpdated": "Última actualización: marzo 2026",
+    "sections": {
+      "intro": {
+        "heading": "Qué Son las Cookies",
+        "body": "Las cookies son pequeños archivos de texto almacenados en tu dispositivo cuando visitas un sitio web. Ayudan a que los sitios web funcionen correctamente y pueden proporcionar información a los propietarios del sitio sobre cómo se utiliza."
+      },
+      "howWeUse": {
+        "heading": "Cómo Usamos las Cookies",
+        "body": "Bruma Studio utiliza solo cookies esenciales necesarias para que el sitio web funcione. No usamos cookies publicitarias, cookies de rastreo de redes sociales ni cookies de marketing de terceros."
+      },
+      "types": {
+        "heading": "Cookies Que Usamos",
+        "essential": {
+          "heading": "Cookies Esenciales",
+          "body": "Estas cookies son necesarias para que el sitio web funcione y no se pueden desactivar. Incluyen:",
+          "items": [
+            "Preferencia de idioma — recuerda tu selección de idioma (inglés o español)",
+            "Cookies de sesión — necesarias para envíos de formularios y funcionalidad del sitio"
+          ]
+        },
+        "analytics": {
+          "heading": "Analítica",
+          "body": "Usamos Vercel Analytics, que recopila datos de uso anónimos y agregados (páginas vistas, referentes, país, tipo de dispositivo) sin establecer cookies ni recopilar identificadores personales. Estos datos nos ayudan a comprender cómo los visitantes usan nuestro sitio."
+        }
+      },
+      "thirdParty": {
+        "heading": "Cookies de Terceros",
+        "body": "Nuestro sitio web no establece cookies de rastreo de terceros. La interfaz de Sanity Studio (accesible en /studio) puede establecer sus propias cookies de sesión para usuarios autenticados, pero estas se limitan al área de administración del studio."
+      },
+      "managing": {
+        "heading": "Gestión de Cookies",
+        "body": "Puedes controlar y eliminar cookies a través de la configuración de tu navegador. La mayoría de los navegadores te permiten bloquear o eliminar cookies. Sin embargo, bloquear cookies esenciales puede afectar la funcionalidad del sitio web. Consulta la documentación de ayuda de tu navegador para instrucciones sobre la gestión de cookies."
+      },
+      "changes": {
+        "heading": "Cambios a Esta Política",
+        "body": "Podemos actualizar esta Política de Cookies a medida que nuestras prácticas o tecnología cambien. Las actualizaciones se publicarán en esta página con una fecha revisada."
+      },
+      "contact": {
+        "heading": "Contáctanos",
+        "body": "Si tienes preguntas sobre nuestro uso de cookies, contáctanos en hello@brumastudio.dev."
+      }
+    }
   },
   "Common": {
     "skipToContent": "Ir al contenido"

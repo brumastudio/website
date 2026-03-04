@@ -71,6 +71,24 @@ export async function Footer() {
             {t("copyright", { year: new Date().getFullYear() })}
           </p>
 
+          {/* Legal links */}
+          <nav
+            className="mt-3 flex items-center justify-center gap-x-2 font-ui text-xs text-grimoire-muted/60"
+            aria-label={t("legalNav")}
+          >
+            <Link href="/privacy" className="hover:text-grimoire-gold transition-colors duration-200">
+              {t("privacy")}
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/terms" className="hover:text-grimoire-gold transition-colors duration-200">
+              {t("terms")}
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/cookies" className="hover:text-grimoire-gold transition-colors duration-200">
+              {t("cookies")}
+            </Link>
+          </nav>
+
           {/* Social icons */}
           <div className="mt-6 flex items-center gap-2">
             {socialLinks.map((link) => (

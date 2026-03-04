@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { useState, type FormEvent } from "react";
 
 const projectTypeKeys = ["website", "cms", "design", "other"] as const;
-const budgetRangeKeys = ["under3k", "3kTo5k", "5kTo10k", "over10k", "notSure"] as const;
 
 const inputStyles =
   "w-full min-h-[44px] bg-grimoire-surface-elevated border border-grimoire-border rounded-md px-4 py-3 text-grimoire-text font-body text-base md:text-lg leading-relaxed placeholder:text-grimoire-muted focus:border-grimoire-gold focus:ring-1 focus:ring-grimoire-gold/50 focus:outline-none transition-colors duration-200";
@@ -27,7 +26,6 @@ export function ContactForm() {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       projectType: (form.elements.namedItem("projectType") as HTMLSelectElement).value,
-      budget: (form.elements.namedItem("budget") as HTMLSelectElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
 
@@ -112,34 +110,6 @@ export function ContactForm() {
             {projectTypeKeys.map((key) => (
               <option key={key} value={key}>
                 {t(`projectTypes.${key}`)}
-              </option>
-            ))}
-          </select>
-          <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-grimoire-muted">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="budget" className={labelStyles}>
-          {t("budgetLabel")}
-        </label>
-        <div className="relative">
-          <select
-            id="budget"
-            name="budget"
-            className={inputStyles + " appearance-none pr-10"}
-            defaultValue=""
-          >
-            <option value="" disabled>
-              {t("budgetPlaceholder")}
-            </option>
-            {budgetRangeKeys.map((key) => (
-              <option key={key} value={key}>
-                {t(`budgetRanges.${key}`)}
               </option>
             ))}
           </select>

@@ -94,7 +94,7 @@ export default async function TheRitualPage({ params }: Props) {
                       {deliverables.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <Check className="h-4 w-4 text-grimoire-gold shrink-0 mt-0.5" />
-                          <span className="font-body text-sm leading-relaxed text-grimoire-text/70">
+                          <span className="font-body text-base leading-relaxed text-grimoire-text/80">
                             {item}
                           </span>
                         </li>
