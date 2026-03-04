@@ -41,16 +41,22 @@ const components: PortableTextComponents = {
         {children}
       </code>
     ),
-    link: ({ children, value }) => (
-      <a
-        href={value?.href}
-        target={value?.href?.startsWith("http") ? "_blank" : undefined}
-        rel={value?.href?.startsWith("http") ? "noopener noreferrer" : undefined}
-        className="text-grimoire-rune-soft underline-offset-2 hover:underline transition-colors duration-200"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ children, value }) => {
+      const href = value?.href || "";
+      // Block dangerous protocols
+      if (/^(javascript|data|vbscript):/i.test(href)) return <>{children}</>;
+      const isExternal = href.startsWith("http");
+      return (
+        <a
+          href={href}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="text-grimoire-rune-soft underline-offset-2 hover:underline transition-colors duration-200"
+        >
+          {children}
+        </a>
+      );
+    },
   },
   list: {
     bullet: ({ children }) => (
