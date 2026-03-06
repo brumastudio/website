@@ -28,6 +28,7 @@ export interface Project {
   slug: SanitySlug;
   description?: string;
   body?: PortableTextBlock[];
+  bodyEs?: PortableTextBlock[];
   coverImage?: SanityImage;
   tags?: string[];
   techStack?: string[];

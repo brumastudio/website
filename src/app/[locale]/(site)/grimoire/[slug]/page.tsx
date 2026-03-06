@@ -139,13 +139,16 @@ export default async function ProjectPage({ params }: Props) {
         <div className="mx-auto max-w-6xl grid gap-12 md:grid-cols-[1fr_280px]">
           {/* Body */}
           <div className="min-w-0">
-            {project.body && project.body.length > 0 ? (
-              <PortableTextBody value={project.body} />
-            ) : (
-              <p className="font-body text-lg leading-relaxed text-grimoire-muted italic">
-                {t("caseStudyComingSoon")}
-              </p>
-            )}
+            {(() => {
+              const body = locale === "es" && rawProject.bodyEs?.length ? rawProject.bodyEs : project.body;
+              return body && body.length > 0 ? (
+                <PortableTextBody value={body} />
+              ) : (
+                <p className="font-body text-lg leading-relaxed text-grimoire-muted italic">
+                  {t("caseStudyComingSoon")}
+                </p>
+              );
+            })()}
           </div>
 
           {/* Sidebar */}

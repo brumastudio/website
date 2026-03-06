@@ -51,6 +51,32 @@ export const project = defineType({
       ],
     }),
     defineField({
+      name: "bodyEs",
+      title: "Body (Spanish)",
+      type: "array",
+      description:
+        "Spanish version of the body content. Falls back to English if empty.",
+      of: [
+        { type: "block" },
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "alt",
+              title: "Alt Text",
+              type: "string",
+            },
+            {
+              name: "caption",
+              title: "Caption",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: "coverImage",
       title: "Cover Image",
       type: "image",

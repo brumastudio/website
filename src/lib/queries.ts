@@ -39,6 +39,7 @@ export const projectBySlugQuery = groq`
     slug,
     description,
     body,
+    bodyEs,
     coverImage,
     tags,
     techStack,
