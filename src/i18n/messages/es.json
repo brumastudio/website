@@ -709,6 +709,11 @@
         "title": "Verdant Press",
         "description": "Plataforma editorial con CMS para una editorial independiente, construida para velocidad, accesibilidad y una experiencia de lectura impecable.",
         "timeline": "4 semanas"
+      },
+      "matico": {
+        "title": "Matico",
+        "description": "Plataforma B2B para un proveedor de productos frescos de Baja California — con catálogo de productos, precios personalizados por cliente y un panel de administración completo.",
+        "timeline": "6 semanas"
       }
     },
     "authors": {
@@ -733,9 +738,13 @@
     },
     "tags": {
       "Web Development": "Desarrollo Web",
+      "Web Design": "Diseño Web",
       "CMS": "CMS",
       "Design": "Diseño",
-      "Bilingual": "Bilingüe"
+      "Bilingual": "Bilingüe",
+      "B2B Platform": "Plataforma B2B",
+      "E-Commerce": "E-Commerce",
+      "Dashboard": "Dashboard"
     }
   }
 }

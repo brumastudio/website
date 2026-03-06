@@ -709,6 +709,11 @@
         "title": "Verdant Press",
         "description": "A content-managed editorial platform for an independent publisher, built for speed, accessibility, and beautiful long-form reading.",
         "timeline": "4 weeks"
+      },
+      "matico": {
+        "title": "Matico",
+        "description": "B2B platform for a fresh produce supplier from Baja California — featuring a product catalog, per-client custom pricing, and a full admin dashboard.",
+        "timeline": "6 weeks"
       }
     },
     "authors": {
@@ -733,9 +738,13 @@
     },
     "tags": {
       "Web Development": "Web Development",
+      "Web Design": "Web Design",
       "CMS": "CMS",
       "Design": "Design",
-      "Bilingual": "Bilingual"
+      "Bilingual": "Bilingual",
+      "B2B Platform": "B2B Platform",
+      "E-Commerce": "E-Commerce",
+      "Dashboard": "Dashboard"
     }
   }
 }
