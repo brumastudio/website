@@ -128,6 +128,26 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
             </div>
           </Link>
         ))}
+
+        {/* Coming-soon placeholder card */}
+        {filtered.length > 0 && (
+          <div
+            className="flex flex-col bg-grimoire-surface/40 border border-dashed border-grimoire-border/70 rounded-lg overflow-hidden"
+            aria-hidden="false"
+          >
+            <div className="relative h-40 md:h-52 border-b border-dashed border-grimoire-border/70 flex items-center justify-center">
+              <Sparkles className="h-10 w-10 text-grimoire-gold/40" />
+            </div>
+            <div className="flex flex-1 flex-col items-center justify-center p-6 md:p-8 text-center">
+              <h3 className="font-display text-xl uppercase tracking-wide text-grimoire-gold/70">
+                {t("comingSoonTitle")}
+              </h3>
+              <p className="mt-3 max-w-sm font-body text-base md:text-lg leading-relaxed text-grimoire-muted italic">
+                {t("moreComingSoon")}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Empty state */}
@@ -138,13 +158,6 @@ export function ProjectGrid({ projects, allTags }: ProjectGridProps) {
             {t("emptyState")}
           </p>
         </div>
-      )}
-
-      {/* Footer note if few projects */}
-      {projects.length < 4 && projects.length > 0 && (
-        <p className="mt-12 text-center font-body text-sm italic text-grimoire-muted">
-          {t("moreComingSoon")}
-        </p>
       )}
     </>
   );

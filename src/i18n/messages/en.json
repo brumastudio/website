@@ -479,6 +479,7 @@
     "all": "All",
     "viewTome": "View Tome →",
     "emptyState": "No projects match this filter yet.",
+    "comingSoonTitle": "More tomes in progress",
     "moreComingSoon": "More spells are in progress. Check back soon."
   },
   "NotFound": {
