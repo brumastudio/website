@@ -727,6 +727,11 @@
         "title": "Matico",
         "description": "B2B platform for a fresh produce supplier from Baja California — featuring a product catalog, per-client custom pricing, and a full admin dashboard.",
         "timeline": "6 weeks"
+      },
+      "cantera-bjj": {
+        "title": "Cantera BJJ",
+        "description": "Landing page for a Brazilian Jiu-Jitsu academy in Tijuana — schedules, pricing, gallery, and pre-registration on one page.",
+        "timeline": "~4 weeks"
       }
     },
     "authors": {
@@ -757,7 +762,11 @@
       "Bilingual": "Bilingual",
       "B2B Platform": "B2B Platform",
       "E-Commerce": "E-Commerce",
-      "Dashboard": "Dashboard"
+      "Dashboard": "Dashboard",
+      "Local Business": "Local Business",
+      "Fitness": "Fitness",
+      "Marketing Site": "Marketing Site",
+      "Landing Page": "Landing Page"
     }
   }
 }
