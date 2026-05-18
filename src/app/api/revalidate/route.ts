@@ -17,6 +17,8 @@ const PATHS_BY_TYPE: Record<string, string[]> = {
   author: ["/en/the-order", "/es/la-orden"],
   siteSettings: ["/en/summon", "/es/invocar"],
   prospectOfferings: [
+    "/en/offerings",
+    "/es/ofrendas",
     "/en/offerings-prospect",
     "/es/ofrendas-prospecto",
   ],
