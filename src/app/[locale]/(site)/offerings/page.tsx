@@ -161,12 +161,12 @@ export default async function OfferingsPage({ params }: Props) {
                           <Check className="h-4 w-4 text-grimoire-gold shrink-0 mt-1" />
                           <div className="flex-1">
                             {bTitle && (
-                              <p className="font-ui text-xs font-semibold uppercase tracking-wider text-grimoire-text">
+                              <p className="font-ui text-sm font-semibold uppercase tracking-wider text-grimoire-text">
                                 {bTitle}
                               </p>
                             )}
                             {bDesc && (
-                              <p className="mt-1 font-body text-sm leading-relaxed text-grimoire-text/75">
+                              <p className="mt-1.5 font-body text-base leading-relaxed text-grimoire-text/80">
                                 {bDesc}
                               </p>
                             )}
@@ -180,7 +180,7 @@ export default async function OfferingsPage({ params }: Props) {
                   {duration && (
                     <div className="mt-6 flex items-center gap-2 text-grimoire-muted">
                       <Clock className="h-4 w-4" />
-                      <span className="font-ui text-sm">{duration}</span>
+                      <span className="font-ui text-base">{duration}</span>
                     </div>
                   )}
 
