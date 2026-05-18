@@ -732,6 +732,11 @@
         "title": "Cantera BJJ",
         "description": "Landing page for a Brazilian Jiu-Jitsu academy in Tijuana — schedules, pricing, gallery, and pre-registration on one page.",
         "timeline": "~4 weeks"
+      },
+      "contenedores-b": {
+        "title": "Contenedores B",
+        "description": "Landing page for a Baja California shipping-container vendor — product specs, transport pricing, and a serverless contact form.",
+        "timeline": "~3 weeks"
       }
     },
     "authors": {
@@ -766,7 +771,8 @@
       "Local Business": "Local Business",
       "Fitness": "Fitness",
       "Marketing Site": "Marketing Site",
-      "Landing Page": "Landing Page"
+      "Landing Page": "Landing Page",
+      "Mexico": "Mexico"
     }
   }
 }
