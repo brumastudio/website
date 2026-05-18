@@ -101,6 +101,25 @@ export async function GrimoirePreview({ projects }: GrimoirePreviewProps) {
 
             return <StaggerItem key={project.title}>{card}</StaggerItem>;
           })}
+
+          {/* Coming-soon placeholder card */}
+          {items.length > 0 && (
+            <StaggerItem>
+              <div className="flex flex-col bg-grimoire-surface/40 border border-dashed border-grimoire-border/70 rounded-lg overflow-hidden h-full">
+                <div className="relative h-48 border-b border-dashed border-grimoire-border/70 flex items-center justify-center">
+                  <Sparkles className="h-10 w-10 text-grimoire-gold/40" />
+                </div>
+                <div className="flex flex-1 flex-col items-center justify-center p-6 md:p-8 text-center">
+                  <h3 className="font-display text-xl uppercase tracking-wide text-grimoire-gold/70">
+                    {t("comingSoonTitle")}
+                  </h3>
+                  <p className="mt-3 max-w-sm font-body text-base md:text-lg leading-relaxed text-grimoire-muted italic">
+                    {t("comingSoonBody")}
+                  </p>
+                </div>
+              </div>
+            </StaggerItem>
+          )}
         </StaggerContainer>
 
         <ScrollReveal>
