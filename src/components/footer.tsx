@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
 import { GoldDivider } from "@/components/gold-divider";
 
 const footerLinks = [
@@ -11,13 +10,6 @@ const footerLinks = [
   { href: "/scrolls" as const, key: "scrolls" },
   { href: "/the-order" as const, key: "theOrder" },
   { href: "/summon" as const, key: "summon" },
-];
-
-const socialLinks = [
-  { href: "https://github.com/brumastudio", label: "GitHub", icon: Github },
-  { href: "https://x.com/brumastudio", label: "X", icon: Twitter },
-  { href: "https://linkedin.com/company/brumastudio", label: "LinkedIn", icon: Linkedin },
-  { href: "https://instagram.com/brumastudio", label: "Instagram", icon: Instagram },
 ];
 
 export async function Footer() {
@@ -89,21 +81,6 @@ export async function Footer() {
             </Link>
           </nav>
 
-          {/* Social icons */}
-          <div className="mt-6 flex items-center gap-2">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className="flex items-center justify-center w-11 h-11 rounded-md text-grimoire-muted/50 hover:text-grimoire-gold hover:opacity-100 transition-all duration-200"
-              >
-                <link.icon className="h-5 w-5" />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

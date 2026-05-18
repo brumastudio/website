@@ -7,7 +7,6 @@ import { postBySlugQuery, postSlugsQuery } from "@/lib/queries";
 import { PortableTextBody } from "@/components/portable-text-body";
 import { FadeImage } from "@/components/fade-image";
 import { GoldDivider } from "@/components/gold-divider";
-import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { estimateReadingTime, formatDate, formatCategory } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
@@ -192,11 +191,6 @@ export default async function ScrollPage({ params }: Props) {
               </div>
             </div>
           )}
-          {/* Newsletter CTA */}
-          <div className="mt-16">
-            <GoldDivider className="mb-12" />
-            <NewsletterSignup />
-          </div>
         </div>
       </article>
     </>

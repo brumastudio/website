@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Github, Twitter, Linkedin, Instagram, Mail, MapPin, Clock } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ContactForm } from "@/components/contact-form";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/scroll-reveal";
@@ -29,15 +29,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const fallbackSettings: SiteSettings = {
-  contactEmail: "hello@brumastudio.dev",
   location: "Tijuana, MX — serving clients worldwide",
+  locationEs: "Tijuana, MX — clientes en todo el mundo",
   responseTime: "Within 24 hours on business days",
-  socialLinks: {
-    github: "https://github.com/brumastudio",
-    twitter: "https://x.com/brumastudio",
-    linkedin: "https://linkedin.com/company/brumastudio",
-    instagram: "https://instagram.com/brumastudio",
-  },
+  responseTimeEs: "Menos de 24 horas en días hábiles",
 };
 
 export default async function SummonPage({ params }: Props) {
@@ -47,33 +42,28 @@ export default async function SummonPage({ params }: Props) {
   const t = await getTranslations("Summon");
   const sanitySettings = await client.fetch<SiteSettings | null>(siteSettingsQuery);
   const settings = sanitySettings || fallbackSettings;
+  const isEs = locale === "es";
+
+  const location = isEs
+    ? settings.locationEs || fallbackSettings.locationEs!
+    : settings.location || fallbackSettings.location!;
+
+  const responseTime = isEs
+    ? settings.responseTimeEs || fallbackSettings.responseTimeEs!
+    : settings.responseTime || fallbackSettings.responseTime!;
 
   const contactInfo = [
     {
-      icon: Mail,
-      labelKey: "direct" as const,
-      value: settings.contactEmail || fallbackSettings.contactEmail!,
-      href: `mailto:${settings.contactEmail || fallbackSettings.contactEmail}`,
-    },
-    {
       icon: MapPin,
       labelKey: "basedIn" as const,
-      value: settings.location || fallbackSettings.location!,
+      value: location,
     },
     {
       icon: Clock,
       labelKey: "responseTime" as const,
-      value: settings.responseTime || fallbackSettings.responseTime!,
+      value: responseTime,
     },
   ];
-
-  const social = settings.socialLinks || fallbackSettings.socialLinks!;
-  const socialLinks = [
-    social.github && { href: social.github, label: "GitHub", icon: Github },
-    social.twitter && { href: social.twitter, label: "X", icon: Twitter },
-    social.linkedin && { href: social.linkedin, label: "LinkedIn", icon: Linkedin },
-    social.instagram && { href: social.instagram, label: "Instagram", icon: Instagram },
-  ].filter(Boolean) as { href: string; label: string; icon: typeof Github }[];
 
   return (
     <>
@@ -114,46 +104,12 @@ export default async function SummonPage({ params }: Props) {
                     {t(`sidebar.${item.labelKey}`)}
                   </h3>
                 </div>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    className="font-body text-base md:text-lg leading-relaxed text-grimoire-text hover:text-grimoire-gold transition-colors duration-200"
-                  >
-                    {item.value}
-                  </a>
-                ) : (
-                  <p className="font-body text-base md:text-lg leading-relaxed text-grimoire-text">
-                    {item.value}
-                  </p>
-                )}
+                <p className="font-body text-base md:text-lg leading-relaxed text-grimoire-text">
+                  {item.value}
+                </p>
               </div>
               </StaggerItem>
             ))}
-
-            {/* Social */}
-            {socialLinks.length > 0 && (
-              <StaggerItem>
-              <div>
-                <h3 className="font-ui text-sm font-medium uppercase tracking-wider text-grimoire-muted mb-3">
-                  {t("sidebar.social")}
-                </h3>
-                <div className="flex items-center gap-1">
-                  {socialLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={link.label}
-                      className="flex items-center justify-center w-11 h-11 rounded-md text-grimoire-muted hover:text-grimoire-gold transition-colors duration-200"
-                    >
-                      <link.icon className="h-5 w-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-              </StaggerItem>
-            )}
           </StaggerContainer>
         </div>
       </section>

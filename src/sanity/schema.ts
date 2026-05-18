@@ -4,6 +4,7 @@ import { service } from "./schemas/service";
 import { post } from "./schemas/post";
 import { author } from "./schemas/author";
 import { siteSettings } from "./schemas/siteSettings";
+import { prospectOfferings } from "./schemas/prospectOfferings";
 
 export const schemaTypes: SchemaTypeDefinition[] = [
   project,
@@ -11,4 +12,5 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   post,
   author,
   siteSettings,
+  prospectOfferings,
 ];

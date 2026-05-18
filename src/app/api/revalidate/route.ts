@@ -16,6 +16,10 @@ const PATHS_BY_TYPE: Record<string, string[]> = {
   service: ["/en", "/es", "/en/arts", "/es/artes"],
   author: ["/en/the-order", "/es/la-orden"],
   siteSettings: ["/en/summon", "/es/invocar"],
+  prospectOfferings: [
+    "/en/offerings-prospect",
+    "/es/ofrendas-prospecto",
+  ],
 };
 
 export async function POST(request: Request) {

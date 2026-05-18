@@ -90,7 +90,9 @@ export interface SiteSettings {
   description?: string;
   contactEmail?: string;
   location?: string;
+  locationEs?: string;
   responseTime?: string;
+  responseTimeEs?: string;
   socialLinks?: {
     github?: string;
     linkedin?: string;
@@ -99,4 +101,52 @@ export interface SiteSettings {
     behance?: string;
   };
   newsletterCTA?: string;
+}
+
+// ─── Prospect Offerings (Private) ─────────────────────
+
+export interface ProspectBullet {
+  title?: string;
+  titleEs?: string;
+  description?: string;
+  descriptionEs?: string;
+}
+
+export interface ProspectTier {
+  name?: string;
+  nameEs?: string;
+  tagline?: string;
+  taglineEs?: string;
+  price?: string;
+  priceEs?: string;
+  duration?: string;
+  durationEs?: string;
+  isMostPopular?: boolean;
+  mostPopularLabel?: string;
+  mostPopularLabelEs?: string;
+  bullets?: ProspectBullet[];
+  ctaLabel?: string;
+  ctaLabelEs?: string;
+  ctaHref?: string;
+}
+
+export interface ProspectOfferings {
+  heroEyebrow?: string;
+  heroEyebrowEs?: string;
+  heroTitle?: string;
+  heroTitleEs?: string;
+  heroSubtitle?: string;
+  heroSubtitleEs?: string;
+  tiers?: ProspectTier[];
+  pricingSectionTitle?: string;
+  pricingSectionTitleEs?: string;
+  pricingSectionBody?: PortableTextBlock[];
+  pricingSectionBodyEs?: PortableTextBlock[];
+  finalCtaTitle?: string;
+  finalCtaTitleEs?: string;
+  finalCtaSubtitle?: string;
+  finalCtaSubtitleEs?: string;
+  finalCtaButtonLabel?: string;
+  finalCtaButtonLabelEs?: string;
+  finalCtaButtonHref?: string;
 }

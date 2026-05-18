@@ -151,8 +151,56 @@ export const siteSettingsQuery = groq`
     description,
     contactEmail,
     location,
+    locationEs,
     responseTime,
+    responseTimeEs,
     socialLinks,
     newsletterCTA
+  }
+`;
+
+// ─── Prospect Offerings (Private) ─────────────────────
+
+export const prospectOfferingsQuery = groq`
+  *[_type == "prospectOfferings"][0] {
+    heroEyebrow,
+    heroEyebrowEs,
+    heroTitle,
+    heroTitleEs,
+    heroSubtitle,
+    heroSubtitleEs,
+    tiers[] {
+      name,
+      nameEs,
+      tagline,
+      taglineEs,
+      price,
+      priceEs,
+      duration,
+      durationEs,
+      isMostPopular,
+      mostPopularLabel,
+      mostPopularLabelEs,
+      bullets[] {
+        title,
+        titleEs,
+        description,
+        descriptionEs
+      },
+      ctaLabel,
+      ctaLabelEs,
+      ctaHref
+    },
+    pricingSectionTitle,
+    pricingSectionTitleEs,
+    pricingSectionBody,
+    pricingSectionBodyEs,
+    finalCtaTitle,
+    finalCtaTitleEs,
+    finalCtaSubtitle,
+    finalCtaSubtitleEs,
+    finalCtaButtonLabel,
+    finalCtaButtonLabelEs,
+    finalCtaButtonHref
   }
 `;

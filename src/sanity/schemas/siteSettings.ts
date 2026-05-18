@@ -31,15 +31,27 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: "location",
-      title: "Location",
+      title: "Location (EN)",
       type: "string",
       initialValue: "Tijuana, MX — serving clients worldwide",
     }),
     defineField({
+      name: "locationEs",
+      title: "Location (ES)",
+      type: "string",
+      initialValue: "Tijuana, MX — clientes en todo el mundo",
+    }),
+    defineField({
       name: "responseTime",
-      title: "Response Time",
+      title: "Response Time (EN)",
       type: "string",
       initialValue: "Within 24 hours on business days",
+    }),
+    defineField({
+      name: "responseTimeEs",
+      title: "Response Time (ES)",
+      type: "string",
+      initialValue: "Menos de 24 horas en días hábiles",
     }),
     defineField({
       name: "socialLinks",

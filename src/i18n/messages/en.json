@@ -423,10 +423,23 @@
     }
   },
   "ContactForm": {
-    "nameLabel": "Name",
-    "namePlaceholder": "Your name",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "Your first name",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Your last name",
     "emailLabel": "Email",
     "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "10 digits",
+    "phoneError": "Phone must be 10 digits.",
+    "countryCodeLabel": "Country",
+    "contactPreferenceLabel": "Preferred Contact",
+    "contactPreferenceError": "Please select a preferred contact method.",
+    "contactPrefs": {
+      "phone": "Phone",
+      "email": "Email",
+      "whatsapp": "WhatsApp"
+    },
     "projectTypeLabel": "Project Type",
     "projectTypePlaceholder": "Select a type…",
     "projectTypes": {
